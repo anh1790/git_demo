@@ -1,0 +1,976 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Hệ thống AI Dự báo Chất lượng Không khí Không gian - Thời gian",
+    "description": "Backend API phục vụ dự báo PM2.5 đa bước, tích hợp GeoPandas và tối ưu 20 CCU.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/health": {
+      "get": {
+        "tags": [
+          "System Health"
+        ],
+        "summary": "Get Health",
+        "description": "Kiểm tra tình trạng sức khỏe của hệ thống backend và tài nguyên máy.",
+        "operationId": "get_health_api_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stations": {
+      "get": {
+        "tags": [
+          "Spatial Data"
+        ],
+        "summary": "List Stations",
+        "description": "Trả về danh sách 8 trạm quan trắc không gian cùng tọa độ WGS84 và khoảng cách trung tâm.",
+        "operationId": "list_stations_api_stations_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/StationInfo"
+                  },
+                  "type": "array",
+                  "title": "Response List Stations Api Stations Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/regions": {
+      "get": {
+        "tags": [
+          "Spatial Data"
+        ],
+        "summary": "Get Geojson Regions",
+        "description": "Trả về dữ liệu GeoJSON đa giác các quận Hà Nội được gắn nhãn AQI và PM2.5 trung bình.\nGeoPandas GeoDataFrame được serialize trực tiếp thành GeoJSON chuẩn EPSG:4326.",
+        "operationId": "get_geojson_regions_api_regions_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/air-quality/latest": {
+      "get": {
+        "tags": [
+          "Air Quality & Forecasting"
+        ],
+        "summary": "Get Latest Observations",
+        "description": "Trả về quan trắc mới nhất tại các trạm quan trắc.",
+        "operationId": "get_latest_observations_api_air_quality_latest_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LatestObservation"
+                  },
+                  "type": "array",
+                  "title": "Response Get Latest Observations Api Air Quality Latest Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/air-quality/history": {
+      "get": {
+        "tags": [
+          "Air Quality & Forecasting"
+        ],
+        "summary": "Get Station History",
+        "description": "Lấy dữ liệu lịch sử cho biểu đồ phân tích chuỗi thời gian.",
+        "operationId": "get_station_history_api_air_quality_history_get",
+        "parameters": [
+          {
+            "name": "station_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Mã trạm",
+              "default": "VN_HN",
+              "title": "Station Id"
+            },
+            "description": "Mã trạm"
+          },
+          {
+            "name": "pollutant",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Chỉ số quan trắc (pm25, pm10, no2, co, o3, so2)",
+              "default": "pm25",
+              "title": "Pollutant"
+            },
+            "description": "Chỉ số quan trắc (pm25, pm10, no2, co, o3, so2)"
+          },
+          {
+            "name": "hours",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 168,
+              "minimum": 6,
+              "description": "Số giờ lịch sử cần lấy (6 đến 168 giờ)",
+              "default": 72,
+              "title": "Hours"
+            },
+            "description": "Số giờ lịch sử cần lấy (6 đến 168 giờ)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/air-quality/forecast": {
+      "post": {
+        "tags": [
+          "Air Quality & Forecasting"
+        ],
+        "summary": "Forecast Air Quality",
+        "description": "API DỰ BÁO CHẤT LƯỢNG KHÔNG KHÍ THỰC TẾ:\n- Nhận dữ liệu từ Website gửi lên.\n- Chạy mô hình Machine Learning thực tế trong RAM (Random Forest, Neural Network, Baseline).\n- Hỗ trợ cả 34 tỉnh thành và mô hình lượng tử hóa Int8 Quantized.\n- Trả về kết quả dự báo thực tế kèm thời gian phản hồi.",
+        "operationId": "forecast_air_quality_api_air_quality_forecast_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForecastRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForecastResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/air-quality/optimization-experiment": {
+      "get": {
+        "tags": [
+          "Air Quality & Forecasting"
+        ],
+        "summary": "Run Optimization Experiment",
+        "description": "THÍ NGHIỆM ĐỐI SÁNH TRỰC TIẾP TRƯỚC VÀ SAU TỐI ƯU HÓA:\nTrả về dữ liệu benchmark thực nghiệm định lượng hóa Post-Training Quantization (PTQ Int8)\nso sánh với mô hình FP32 nguyên bản kèm sai số, dung lượng và thông lượng.",
+        "operationId": "run_optimization_experiment_api_air_quality_optimization_experiment_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/air-quality/concurrency-benchmark": {
+      "get": {
+        "tags": [
+          "Air Quality & Forecasting"
+        ],
+        "summary": "Run Concurrency Load Test",
+        "operationId": "run_concurrency_load_test_api_air_quality_concurrency_benchmark_get",
+        "parameters": [
+          {
+            "name": "concurrent_requests",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 2,
+              "default": 12,
+              "title": "Concurrent Requests"
+            }
+          },
+          {
+            "name": "ccu",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Ccu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/air-quality/concurrency-test": {
+      "get": {
+        "tags": [
+          "Air Quality & Forecasting"
+        ],
+        "summary": "Run Concurrency Load Test",
+        "operationId": "run_concurrency_load_test_api_air_quality_concurrency_test_get",
+        "parameters": [
+          {
+            "name": "concurrent_requests",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 2,
+              "default": 12,
+              "title": "Concurrent Requests"
+            }
+          },
+          {
+            "name": "ccu",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Ccu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Air Quality & Forecasting"
+        ],
+        "summary": "Run Concurrency Load Test",
+        "operationId": "run_concurrency_load_test_api_air_quality_concurrency_test_post",
+        "parameters": [
+          {
+            "name": "concurrent_requests",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 2,
+              "default": 12,
+              "title": "Concurrent Requests"
+            }
+          },
+          {
+            "name": "ccu",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Ccu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/models/evaluation": {
+      "get": {
+        "tags": [
+          "Model Evaluation & Explainability"
+        ],
+        "summary": "Get Model Evaluation",
+        "description": "Trả về bảng chỉ số thực nghiệm (MAE, RMSE, R2, Latency) đánh giá trên test set độc lập.",
+        "operationId": "get_model_evaluation_api_models_evaluation_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/ModelEvaluationItem"
+                  },
+                  "type": "object",
+                  "title": "Response Get Model Evaluation Api Models Evaluation Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/explain": {
+      "get": {
+        "tags": [
+          "Model Evaluation & Explainability"
+        ],
+        "summary": "Get Model Explanation",
+        "description": "Tài liệu giải thích mô hình AI bằng tiếng Việt phục vụ sinh viên đại học.",
+        "operationId": "get_model_explanation_api_explain_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Root",
+        "description": "Trang chủ chuyển hướng thẳng tới giao diện người dùng.",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/manifest.json": {
+      "get": {
+        "summary": "Manifest",
+        "operationId": "manifest_manifest_json_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sw.js": {
+      "get": {
+        "summary": "Service Worker",
+        "operationId": "service_worker_sw_js_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/network-info": {
+      "get": {
+        "summary": "Network Info",
+        "operationId": "network_info_api_network_info_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ForecastRequest": {
+        "properties": {
+          "station_id": {
+            "type": "string",
+            "title": "Station Id",
+            "description": "Mã trạm quan trắc (ví dụ: VN_HN, VN_DN, VN_HCM)",
+            "default": "VN_HN"
+          },
+          "pollutant": {
+            "type": "string",
+            "title": "Pollutant",
+            "description": "Chỉ số dự báo (mặc định: pm25)",
+            "default": "pm25"
+          },
+          "model_name": {
+            "type": "string",
+            "title": "Model Name",
+            "description": "Mô hình AI sử dụng (Baseline, Random_Forest, Neural_Network, Random_Forest_Quantized, Neural_Network_Quantized)",
+            "default": "Random_Forest"
+          },
+          "horizon_hours": {
+            "type": "integer",
+            "maximum": 48.0,
+            "minimum": 1.0,
+            "title": "Horizon Hours",
+            "description": "Số giờ cần dự báo (1 đến 48 giờ)",
+            "default": 48
+          }
+        },
+        "type": "object",
+        "title": "ForecastRequest"
+      },
+      "ForecastResponse": {
+        "properties": {
+          "station_id": {
+            "type": "string",
+            "title": "Station Id"
+          },
+          "station_name": {
+            "type": "string",
+            "title": "Station Name"
+          },
+          "district": {
+            "type": "string",
+            "title": "District"
+          },
+          "model_used": {
+            "type": "string",
+            "title": "Model Used"
+          },
+          "horizon_hours": {
+            "type": "integer",
+            "title": "Horizon Hours"
+          },
+          "current_timestamp": {
+            "type": "string",
+            "title": "Current Timestamp"
+          },
+          "current_pm25": {
+            "type": "number",
+            "title": "Current Pm25"
+          },
+          "forecast_steps": {
+            "items": {
+              "$ref": "#/components/schemas/ForecastStepResult"
+            },
+            "type": "array",
+            "title": "Forecast Steps"
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer",
+            "default": "Kết quả dự báo từ mô hình AI phục vụ học tập và nghiên cứu, không thay thế trạm đo quốc gia."
+          }
+        },
+        "type": "object",
+        "required": [
+          "station_id",
+          "station_name",
+          "district",
+          "model_used",
+          "horizon_hours",
+          "current_timestamp",
+          "current_pm25",
+          "forecast_steps"
+        ],
+        "title": "ForecastResponse"
+      },
+      "ForecastStepResult": {
+        "properties": {
+          "step_ahead": {
+            "type": "integer",
+            "title": "Step Ahead"
+          },
+          "forecast_time": {
+            "type": "string",
+            "title": "Forecast Time"
+          },
+          "pm25_predicted": {
+            "type": "number",
+            "title": "Pm25 Predicted"
+          },
+          "lower_bound": {
+            "type": "number",
+            "title": "Lower Bound"
+          },
+          "upper_bound": {
+            "type": "number",
+            "title": "Upper Bound"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "aqi_level": {
+            "type": "string",
+            "title": "Aqi Level"
+          },
+          "aqi_code": {
+            "type": "string",
+            "title": "Aqi Code"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color"
+          },
+          "health_advice": {
+            "type": "string",
+            "title": "Health Advice"
+          }
+        },
+        "type": "object",
+        "required": [
+          "step_ahead",
+          "forecast_time",
+          "pm25_predicted",
+          "lower_bound",
+          "upper_bound",
+          "unit",
+          "aqi_level",
+          "aqi_code",
+          "color",
+          "health_advice"
+        ],
+        "title": "ForecastStepResult"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "example": "healthy"
+          },
+          "uptime_seconds": {
+            "type": "number",
+            "title": "Uptime Seconds"
+          },
+          "cpu_percent": {
+            "type": "number",
+            "title": "Cpu Percent"
+          },
+          "memory_mb": {
+            "type": "number",
+            "title": "Memory Mb"
+          },
+          "models_loaded": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Models Loaded"
+          },
+          "stations_count": {
+            "type": "integer",
+            "title": "Stations Count"
+          },
+          "districts_count": {
+            "type": "integer",
+            "title": "Districts Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "uptime_seconds",
+          "cpu_percent",
+          "memory_mb",
+          "models_loaded",
+          "stations_count",
+          "districts_count"
+        ],
+        "title": "HealthResponse"
+      },
+      "LatestObservation": {
+        "properties": {
+          "station_id": {
+            "type": "string",
+            "title": "Station Id"
+          },
+          "station_name": {
+            "type": "string",
+            "title": "Station Name"
+          },
+          "district": {
+            "type": "string",
+            "title": "District"
+          },
+          "latitude": {
+            "type": "number",
+            "title": "Latitude"
+          },
+          "longitude": {
+            "type": "number",
+            "title": "Longitude"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          },
+          "pm25": {
+            "type": "number",
+            "title": "Pm25"
+          },
+          "pm10": {
+            "type": "number",
+            "title": "Pm10"
+          },
+          "no2": {
+            "type": "number",
+            "title": "No2"
+          },
+          "co": {
+            "type": "number",
+            "title": "Co"
+          },
+          "o3": {
+            "type": "number",
+            "title": "O3"
+          },
+          "so2": {
+            "type": "number",
+            "title": "So2"
+          },
+          "temperature": {
+            "type": "number",
+            "title": "Temperature"
+          },
+          "humidity": {
+            "type": "number",
+            "title": "Humidity"
+          },
+          "wind_speed": {
+            "type": "number",
+            "title": "Wind Speed"
+          },
+          "aqi_level": {
+            "type": "string",
+            "title": "Aqi Level"
+          },
+          "aqi_code": {
+            "type": "string",
+            "title": "Aqi Code"
+          },
+          "color": {
+            "type": "string",
+            "title": "Color"
+          }
+        },
+        "type": "object",
+        "required": [
+          "station_id",
+          "station_name",
+          "district",
+          "latitude",
+          "longitude",
+          "timestamp",
+          "pm25",
+          "pm10",
+          "no2",
+          "co",
+          "o3",
+          "so2",
+          "temperature",
+          "humidity",
+          "wind_speed",
+          "aqi_level",
+          "aqi_code",
+          "color"
+        ],
+        "title": "LatestObservation"
+      },
+      "ModelEvaluationItem": {
+        "properties": {
+          "model_name": {
+            "type": "string",
+            "title": "Model Name"
+          },
+          "model_type": {
+            "type": "string",
+            "title": "Model Type"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "mae": {
+            "type": "number",
+            "title": "Mae"
+          },
+          "rmse": {
+            "type": "number",
+            "title": "Rmse"
+          },
+          "r2": {
+            "type": "number",
+            "title": "R2"
+          },
+          "train_time_sec": {
+            "type": "number",
+            "title": "Train Time Sec"
+          },
+          "inference_latency_ms": {
+            "type": "number",
+            "title": "Inference Latency Ms"
+          },
+          "test_samples": {
+            "type": "integer",
+            "title": "Test Samples"
+          },
+          "epochs_trained": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Epochs Trained"
+          },
+          "top_features": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top Features"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_name",
+          "model_type",
+          "description",
+          "mae",
+          "rmse",
+          "r2",
+          "train_time_sec",
+          "inference_latency_ms",
+          "test_samples"
+        ],
+        "title": "ModelEvaluationItem"
+      },
+      "StationInfo": {
+        "properties": {
+          "station_id": {
+            "type": "string",
+            "title": "Station Id"
+          },
+          "station_name": {
+            "type": "string",
+            "title": "Station Name"
+          },
+          "district": {
+            "type": "string",
+            "title": "District"
+          },
+          "latitude": {
+            "type": "number",
+            "title": "Latitude"
+          },
+          "longitude": {
+            "type": "number",
+            "title": "Longitude"
+          },
+          "station_type": {
+            "type": "string",
+            "title": "Station Type"
+          },
+          "elevation_m": {
+            "type": "number",
+            "title": "Elevation M"
+          },
+          "dist_center_km": {
+            "type": "number",
+            "title": "Dist Center Km"
+          }
+        },
+        "type": "object",
+        "required": [
+          "station_id",
+          "station_name",
+          "district",
+          "latitude",
+          "longitude",
+          "station_type",
+          "elevation_m",
+          "dist_center_km"
+        ],
+        "title": "StationInfo"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

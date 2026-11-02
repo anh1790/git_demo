@@ -59,6 +59,15 @@ if STATIC_DIR.exists():
     if (STATIC_DIR / "js").exists():
         app.mount("/js", StaticFiles(directory=str(STATIC_DIR / "js")), name="js")
 
+from fastapi.responses import FileResponse, RedirectResponse
+
+@app.get("/apidoc")
+@app.get("/apidocs")
+@app.get("/api-docs")
+async def apidoc_redirect():
+    """Điều hướng nhanh tới trang tài liệu API tương tác Swagger UI."""
+    return RedirectResponse(url="/docs")
+
 @app.get("/")
 async def root():
     """Trang chủ chuyển hướng thẳng tới giao diện người dùng."""
