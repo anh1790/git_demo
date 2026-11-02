@@ -103,29 +103,47 @@
         </div>
       </header>
 
-      <!-- Location Search & Quick Region Bar: 34 Tỉnh Thành Cả Nước -->
+      <!-- Location Search & Quick Region Bar: 34 Tỉnh Thành Cả Nước & 101 Trạm Quan Trắc -->
       <section class="location-search-section">
         <div class="search-bar-row">
           <div class="search-input-wrapper">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" id="input-location-search" placeholder="Tìm kiếm nhanh trong 34 tỉnh thành (Hà Nội, TP.HCM, Đà Nẵng, Cần Thơ, Hải Phòng, Huế, Quảng Ninh, Khánh Hòa, Lâm Đồng...)..." autocomplete="off">
+            <input type="text" id="input-location-search" placeholder="Tìm kiếm nhanh trong 34 tỉnh thành hoặc 101 trạm đo (Hà Nội, Tây Ninh, TP.HCM, Đà Nẵng, Sa Pa, Núi Bà Đen...)..." autocomplete="off">
             <div class="search-results-dropdown" id="search-results-dropdown"></div>
           </div>
+          <!-- Menu thả xuống chọn nhanh 34 Tỉnh Thành (Không bị tràn màn hình) -->
+          <div class="province-dropdown-wrap">
+            <i class="fa-solid fa-city" style="color:var(--primary);font-size:13px;"></i>
+            <select id="select-province-dropdown" onchange="App.selectProvince(this.value)" class="province-select-box" title="Chọn nhanh tỉnh/thành phố">
+              <!-- Populated by JS -->
+            </select>
+          </div>
           <div class="quick-city-badge">
-            <i class="fa-solid fa-globe" style="color:var(--primary);"></i>
-            <span>Mạng lưới: <strong>34 Tỉnh Thành / 3 Miền</strong></span>
+            <i class="fa-solid fa-tower-broadcast" style="color:var(--accent-teal);"></i>
+            <span>Mạng lưới: <strong>34 Tỉnh / 101 Trạm Đo</strong></span>
           </div>
         </div>
+        
+        <!-- Bộ lọc Vùng Miền phân chia rõ ràng -->
         <div class="district-pills-row" id="region-pills-container">
-          <span class="pills-label"><i class="fa-solid fa-filter"></i> Khu vực:</span>
+          <span class="pills-label"><i class="fa-solid fa-filter"></i> Phân vùng:</span>
           <button class="district-pill active" onclick="App.filterByRegion('all')">Tất cả (34 tỉnh)</button>
-          <button class="district-pill" onclick="App.filterByRegion('Miền Bắc')">Miền Bắc (14)</button>
-          <button class="district-pill" onclick="App.filterByRegion('Miền Trung')">Miền Trung & Tây Nguyên (11)</button>
-          <button class="district-pill" onclick="App.filterByRegion('Miền Nam')">Miền Nam (9)</button>
+          <button class="district-pill" onclick="App.filterByRegion('Miền Bắc')">Miền Bắc (15)</button>
+          <button class="district-pill" onclick="App.filterByRegion('Miền Trung')">Miền Trung (8)</button>
+          <button class="district-pill" onclick="App.filterByRegion('Tây Nguyên')">Tây Nguyên (3)</button>
+          <button class="district-pill" onclick="App.filterByRegion('Miền Nam')">Miền Nam (8)</button>
         </div>
-        <div class="district-pills-row" id="province-pills-container" style="margin-top: 4px;">
+
+        <!-- Hàng nút chọn Tỉnh Thành hiển thị linh hoạt -->
+        <div class="district-pills-row pills-scrollable-row" id="province-pills-container" style="margin-top: 4px;">
           <span class="pills-label"><i class="fa-solid fa-location-dot"></i> Địa phương:</span>
           <!-- Dynamic province pills injected by JS -->
+        </div>
+
+        <!-- Hàng nút Đo Từng Trạm của Tỉnh Thành đang chọn -->
+        <div class="district-pills-row station-selection-row" id="station-pills-container" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border-color);">
+          <span class="pills-label"><i class="fa-solid fa-tower-broadcast" style="color:var(--accent-teal);"></i> Đo từng trạm (<span id="station-prov-name">Hà Nội</span>):</span>
+          <!-- Dynamic station pills injected by JS -->
         </div>
       </section>
 
@@ -473,6 +491,27 @@
           </div>
           <div class="pollutants-grid" id="pollutants-grid-container">
             <!-- Injected by JS: PM2.5, PM10, CO, NO2, SO2, O3 -->
+          </div>
+        </div>
+
+        <!-- Detailed Monitoring Stations Grid of the Selected Province -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">
+                <i class="fa-solid fa-tower-broadcast" style="color:var(--accent-teal);"></i>
+                Mạng Lưới & Kết Quả Đo Đạc Từng Trạm Quan Trắc Tại <span id="aqi-stations-province-name" style="color:var(--primary);">Hà Nội</span>
+              </h3>
+              <p style="font-size:12px;color:var(--text-muted);margin-top:2px;">
+                Theo dõi chi tiết số liệu AQI, PM2.5, nhiệt độ & trạng thái cảm biến tại từng trạm (Đô thị, Giao thông, Công nghiệp, Trạm nền sinh thái)
+              </p>
+            </div>
+            <span class="stat-badge" style="background:#e0f2fe;color:#0369a1;font-size:12px;">
+              <i class="fa-solid fa-circle-check"></i> Cảm biến IoT 24/7
+            </span>
+          </div>
+          <div class="stations-detail-grid" id="province-stations-grid">
+            <!-- Injected by JS: detailed cards for each station of current province -->
           </div>
         </div>
 
@@ -948,7 +987,8 @@
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="js/embedded_data.js?v=5"></script>
-  <script src="js/app.js?v=5"></script>
+  <script src="js/stations_data.js?v=6"></script>
+  <script src="js/embedded_data.js?v=6"></script>
+  <script src="js/app.js?v=6"></script>
 </body>
 </html>

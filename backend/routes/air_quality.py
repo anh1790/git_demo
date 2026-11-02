@@ -22,7 +22,7 @@ from backend.schemas import (
     ForecastResponse,
     ForecastStepResult
 )
-from backend.provinces_data import PROVINCES_34
+from backend.provinces_data import PROVINCES_34, STATIONS_CONFIG
 from ml.inference import calculate_aqi_category
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -125,17 +125,40 @@ async def forecast_air_quality(req: ForecastRequest):
     station_data = state.history_df[state.history_df["station_id"] == req.station_id].sort_values("timestamp")
     
     if station_data.empty:
-        # Tra cứu thông tin từ 34 tỉnh thành
-        matched = next((p for p in PROVINCES_34 if p["id"] == req.station_id or p["name"].lower() == req.station_id.lower()), None)
-        if not matched:
-            matched = PROVINCES_34[0] # Hà Nội mặc định
+        # Tra cứu thông tin từ 101 trạm chi tiết hoặc 34 tỉnh thành
+        matched_st = None
+        matched_prov = None
+        for pid, st_list in STATIONS_CONFIG.items():
+            for s in st_list:
+                if s["id"] == req.station_id:
+                    matched_st = s
+                    matched_prov = next((p for p in PROVINCES_34 if p["id"] == pid), None)
+                    break
+            if matched_st:
+                break
+        
+        if matched_st:
+            base_pm = matched_st["pm25"]
+            base_temp = matched_st["temp"]
+            base_hum = matched_st["humidity"]
+            base_wind = matched_st.get("wind", 3.0)
+            station_name = matched_st["name"]
+            district_name = matched_prov["name"] if matched_prov else matched_st["name"]
+            station_id_val = matched_st["id"]
+        else:
+            matched = next((p for p in PROVINCES_34 if p["id"] == req.station_id or p["name"].lower() == req.station_id.lower()), None)
+            if not matched:
+                matched = PROVINCES_34[0] # Hà Nội mặc định
+            base_pm = matched["pm25"]
+            base_temp = matched["temp"]
+            base_hum = matched["humidity"]
+            base_wind = matched["wind_speed"]
+            station_name = f"Trạm {matched['name']}"
+            district_name = matched["name"]
+            station_id_val = matched["id"]
             
         # Tạo chuỗi dữ liệu 48h thực tế cho trạm để làm đầu vào cho mô hình
         records = []
-        base_pm = matched["pm25"]
-        base_temp = matched["temp"]
-        base_hum = matched["humidity"]
-        base_wind = matched["wind_speed"]
         now = pd.Timestamp.now()
         
         for i in range(48, 0, -1):
@@ -143,18 +166,18 @@ async def forecast_air_quality(req: ForecastRequest):
             jitter_pm = round(max(4.0, base_pm + np.sin(i / 3.8) * 4.5), 2)
             records.append({
                 "timestamp": ts,
-                "station_id": matched["id"],
-                "station_name": f"Trạm {matched['name']}",
-                "district": matched["name"],
+                "station_id": station_id_val,
+                "station_name": station_name,
+                "district": district_name,
                 "pm25": jitter_pm,
                 "temperature": base_temp + np.sin(i / 4.0) * 2.0,
                 "humidity": np.clip(base_hum + np.cos(i / 3.0) * 6.0, 30.0, 95.0),
                 "wind_speed": base_wind,
                 "pm10": round(jitter_pm * 1.45, 2),
-                "no2": matched.get("no2", 20.0),
-                "co": matched.get("co", 0.8),
-                "o3": matched.get("o3", 25.0),
-                "so2": matched.get("so2", 6.0),
+                "no2": 20.0,
+                "co": 0.8,
+                "o3": 25.0,
+                "so2": 6.0,
                 "dist_center_km": 3.5,
                 "elevation_m": 15.0
             })
