@@ -23,7 +23,7 @@
   <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3222/3222800.png">
   
   <!-- Custom CSS: Ocean Blue & Cyan/Teal Design System -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
   <div class="app-layout">
@@ -205,10 +205,10 @@
             <div class="weather-hero-right">
               <!-- Nút chuyển đổi khung giờ xem trước hiệu ứng động -->
               <div class="time-scrub-controls">
-                <button class="time-scrub-btn active" onclick="App.scrubTimeOfDay('now')">Hiện tại</button>
-                <button class="time-scrub-btn" onclick="App.scrubTimeOfDay('noon')">Trưa (Nắng)</button>
-                <button class="time-scrub-btn" onclick="App.scrubTimeOfDay('sunset')">Hoàng hôn</button>
-                <button class="time-scrub-btn" onclick="App.scrubTimeOfDay('night')">Đêm (Trăng)</button>
+                <button class="time-scrub-btn active" id="btn-scrub-now" onclick="App.scrubTimeOfDay('now')" title="Tự động bám sát giờ thực tế trên máy tính"><i class="fa-solid fa-clock"></i> Tự động (Giờ thực tế)</button>
+                <button class="time-scrub-btn" id="btn-scrub-noon" onclick="App.scrubTimeOfDay('noon')"><i class="fa-solid fa-sun"></i> Trưa (Nắng)</button>
+                <button class="time-scrub-btn" id="btn-scrub-sunset" onclick="App.scrubTimeOfDay('sunset')"><i class="fa-solid fa-cloud-sun"></i> Hoàng hôn</button>
+                <button class="time-scrub-btn" id="btn-scrub-night" onclick="App.scrubTimeOfDay('night')"><i class="fa-solid fa-moon"></i> Đêm (Trăng sao)</button>
               </div>
             </div>
           </div>
@@ -872,7 +872,12 @@
       <div class="tab-pane" id="tab-map">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title"><i class="fa-solid fa-map-location-dot"></i> Bản Đồ Khí Tượng & Chất Lượng Không Khí Toàn Quốc</h3>
+            <div>
+              <h3 class="card-title"><i class="fa-solid fa-map-location-dot"></i> Bản Đồ Khí Tượng & GIS Việt Nam (Hoàng Sa & Trường Sa)</h3>
+              <p style="font-size:12px;color:var(--text-muted);margin-top:2px;">
+                <i class="fa-solid fa-flag" style="color:#ef4444;"></i> Bản đồ chuẩn Việt Nam • Khẳng định chủ quyền không thể tách rời đối với Quần đảo Hoàng Sa (TP. Đà Nẵng) và Quần đảo Trường Sa (Tỉnh Khánh Hòa)
+              </p>
+            </div>
             <div class="map-layer-toggles">
               <button class="map-layer-btn active" onclick="App.setMapLayer('temp')">Nhiệt độ (°C)</button>
               <button class="map-layer-btn" onclick="App.setMapLayer('aqi')">Chất lượng không khí (AQI)</button>
@@ -895,6 +900,16 @@
             <div style="font-size:12px;color:var(--text-muted);">
               Sắp xếp theo: <strong>Điểm thuận lợi cao nhất</strong>
             </div>
+          </div>
+
+          <!-- Outdoor Region Filter Row (Lọc theo Miền chuẩn xác) -->
+          <div class="outdoor-region-filter-row" id="outdoor-region-filters-container" style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid var(--border-color);">
+            <span style="font-size:12px;font-weight:700;color:var(--text-muted);"><i class="fa-solid fa-layer-group" style="color:var(--primary);"></i> Lọc theo Vùng miền:</span>
+            <button class="district-pill active" id="btn-outdoor-reg-all" onclick="App.filterOutdoorRegion('all')">Tất cả (34 tỉnh)</button>
+            <button class="district-pill" id="btn-outdoor-reg-bac" onclick="App.filterOutdoorRegion('Miền Bắc')">Miền Bắc (15)</button>
+            <button class="district-pill" id="btn-outdoor-reg-trung" onclick="App.filterOutdoorRegion('Miền Trung')">Miền Trung (8)</button>
+            <button class="district-pill" id="btn-outdoor-reg-taynguyen" onclick="App.filterOutdoorRegion('Tây Nguyên')">Tây Nguyên (3)</button>
+            <button class="district-pill" id="btn-outdoor-reg-nam" onclick="App.filterOutdoorRegion('Miền Nam')">Miền Nam (8)</button>
           </div>
 
           <!-- Activity Filter Buttons -->
@@ -987,8 +1002,8 @@
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="js/stations_data.js?v=6"></script>
-  <script src="js/embedded_data.js?v=6"></script>
-  <script src="js/app.js?v=6"></script>
+  <script src="js/stations_data.js?v=7"></script>
+  <script src="js/embedded_data.js?v=7"></script>
+  <script src="js/app.js?v=7"></script>
 </body>
 </html>
