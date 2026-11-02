@@ -77,16 +77,21 @@ def clean_and_impute(df: pd.DataFrame) -> pd.DataFrame:
             if df[col].isnull().any():
                 df[col] = df[col].fillna(df[col].median())
 
-    # 4. Giới hạn ngoại lai vật lý (Clipping)
-    df["pm25"] = df["pm25"].clip(0.0, 500.0)
-    df["pm10"] = df["pm10"].clip(0.0, 600.0)
-    df["no2"] = df["no2"].clip(0.0, 300.0)
-    df["co"] = df["co"].clip(0.0, 15.0)
-    df["o3"] = df["o3"].clip(0.0, 350.0)
-    df["so2"] = df["so2"].clip(0.0, 200.0)
-    df["temperature"] = df["temperature"].clip(0.0, 50.0)
-    df["humidity"] = df["humidity"].clip(10.0, 100.0)
-    df["wind_speed"] = df["wind_speed"].clip(0.0, 40.0)
+    # 4. Giới hạn ngoại lai vật lý (Clipping) an toàn cho các cột có mặt
+    clip_limits = {
+        "pm25": (0.0, 500.0),
+        "pm10": (0.0, 600.0),
+        "no2": (0.0, 300.0),
+        "co": (0.0, 15.0),
+        "o3": (0.0, 350.0),
+        "so2": (0.0, 200.0),
+        "temperature": (0.0, 50.0),
+        "humidity": (10.0, 100.0),
+        "wind_speed": (0.0, 40.0)
+    }
+    for col, (lower, upper) in clip_limits.items():
+        if col in df.columns:
+            df[col] = df[col].clip(lower, upper)
     
     return df
 

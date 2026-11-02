@@ -186,8 +186,7 @@ async def forecast_air_quality(req: ForecastRequest):
         recent_history = station_data.tail(48)
 
     # Chạy mô hình Machine Learning thực tế đa luồng không nghẽn Event Loop
-    forecast_steps_data = await asyncio.to_thread(
-        state.engine.forecast_multistep,
+    forecast_steps_data = state.engine.forecast_multistep(
         recent_history=recent_history,
         model_name=req.model_name,
         horizon_hours=req.horizon_hours

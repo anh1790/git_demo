@@ -1,0 +1,68 @@
+{
+  "models": {
+    "baseline.joblib": {
+      "sha256": "f127e6ebfaba148ca73075bd704b03017ed6787321457d6d030fa72d0a7da79a",
+      "size_bytes": 76
+    },
+    "neural_forecast.joblib": {
+      "sha256": "9a2f43aa3fc550d61a22300bb2df11c9d6f4e1b2899d817d62ba8006ea461fdd",
+      "size_bytes": 104607
+    },
+    "neural_quantized.joblib": {
+      "sha256": "c8e8cc08cb700d814403d7a74f5f7ffdb6b93aabed80dc53cebe838ac7f3ec39",
+      "size_bytes": 104512
+    },
+    "random_forest.joblib": {
+      "sha256": "6326893da1485a869f624f16a0abd4a16a5dfa782db8c9bd3be679c0b18f24e2",
+      "size_bytes": 21707153
+    },
+    "random_forest_quantized.joblib": {
+      "sha256": "c9ac9e4d2c744cee9829044ca7a4cf251a99fc03ce40816fcb430c8ab8d1d4d4",
+      "size_bytes": 6926282
+    },
+    "scaler.joblib": {
+      "sha256": "003782f173e454c87f193e9c9f0b35a364d2efa6ce7006b453527f7674d6b774",
+      "size_bytes": 1839
+    }
+  },
+  "valid_forecast_requests": [
+    {
+      "station_id": "VN_HN_01",
+      "pollutant": "pm25",
+      "model_name": "Random_Forest",
+      "horizon_hours": 6
+    },
+    {
+      "station_id": "VN_HN_02",
+      "pollutant": "pm25",
+      "model_name": "Neural_Network",
+      "horizon_hours": 12
+    },
+    {
+      "station_id": "VN_HN_03",
+      "pollutant": "pm25",
+      "model_name": "Baseline",
+      "horizon_hours": 24
+    },
+    {
+      "station_id": "VN_HCM_01",
+      "pollutant": "pm25",
+      "model_name": "Random_Forest",
+      "horizon_hours": 48
+    }
+  ],
+  "invalid_forecast_requests": [
+    {
+      "station_id": "NON_EXISTENT_STATION",
+      "pollutant": "pm25",
+      "model_name": "Random_Forest",
+      "horizon_hours": 6
+    },
+    {
+      "station_id": "VN_HN_01",
+      "pollutant": "invalid_gas",
+      "model_name": "Random_Forest",
+      "horizon_hours": 6
+    }
+  ]
+}
