@@ -902,6 +902,8 @@
               <button class="map-layer-btn" onclick="App.setMapLayer('rain')">Khả năng mưa (%)</button>
               <button class="map-layer-btn" onclick="App.setMapLayer('wind')">Tốc độ gió (m/s)</button>
               <button class="map-layer-btn" onclick="App.setMapLayer('geopandas')"><i class="fa-solid fa-draw-polygon"></i> Ranh giới GeoPandas</button>
+              <button class="map-layer-btn active" id="btn-toggle-admin-labels" onclick="App.toggleAdminLabels()"><i class="fa-solid fa-tags"></i> Tên Đơn Vị Hành Chính (Có Dấu)</button>
+              <button class="map-layer-btn active" id="btn-toggle-islands" onclick="App.toggleIslandsLayer()"><i class="fa-solid fa-water"></i> Quần Đảo & Đảo Tiêu Biểu</button>
             </div>
             <div class="map-layer-toggles" style="margin-top:8px;padding-top:8px;border-top:1px dashed var(--border-color);display:flex;align-items:center;flex-wrap:wrap;gap:6px;">
               <span style="font-size:11.5px;font-weight:700;color:var(--text-muted);display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-layer-group"></i> Bản đồ nền:</span>
