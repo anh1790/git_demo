@@ -1086,14 +1086,14 @@
     </div>
     <div class="ai-chat-body" id="ai-chat-body">
       <div class="ai-chat-msg bot">
-        Xin chào! Tôi là <strong>Trợ lý AI AirSense</strong>. Tôi phân tích dữ liệu quan trắc thời gian thực và mô hình học máy để giải thích thời tiết, đánh giá ô nhiễm, dự báo 24h - 48h và khuyến nghị hoạt động ngoài trời. Bạn hãy chọn câu hỏi gợi ý hoặc nhập câu hỏi:
+        Xin chào! Tôi là <strong>Trợ lý AI AirSense</strong>. Tôi phân tích dữ liệu quan trắc thời gian thực và mô hình học máy để giải thích thời tiết, đánh giá ô nhiễm, dự báo 24h - 48h, theo dõi bão NCHMF, dự báo không khí lạnh và cảnh báo thiên tai. Bạn hãy chọn câu hỏi gợi ý hoặc nhập câu hỏi:
       </div>
       <div class="ai-chat-suggestions" id="ai-chat-suggestions">
-        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText)">Hôm nay ở đây có nên chạy bộ không?</span>
-        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText)">Dự báo 24h - 48h tới có mưa không?</span>
-        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText)">Chỉ số PM2.5 và AQI hiện tại thế nào?</span>
-        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText)">Có cảnh báo giông bão, ngập lụt hay nắng nóng không?</span>
-        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText)">Bụi mịn cao do những yếu tố nào gây ra?</span>
+        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText, this)">Không khí lạnh đang về đến đâu rồi?</span>
+        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText, this)">Hôm nay ở đây có nên chạy bộ không?</span>
+        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText, this)">Dự báo 48h tới tại đây có mưa không?</span>
+        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText, this)">Bão trên Biển Đông có ảnh hưởng không?</span>
+        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText, this)">Chỉ số PM2.5 và AQI hiện tại thế nào?</span>
       </div>
     </div>
     <form class="ai-chat-footer" onsubmit="event.preventDefault(); App.submitAiUserChat();">

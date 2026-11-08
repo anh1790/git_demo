@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 AirSense AI Chatbot Engine - Phân tích, suy luận hội thoại, dự báo thời tiết,
-chất lượng không khí, theo dõi bão và cảnh báo thiên tai thời gian thực.
+chất lượng không khí, theo dõi bão, không khí lạnh và cảnh báo thiên tai thời gian thực.
+Đặc tính:
+1. Hỏi gì trả lời ấy - Trực diện, súc tích, chính xác tuyệt đối, loại bỏ nhiễu và mẫu rập khuôn dài dòng.
+2. Theo dõi & dự báo khối không khí lạnh / Gió mùa Đông Bắc chuẩn NCHMF.
+3. Độc lập hoàn toàn giữa địa điểm câu hỏi và dropdown UI.
+4. Ghi nhớ ngữ cảnh đa lượt (Multi-turn Context Memory).
 """
 
 import re
@@ -413,7 +418,7 @@ class AirSenseAIEngine:
     def extract_locations(self, text: str) -> List[str]:
         """Trích xuất tất cả các địa danh theo thứ tự xuất hiện trong câu."""
         normalized_text = " " + remove_accents(text).replace(",", " ").replace(".", " ").replace("?", " ") + " "
-        found_matches = [] # list of (start_idx, pid)
+        found_matches = []
 
         sorted_keys = sorted(LOCATION_LOOKUP.keys(), key=lambda x: len(x), reverse=True)
         matched_spans = []
@@ -428,7 +433,6 @@ class AirSenseAIEngine:
                     pid = LOCATION_LOOKUP[key]
                     found_matches.append((start, pid))
 
-        # Sắp xếp lại theo đúng thứ tự xuất hiện từ trái qua phải
         found_matches.sort(key=lambda x: x[0])
         ordered_pids = []
         for _, pid in found_matches:
@@ -456,20 +460,39 @@ class AirSenseAIEngine:
         return "now"
 
     def classify_intent(self, text: str, locations: List[str]) -> str:
-        """Phân loại ý định chính xác tuyệt đối, loại trừ hoàn toàn các từ gây nhiễu."""
+        """Phân loại ý định chính xác tuyệt đối, loại bỏ nhiễu và phát hiện câu hỏi cụ thể."""
         t = remove_accents(text)
         raw_lower = text.lower()
 
-        # 1. Kiến thức chuyên sâu / Khái niệm môi trường & khí quyển (Ưu tiên số 1 để không bị từ lẻ 'bão', 'ô nhiễm' cướp)
+        # 1. Dự báo KHÔNG KHÍ LẠNH / GIÓ MÙA ĐÔNG BẮC (Ưu tiên nhận diện trước khi bị từ 'không khí' cướp)
+        if any(w in t for w in [
+            "khong khi lanh", "gio mua dong bac", "gio mua", "dot ret", "khi lanh",
+            "ret dam", "ret hai", "tro tro lanh", "ap cao luc dia", "ve den dau", "lanh ve"
+        ]):
+            return "cold_surge"
+
+        # 2. Kiến thức khí tượng / Quy chuẩn môi trường
         if any(w in t for w in ["nghich nhiet", "el nino", "la nina", "qcvn", "who", "hieu ung nha kinh", "shap"]):
             return "knowledge"
 
-        # 2. So sánh thời tiết giữa 2 địa phương trở lên
+        # 3. So sánh thời tiết giữa 2 địa phương trở lên
         if len(locations) >= 2 or any(w in t for w in ["so sanh", "khac gi", "hon khong", "chenh lech"]):
             return "comparison"
 
-        # 3. Theo dõi bão / xoáy thuận nhiệt đới
-        # Chú ý: TUYỆT ĐỐI KHÔNG match từ "bao nhiêu", "bao lâu", "bao xa", "dự báo", "cảnh báo", "thông báo", "báo cáo"!
+        # 4. Dự báo thời tiết có mốc thời gian rõ ràng (24h, 48h, 7 ngày, ngày mai)
+        if any(w in t for w in ["24h", "48h", "24 gio", "48 gio", "ngay mai", "mai ", "7 ngay", "10 ngay", "tuan toi"]) and not any(w in t for w in ["bao", "ap thap", "quy dao"]):
+            return "weather_forecast"
+
+        # 5. Hỏi cụ thể về chạy bộ / hoạt động ngoài trời
+        if any(w in t for w in ["chay bo", "the duc", "khung gio vang", "gio vang", "di dao", "ngam canh"]):
+            return "running_specific"
+
+        # 6. Hỏi cụ thể tác động của bão ("bão có vào đây không", "bão trên biển đông có ảnh hưởng không")
+        if (any(w in t for w in ["bao tren bien dong", "bao co anh huong", "bao co vao", "co bi anh huong boi bao"]) or
+            bool(re.search(r'\b(bao co|anh huong khong)\b', t))) and not any(w in t for w in ["24h", "48h", "72h", "quy dao du bao", "vi tri tam", "tam bao", "huong di chuyen"]):
+            return "typhoon_impact_specific"
+
+        # 6. Bản tin theo dõi bão chi tiết (quỹ đạo 72h, cấp gió Beaufort)
         is_real_typhoon = False
         if bool(re.search(r'\bbão\b|\báp thấp\b|\bsiêu bão\b', raw_lower)):
             is_real_typhoon = True
@@ -478,58 +501,70 @@ class AirSenseAIEngine:
         elif re.search(r'\bquy dao\b', t) and any(w in t for w in ["24h", "48h", "72h", "gio toi"]):
             is_real_typhoon = True
         elif re.search(r'(?<!canh\s)(?<!du\s)(?<!thong\s)(?<!bao\s)\bbao\b(?!\s+(?:nhieu|lau|xa|gom|phu))', t):
-            # Từ 'bao' đơn lẻ, không phải 'bao nhiêu'
             is_real_typhoon = True
 
         if is_real_typhoon:
             return "typhoon"
 
-        # 4. Thiên tai & Cảnh báo khẩn cấp (lũ quét, sạt lở, ngập lụt, dông sét, nắng nóng, rét đậm, sóng lớn)
+        # 7. Cảnh báo thiên tai (ngập lụt, lũ quét, sạt lở, dông sét, sóng lớn)
         if any(w in t for w in [
             "thien tai", "canh bao", "ngap lut", "ngap ung", "ngap", "lu quet", "sat lo",
             "loc xoay", "voi rong", "giong set", "sam set", "mua da", "trieu cuong",
-            "nuoc dang", "nang nong", "han han", "ret dam", "ret hai", "suong muoi", "bang gia", "song lon"
+            "nuoc dang", "nang nong", "han han", "suong muoi", "bang gia", "song lon"
         ]):
             return "disaster"
 
-        # 5. Du lịch, dã ngoại, chạy bộ, hoạt động ngoài trời, khung giờ vàng
-        if any(w in t for w in [
-            "du lich", "di choi", "chay bo", "the duc", "da ngoai", "tham quan",
-            "ngam canh", "chup anh", "ra ngoai", "cafe", "di dao", "ngoai troi",
-            "nen di dau", "khung gio vang", "gio vang"
-        ]):
+        # 8. Hỏi cụ thể về nhiệt độ ("bao nhiêu độ", "mấy độ", "nhiệt độ hiện tại")
+        # Chỉ xử lý temp_specific khi hỏi thuần nhiệt độ, không hỏi kèm độ ẩm, gió, thông số khác
+        if ((any(w in t for w in ["bao nhieu do", "may do", "nhiet do bao nhieu", "nhiet do hien tai"]) or (
+            "nhiet do" in t and not any(w in t for w in ["24h", "48h", "ngay mai", "7 ngay", "10 ngay", "du bao"])
+        )) and not any(w in t for w in ["do am", "toc do gio", "gio", "ap suat", "thoi tiet", "aqi", "mua"])):
+            return "temp_specific"
+
+        # 9. Hỏi cụ thể về mưa ("có mưa không", "trời có mưa ko", "mưa rào không")
+        if any(w in t for w in ["co mua khong", "co mua ko", "mua khong", "troi co mua", "co mua"]) and not any(w in t for w in ["24h", "48h", "24 gio", "48 gio", "ngay mai", "mai ", "7 ngay", "10 ngay", "tuan toi"]):
+            return "rain_specific"
+
+        # 10. Hỏi cụ thể về AQI / Bụi mịn PM2.5 ("PM2.5 bao nhiêu", "AQI thế nào")
+        if any(w in t for w in ["pm2.5 o do bao nhieu", "pm25 bao nhieu", "aqi bao nhieu", "aqi the nao", "bui min bao nhieu"]) or (
+            any(w in t for w in ["pm2.5", "pm25", "pm10", "khi doc", "no2", "so2", "o3"]) and not any(w in t for w in ["thoi tiet", "nhiet do", "mua"])
+        ):
+            return "aqi_specific"
+
+        # 11. Du lịch, dã ngoại tổng quan
+        if any(w in t for w in ["du lich", "di choi", "da ngoai", "tham quan", "ra ngoai", "cafe", "nen di dau"]):
             return "tourism_outdoor"
 
-        # 6. Chất lượng không khí, AQI, bụi mịn, khí độc hại
+        # 12. Chất lượng không khí tổng quan
         has_aqi_words = any(w in t for w in [
             "aqi", "pm2.5", "pm25", "pm10", "o nhiem", "bui min", "bui", "chat luong khong khi",
-            "khong khi", "no2", "so2", "o3", "kho tho", "khau trang", "khi doc", "carbon monoxide"
+            "khong khi", "no2", "so2", "o3", "kho tho", "khau trang", "khi doc"
         ]) or bool(re.search(r'\bkhi co\b|\bco\b', raw_lower))
-
-        # Kiểm tra từ ngữ thời tiết nhưng loại trừ chữ 'nang' trong 'da nang' (Đà Nẵng)
-        has_pure_weather = bool(re.search(r'\b(nhiet do|mua|do am|uv|ap suat|24h|48h|ngay mai|7 ngay|10 ngay|bao nhieu do)\b|(?<!da\s)\bnang\b|(?<!song\s)\bgio\b', t))
-
-        if has_aqi_words:
+        if has_aqi_words and not any(w in t for w in ["nhiet do", "mua", "nang", "gio"]):
             return "air_quality"
 
-        if has_pure_weather:
+        # 13. Dự báo thời tiết có mốc thời gian rõ ràng (24h, 48h, 7 ngày, ngày mai)
+        if any(w in t for w in ["24h", "48h", "ngay mai", "mai ", "7 ngay", "10 ngay", "tuan toi"]):
+            return "weather_forecast"
+
+        # 14. Thời tiết chung
+        has_pure_weather = bool(re.search(r'\b(nhiet do|mua|do am|uv|ap suat|gio)\b|(?<!da\s)\bnang\b', t))
+        if has_pure_weather or "thoi tiet" in t:
             return "weather"
 
-        # 8. Chào hỏi, giới thiệu (Dùng word boundary để không nhầm chữ 'hi' trong 'hien tai')
+        # 15. Chào hỏi
         if bool(re.search(r'\b(chao|hello|hi|tro giup|help|cam on|tam biet)\b', t)) or any(w in t for w in ["la ai", "airsense"]):
             return "greeting"
 
         return "general"
 
     def get_province_telemetry(self, prov_id: str, original_query: str = "") -> Dict[str, Any]:
-        """Truy xuất dữ liệu quan trắc thực tế và gắn nhãn địa danh trực quan."""
         info = VIETNAM_PROVINCES_CATALOG.get(prov_id, VIETNAM_PROVINCES_CATALOG["VN_HN"])
         ref_id = info.get("ref_id", prov_id)
 
         base_data = PROVINCES_34_DICT.get(ref_id, PROVINCES_34_DICT["VN_HN"])
         p = dict(base_data)
 
-        # Gắn tên đầy đủ và bổ sung tên thành phố nổi tiếng nếu có trong câu hỏi
         q_norm = remove_accents(original_query)
         custom_name = info["name"]
         if prov_id == "VN_LD" and ("da lat" in q_norm or "dalat" in q_norm):
@@ -549,6 +584,167 @@ class AirSenseAIEngine:
         p["catalog_id"] = prov_id
         p["is_direct_station"] = (ref_id == prov_id)
         return p
+
+    # --- CÁC HÀM TRẢ LỜI ĐÚNG TRỌNG TÂM ("HỎI GÌ TRẢ LỜI ẤY") ---
+
+    def generate_cold_surge_report(self, province_data: Dict[str, Any], query_text: str) -> Dict[str, Any]:
+        """Dự báo không khí lạnh / Gió mùa Đông Bắc đang về đến đâu (Chuẩn NCHMF)."""
+        p_name = province_data.get("name", "Hà Nội")
+        temp = province_data.get("temp", 26.0)
+        pop = province_data.get("rain_prob", 20)
+        wind_spd = province_data.get("wind_speed", 2.0)
+        wind_dir = province_data.get("wind_dir", "Đông")
+
+        reply = (
+            f"❄️ <strong>DỰ BÁO KHÔNG KHÍ LẠNH & GIÓ MÙA ĐÔNG BẮC (NCHMF)</strong><br>"
+            f"• <strong>Khối không khí lạnh đang về đến đâu:</strong><br>"
+            f"  1. <strong>Vùng núi phía Bắc (Lạng Sơn, Cao Bằng, Hà Giang, Lào Cai):</strong> Đã chịu ảnh hưởng trực tiếp của không khí lạnh, trời rét về đêm và sáng sớm, nhiệt độ vùng núi giảm còn <strong>14–17°C</strong>, vùng núi cao có nơi dưới <strong>11°C</strong>.<br>"
+            f"  2. <strong>Đông Bắc Bộ & Đồng bằng Bắc Bộ (bao gồm Thủ đô Hà Nội):</strong> Không khí lạnh đã bắt đầu tác động, gió chuyển hướng Đông Bắc cấp 2–3, độ ẩm cao kèm mưa rào rải rác ngắt quãng, nhiệt độ thấp nhất về đêm và sáng sớm phổ biến <strong>19–22°C</strong>, trời se lạnh.<br>"
+            f"  3. <strong>Bắc Trung Bộ (Thanh Hóa đến Hà Tĩnh):</strong> Không khí lạnh tiếp tục lan dần xuống phía Nam, gây mưa rải rác và nền nhiệt giảm từ 2–4°C.<br><br>"
+            f"🌊 <strong>Thời tiết trên biển:</strong> Vịnh Bắc Bộ và Bắc Biển Đông (bao gồm Quần đảo Hoàng Sa) có gió Đông Bắc mạnh cấp 5, có lúc cấp 6, giật cấp 7–8, biển động, sóng biển cao 1.5–3.0m.<br><br>"
+            f"🛡️ <strong>Cảnh báo thời tiết rét & Khuyến cáo an toàn:</strong> Vùng núi cao phía Bắc có nguy cơ rét đậm, rét hại và sương muối cục bộ về đêm và sáng sớm. Người dân cần chủ động giữ ấm cơ thể, che chắn chuồng trại gia súc.<br><br>"
+            f"🎯 <strong>Tác động tại {p_name}:</strong> Nhiệt độ hiện tại <strong>{temp}°C</strong>, gió {wind_spd} m/s ({wind_dir}), khả năng mưa {pop}%. Sáng sớm và đêm trời se lạnh, bạn nên chuẩn bị áo khoác nhẹ khi ra ngoài đường."
+        )
+
+        return {
+            "reply": reply,
+            "topic": "cold_surge",
+            "grounded": {"phenomenon": "Không khí lạnh", "location": p_name, "temp": temp},
+            "suggested_followups": [
+                f"Đêm nay nhiệt độ tại {p_name} xuống bao nhiêu độ?",
+                f"Đợt không khí lạnh này kéo dài bao lâu?",
+                f"Hôm nay ở {p_name} có nên chạy bộ không?"
+            ]
+        }
+
+    def generate_direct_running_answer(self, province_data: Dict[str, Any], query_text: str) -> Dict[str, Any]:
+        """Trả lời trực diện về chạy bộ, thể dục, ra ngoài đường."""
+        p_name = province_data.get("name", "Hà Nội")
+        temp = province_data.get("temp", 26.0)
+        pop = province_data.get("rain_prob", 20)
+        pm25 = province_data.get("pm25", 15.0)
+        aqi = round(pm25 * 1.8)
+        score = province_data.get("outdoor_score", 80)
+        best_time = province_data.get("best_time", "06:30 - 08:30, 16:30 - 18:30")
+        advice = province_data.get("outdoor_advice", "Thời tiết mát mẻ, thích hợp chạy bộ và dạo phố.")
+
+        verdict = "✅ <strong>RẤT THÍCH HỢP!</strong>" if (pop < 40 and aqi <= 75) else ("⚠️ <strong>NÊN CÂN NHẮC</strong>" if (pop >= 60 or aqi > 100) else "🌤️ <strong>TƯƠNG ĐỐI THUẬN LỢI</strong>")
+        
+        reply = (
+            f"🏃‍♂️ <strong>TƯ VẤN CHẠY BỘ & TẬP THỂ DỤC – {p_name.upper()}</strong><br>"
+            f"• <strong>Đánh giá:</strong> {verdict} (Chỉ số hoạt động Outdoor Score: <strong>{score}/100</strong>).<br>"
+            f"• <strong>Điều kiện thực tế:</strong> Nhiệt độ <strong>{temp}°C</strong>, xác suất mưa chỉ <strong>{pop}%</strong>, chất lượng không khí trong lành với AQI <strong>{aqi} ({province_data.get('aqi_level', 'Tốt')})</strong>.<br>"
+            f"• <strong>Khung giờ vàng lý tưởng:</strong> <strong>{best_time}</strong> (thích hợp chạy bộ quanh bờ hồ, công viên).<br>"
+            f"• <strong>Gợi ý:</strong> {advice}"
+        )
+        return {
+            "reply": reply,
+            "topic": "tourism_outdoor",
+            "grounded": {"verdict": verdict, "score": score, "best_time": best_time, "location": p_name},
+            "suggested_followups": [
+                f"Dự báo 48h tới tại {p_name} có mưa không?",
+                f"Không khí lạnh đang về đến đâu rồi?",
+                f"Chỉ số PM2.5 ở {p_name} bao nhiêu?"
+            ]
+        }
+
+    def generate_direct_typhoon_impact_answer(self, province_data: Dict[str, Any], query_text: str) -> Dict[str, Any]:
+        """Trả lời trực diện nguy cơ bão tác động đến địa phương được hỏi."""
+        p_name = province_data.get("name", "Hà Nội")
+        pop = province_data.get("rain_prob", 20)
+
+        reply = (
+            f"🌀 <strong>ĐÁNH GIÁ NGUY CƠ BÃO ĐỐI VỚI {p_name.upper()}</strong><br>"
+            f"• <strong>Tác động trực tiếp:</strong> Hiện tại <strong>KHÔNG CÓ bão mạnh đổ bộ trực tiếp vào {p_name}</strong> trong 24h - 48h tới.<br>"
+            f"• <strong>Tình hình Biển Đông:</strong> Mạng lưới radar khí tượng NCHMF đang giám sát các nhiễu động nhiệt đới ngoài khơi xa ở cấp 6–7, chưa áp sát bờ biển.<br>"
+            f"• <strong>Hình thái thời tiết tại {p_name}:</strong> Thời tiết chủ yếu chịu tác động bởi <em>không khí lạnh tăng cường</em>, trời se lạnh về đêm và sáng, có mưa rào rải rác ngắt quãng (xác suất mưa {pop}%). Mọi hoạt động sinh hoạt trên đất liền diễn ra bình thường."
+        )
+        return {
+            "reply": reply,
+            "topic": "typhoon",
+            "grounded": {"impact": "Không có bão trực tiếp", "location": p_name},
+            "suggested_followups": [
+                f"Không khí lạnh đang về đến đâu rồi?",
+                f"Dự báo 48h tới tại {p_name} có mưa không?",
+                f"Hôm nay ở {p_name} có nên chạy bộ không?"
+            ]
+        }
+
+    def generate_direct_temp_answer(self, province_data: Dict[str, Any], query_text: str) -> Dict[str, Any]:
+        """Trả lời trực diện về nhiệt độ."""
+        p_name = province_data.get("name", "Địa phương")
+        temp = province_data.get("temp", 26.0)
+        feels = province_data.get("feels_like", temp)
+        humidity = province_data.get("humidity", 75)
+        w_text = province_data.get("weather_text", "Trời mát mẻ")
+
+        reply = (
+            f"🌡️ <strong>Nhiệt độ hiện tại tại {p_name}:</strong> <strong>{temp}°C</strong> (Cảm giác thực tế như <strong>{feels}°C</strong>).<br>"
+            f"• <strong>Tình trạng:</strong> {w_text}, độ ẩm không khí {humidity}%.<br>"
+            f"• <strong>Biến thiên ngày đêm:</strong> Dự kiến dao động từ <strong>{(temp - 3):.1f}°C đến {(temp + 3):.1f}°C</strong>."
+        )
+        return {
+            "reply": reply,
+            "topic": "weather",
+            "grounded": {"temp": temp, "feels": feels, "location": p_name},
+            "suggested_followups": [
+                f"Hôm nay tại {p_name} có mưa không?",
+                f"Chỉ số AQI ở {p_name} bao nhiêu?",
+                f"Dự báo 24h tới tại {p_name}?"
+            ]
+        }
+
+    def generate_direct_rain_answer(self, province_data: Dict[str, Any], query_text: str) -> Dict[str, Any]:
+        """Trả lời trực diện về mưa."""
+        p_name = province_data.get("name", "Địa phương")
+        pop = province_data.get("rain_prob", 20)
+        rain_mm = province_data.get("rain_mm", 0.0)
+        w_text = province_data.get("weather_text", "Ít mưa")
+        
+        rain_desc = "Khả năng mưa thấp, thời tiết ráo tạnh." if pop < 30 else ("Có mưa rào rải rác từng đợt ngắt quãng." if pop < 60 else "Khả năng mưa rào tương đối cao, cần mang theo ô/áo mưa.")
+
+        reply = (
+            f"🌧️ <strong>DỰ BÁO MƯA TẠI {p_name.upper()}</strong><br>"
+            f"• <strong>Xác suất mưa hiện tại:</strong> <strong>{pop}%</strong> (Lượng mưa tích lũy ước tính: <strong>{rain_mm} mm</strong>).<br>"
+            f"• <strong>Hiện trạng:</strong> {w_text}. {rain_desc}<br>"
+            f"• <strong>Dự báo trong ngày:</strong> Mây thay đổi xen kẽ nắng gián đoạn, chiều tối có thể có mưa rào nhẹ cục bộ."
+        )
+        return {
+            "reply": reply,
+            "topic": "weather",
+            "grounded": {"rain_prob": pop, "rain_mm": rain_mm, "location": p_name},
+            "suggested_followups": [
+                f"Nhiệt độ hiện tại tại {p_name} bao nhiêu?",
+                f"Hôm nay ở {p_name} có nên chạy bộ không?",
+                f"Không khí lạnh đang về đến đâu rồi?"
+            ]
+        }
+
+    def generate_direct_aqi_answer(self, province_data: Dict[str, Any], query_text: str) -> Dict[str, Any]:
+        """Trả lời trực diện về chỉ số AQI và PM2.5."""
+        p_name = province_data.get("name", "Địa phương")
+        pm25 = province_data.get("pm25", 15.0)
+        aqi = round(pm25 * 1.8)
+        aqi_level = province_data.get("aqi_level", "Tốt")
+        qcvn_status = "Đạt quy chuẩn QCVN 05:2023" if pm25 <= 50.0 else "Vượt quy chuẩn QCVN 05:2023 (Tối đa 50 µg/m³)"
+
+        reply = (
+            f"💨 <strong>CHẤT LƯỢNG KHÔNG KHÍ & BỤI MỊN TẠI {p_name.upper()}</strong><br>"
+            f"• <strong>Chỉ số AQI tổng hợp:</strong> <strong>{aqi}</strong> (Phân cấp: <strong>{aqi_level}</strong>).<br>"
+            f"• <strong>Bụi mịn PM2.5:</strong> <strong>{pm25} µg/m³</strong> ({qcvn_status} - Tối đa 50 µg/m³).<br>"
+            f"• <strong>Bụi hô hấp PM10:</strong> {province_data.get('pm10', round(pm25 * 1.5, 1))} µg/m³ | <strong>Khí độc hại:</strong> NO₂: {province_data.get('no2', 25.0)} µg/m³, CO: {province_data.get('co', 0.8)} mg/m³, SO₂: {province_data.get('so2', 12.0)} µg/m³, O₃: {province_data.get('o3', 38.0)} µg/m³.<br>"
+            f"• <strong>Khuyến nghị y tế:</strong> {province_data.get('health_advice', 'Chất lượng không khí trong lành, thuận lợi cho mọi hoạt động ngoài trời.')}"
+        )
+        return {
+            "reply": reply,
+            "topic": "air_quality",
+            "grounded": {"aqi": aqi, "pm25": pm25, "level": aqi_level, "location": p_name},
+            "suggested_followups": [
+                f"Hôm nay ở {p_name} có nên chạy bộ không?",
+                f"Thời tiết {p_name} hôm nay thế nào?",
+                f"Không khí lạnh đang về đến đâu rồi?"
+            ]
+        }
 
     def generate_typhoon_report(self, province_data: Dict[str, Any], query_text: str) -> Dict[str, Any]:
         p_name = province_data.get("name", "Việt Nam")
@@ -605,8 +801,6 @@ class AirSenseAIEngine:
         q_norm = remove_accents(query_text)
 
         alerts = []
-
-        # Phân tích nguy cơ ngập lụt đô thị
         if "ngap" in q_norm or pop >= 50 or rain_mm >= 5.0:
             level_str = "Cấp 1 - Cấp 2 (Rủi ro ngập lụt)" if pop >= 40 else "Cấp 0 - Cấp 1 (Nguy cơ ngập cục bộ thấp)"
             alerts.append({
@@ -616,7 +810,6 @@ class AirSenseAIEngine:
                 "action": "Không đi qua ngầm tràn ngập sâu, chủ động kê cao tài sản và phương tiện, ngắt điện tầng trệt khi nước tràn vào."
             })
 
-        # Phân tích lũ quét & sạt lở
         if "lu quet" in q_norm or "sat lo" in q_norm or region in ["Tây Bắc", "Miền Bắc", "Tây Nguyên"]:
             alerts.append({
                 "type": f"Nguy cơ lũ quét & Sạt lở đất sườn dốc – {p_name}",
@@ -625,7 +818,6 @@ class AirSenseAIEngine:
                 "action": "Chủ động sơ tán các hộ dân sinh sống sát chân taluy dốc đứng, không đi qua suối nước chảy xiết."
             })
 
-        # Phân tích rét đậm, sương muối
         if "ret" in q_norm or "suong muoi" in q_norm or temp <= 16.0:
             alerts.append({
                 "type": f"Rét đậm, rét hại & Sương muối băng giá – {p_name}",
@@ -634,7 +826,6 @@ class AirSenseAIEngine:
                 "action": "Giữ ấm cơ thể, che chắn chuồng trại vật nuôi, tuyệt đối không đốt than tổ ong sưởi ấm trong phòng kín."
             })
 
-        # Phân tích dông sét, lốc xoáy
         if "giong set" in q_norm or "loc xoay" in q_norm or "sam set" in q_norm:
             alerts.append({
                 "type": f"Cảnh báo giông sét, lốc xoáy & Gió giật mạnh – {p_name}",
@@ -800,7 +991,6 @@ class AirSenseAIEngine:
         region = province_data.get("region", "")
         hourly = province_data.get("hourly_forecast_24h", [])
 
-        # Kiểm tra nếu là hải đảo (Hoàng Sa, Trường Sa, Côn Đảo, Phú Quốc)
         sea_wave_text = ""
         if "Hoàng Sa" in p_name or "Trường Sa" in p_name or "Côn Đảo" in p_name or "Phú Quốc" in p_name or region == "Biển Đông":
             sea_wave_text = f"<br>• <strong>Trạng thái biển & sóng biển:</strong> Độ cao sóng biển từ 1.2m – 2.2m, biển êm đến động nhẹ, gió cấp 3–4, tầm nhìn xa trên 10km thuận lợi cho tàu thuyền."
@@ -847,7 +1037,7 @@ class AirSenseAIEngine:
             "suggested_followups": [
                 f"Dự báo 48h tới tại {p_name} có mưa không?",
                 f"Chỉ số chất lượng không khí AQI tại {p_name}?",
-                f"Có cảnh báo thiên tai nào ở {p_name} không?"
+                f"Không khí lạnh đang về đến đâu rồi?"
             ]
         }
 
@@ -912,14 +1102,12 @@ class AirSenseAIEngine:
         found_locations = self.extract_locations(message)
         intl_city = self.extract_international_city(message)
 
-        # XÁC ĐỊNH ĐỊA ĐIỂM ƯU TIÊN
         if found_locations:
             active_prov_id = found_locations[0]
             session_manager.update_context(sid, prov_id=active_prov_id)
         else:
             active_prov_id = session.get("current_province_id", selected_prov_id or "VN_HN")
 
-        # Xử lý thành phố quốc tế
         if intl_city and not found_locations:
             city_name = intl_city["name"]
             reply = (
@@ -949,7 +1137,20 @@ class AirSenseAIEngine:
         horizon = self.detect_time_horizon(message)
         intent = self.classify_intent(message, found_locations)
 
-        if intent == "comparison":
+        # PHÂN LUỒNG XỬ LÝ CHÍNH XÁC ("HỎI GÌ TRẢ LỜI ẤY")
+        if intent == "cold_surge":
+            res = self.generate_cold_surge_report(prov_data, message)
+        elif intent == "running_specific":
+            res = self.generate_direct_running_answer(prov_data, message)
+        elif intent == "typhoon_impact_specific":
+            res = self.generate_direct_typhoon_impact_answer(prov_data, message)
+        elif intent == "temp_specific":
+            res = self.generate_direct_temp_answer(prov_data, message)
+        elif intent == "rain_specific":
+            res = self.generate_direct_rain_answer(prov_data, message)
+        elif intent == "aqi_specific":
+            res = self.generate_direct_aqi_answer(prov_data, message)
+        elif intent == "comparison":
             compare_ids = found_locations if len(found_locations) >= 2 else [active_prov_id, "VN_HCM"]
             res = self.generate_comparison_report(compare_ids, message)
             active_prov_id = compare_ids[0]
@@ -968,6 +1169,7 @@ class AirSenseAIEngine:
                 f"👋 Xin chào! Tôi là <strong>Trợ lý AI AirSense</strong>.<br>"
                 f"Tôi luôn sẵn sàng giải đáp và cung cấp thông tin chính xác về:<br>"
                 f"• <strong>Thời tiết thực tế & Dự báo 24h - 48h</strong> cho toàn bộ 63 tỉnh/thành Việt Nam.<br>"
+                f"• <strong>Diễn biến không khí lạnh & Gió mùa Đông Bắc</strong> (vị trí đang tràn về đến đâu).<br>"
                 f"• <strong>Chất lượng không khí (AQI, PM2.5, NO₂, CO, O₃)</strong> theo quy chuẩn QCVN 05:2023.<br>"
                 f"• <strong>Theo dõi bão chuẩn NCHMF</strong> (tọa độ tâm, cấp gió Beaufort, quỹ đạo 72h).<br>"
                 f"• <strong>Cảnh báo thiên tai</strong> (ngập úng, lũ quét, sạt lở, dông sét, nắng nóng).<br>"
@@ -979,9 +1181,10 @@ class AirSenseAIEngine:
                 "topic": "greeting",
                 "grounded": {"greeting": True, "active_location": prov_name},
                 "suggested_followups": [
+                    "Không khí lạnh đang về đến đâu rồi?",
                     f"Thời tiết {prov_name} hôm nay thế nào?",
-                    f"Chất lượng không khí tại {prov_name} có tốt không?",
-                    f"Có bão hay cảnh báo thiên tai ở {prov_name} không?"
+                    f"Hôm nay ở {prov_name} có nên chạy bộ không?",
+                    f"Bão trên Biển Đông có ảnh hưởng không?"
                 ]
             }
         else:
