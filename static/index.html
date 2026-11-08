@@ -118,6 +118,10 @@
             <input type="text" id="input-location-search" placeholder="Tìm kiếm nhanh trong 34 tỉnh thành hoặc 101 trạm đo (Hà Nội, Tây Ninh, TP.HCM, Đà Nẵng, Sa Pa, Núi Bà Đen...)..." autocomplete="off">
             <div class="search-results-dropdown" id="search-results-dropdown"></div>
           </div>
+          <!-- Nút Định Vị GPS Vị Trí Hiện Tại -->
+          <button class="btn-icon-action" id="btn-gps-locate" onclick="App.locateUserGPS()" title="Định vị GPS vị trí hiện tại của bạn">
+            <i class="fa-solid fa-location-crosshairs"></i> <span>Định vị</span>
+          </button>
           <!-- Menu thả xuống chọn nhanh 34 Tỉnh Thành (Không bị tràn màn hình) -->
           <div class="province-dropdown-wrap">
             <i class="fa-solid fa-city" style="color:var(--primary);font-size:13px;"></i>
@@ -129,6 +133,10 @@
             <i class="fa-solid fa-tower-broadcast" style="color:var(--accent-teal);"></i>
             <span>Mạng lưới: <strong>34 Tỉnh / 101 Trạm Đo</strong></span>
           </div>
+        </div>
+        <!-- Thanh Địa Điểm Yêu Thích (Lưu LocalStorage) -->
+        <div class="favorites-chips-bar" id="favorites-chips-container">
+          <!-- Injected by JS: Yêu thích chips -->
         </div>
         
         <!-- Bộ lọc Vùng Miền phân chia rõ ràng -->
@@ -153,6 +161,9 @@
           <!-- Dynamic station pills injected by JS -->
         </div>
       </section>
+
+      <!-- CẢNH BÁO THỜI TIẾT & Ô NHIỄM KHẨN CẤP (BANNER ĐA CẤP ĐỘ) -->
+      <div id="weather-alert-banner" class="weather-alert-banner" style="display:none;"></div>
 
       <!-- TAB 1: TỔNG QUAN (OVERVIEW) -->
       <div class="tab-pane active" id="tab-overview">
@@ -182,6 +193,9 @@
                 <span class="weather-location-pill" id="hero-location-name">
                   <i class="fa-solid fa-location-dot"></i> Hà Nội • Thủ đô
                 </span>
+                <button class="btn-favorite-star" id="btn-toggle-favorite" onclick="App.toggleFavoriteCurrentProvince()" title="Lưu/Bỏ lưu địa điểm yêu thích">
+                  <i class="fa-regular fa-star"></i>
+                </button>
                 <span class="weather-cond-badge" id="hero-cond-badge">
                   <i class="fa-solid fa-cloud-sun"></i> Ít mây, nắng gián đoạn
                 </span>
@@ -332,12 +346,24 @@
               Chi Tiết Thời Tiết 24 Giờ & 7 Ngày Tới – <span id="weather-detail-city">Hà Nội</span>
             </h3>
           </div>
-          <h4 style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">DỰ BÁO TỪNG GIỜ (24H SLIDER):</h4>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+            <h4 style="font-size:14px;color:var(--text-muted);margin:0;">DỰ BÁO TỪNG GIỜ (SLIDER LIÊN TỤC):</h4>
+            <div class="horizon-toggle-group">
+              <button class="horizon-btn active" id="btn-hourly-24" onclick="App.setHourlyHorizon(24)">24 Giờ</button>
+              <button class="horizon-btn" id="btn-hourly-48" onclick="App.setHourlyHorizon(48)">48 Giờ (AI)</button>
+            </div>
+          </div>
           <div class="hourly-scroll-container" id="weather-detail-hourly">
             <!-- 24h Hourly Forecast items -->
           </div>
 
-          <h4 style="font-size:14px;color:var(--text-muted);margin:24px 0 12px 0;">DỰ BÁO 7 NGÀY TIẾP THEO:</h4>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin:24px 0 12px 0;">
+            <h4 style="font-size:14px;color:var(--text-muted);margin:0;">DỰ BÁO NHIỀU NGÀY TỚI:</h4>
+            <div class="horizon-toggle-group">
+              <button class="horizon-btn active" id="btn-daily-7" onclick="App.setDailyHorizon(7)">7 Ngày</button>
+              <button class="horizon-btn" id="btn-daily-10" onclick="App.setDailyHorizon(10)">10 Ngày (Mở rộng)</button>
+            </div>
+          </div>
           <div class="daily-forecast-grid" id="weather-detail-daily">
             <!-- 7-Day Forecast cards -->
           </div>
@@ -901,6 +927,8 @@
               <button class="map-layer-btn" onclick="App.setMapLayer('aqi')">Chất lượng không khí (AQI)</button>
               <button class="map-layer-btn" onclick="App.setMapLayer('rain')">Khả năng mưa (%)</button>
               <button class="map-layer-btn" onclick="App.setMapLayer('wind')">Tốc độ gió (m/s)</button>
+              <button class="map-layer-btn" onclick="App.setMapLayer('clouds')"><i class="fa-solid fa-cloud"></i> Mây trời (%)</button>
+              <button class="map-layer-btn" onclick="App.locateUserOnMap()"><i class="fa-solid fa-crosshairs"></i> Vị trí của tôi</button>
               <button class="map-layer-btn" onclick="App.setMapLayer('geopandas')"><i class="fa-solid fa-draw-polygon"></i> Ranh giới GeoPandas</button>
               <button class="map-layer-btn active" id="btn-toggle-admin-labels" onclick="App.toggleAdminLabels()"><i class="fa-solid fa-tags"></i> Tên Đơn Vị Hành Chính (Có Dấu)</button>
               <button class="map-layer-btn active" id="btn-toggle-islands" onclick="App.toggleIslandsLayer()"><i class="fa-solid fa-water"></i> Quần Đảo & Đảo Tiêu Biểu</button>
@@ -1032,5 +1060,44 @@
   <script src="js/stations_data.js?v=9"></script>
   <script src="js/embedded_data.js?v=9"></script>
   <script src="js/app.js?v=9"></script>
+
+  <!-- =========================================================================
+       TRỢ LÝ AI HỎI ĐÁP THỜI TIẾT & CHẤT LƯỢNG KHÔNG KHÍ (INTERACTIVE AI ASSISTANT)
+       ========================================================================= -->
+  <div class="ai-assistant-fab-container">
+    <button class="ai-assistant-fab" onclick="App.toggleAiChat()" id="btn-ai-fab">
+      <i class="fa-solid fa-robot"></i> <span>Trợ lý AI</span> <span class="ai-online-dot"></span>
+    </button>
+  </div>
+
+  <div class="ai-chat-window" id="ai-chat-window" style="display:none;">
+    <div class="ai-chat-header">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <i class="fa-solid fa-robot" style="font-size:20px;"></i>
+        <div>
+          <div style="font-weight:800;font-size:14px;">Trợ Lý AI AirSense</div>
+          <div style="font-size:11px;opacity:0.9;">Hỏi đáp thời tiết, AQI & khuyến nghị</div>
+        </div>
+      </div>
+      <button style="background:transparent;border:none;color:#fff;font-size:18px;cursor:pointer;" onclick="App.toggleAiChat()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="ai-chat-body" id="ai-chat-body">
+      <div class="ai-chat-msg bot">
+        Xin chào! Tôi là <strong>Trợ lý AI AirSense</strong>. Tôi phân tích dữ liệu quan trắc thời gian thực và mô hình học máy để giải thích thời tiết, đánh giá ô nhiễm, dự báo 24h - 48h và khuyến nghị hoạt động ngoài trời. Bạn hãy chọn câu hỏi gợi ý hoặc nhập câu hỏi:
+      </div>
+      <div class="ai-chat-suggestions" id="ai-chat-suggestions">
+        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText)">Hôm nay ở đây có nên chạy bộ không?</span>
+        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText)">Dự báo 24h - 48h tới có mưa không?</span>
+        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText)">Chỉ số PM2.5 và AQI hiện tại thế nào?</span>
+        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText)">Có cảnh báo giông bão, ngập lụt hay nắng nóng không?</span>
+        <span class="ai-suggestion-chip" onclick="App.askAiSuggestion(this.innerText)">Bụi mịn cao do những yếu tố nào gây ra?</span>
+      </div>
+    </div>
+    <form class="ai-chat-footer" onsubmit="event.preventDefault(); App.submitAiUserChat();">
+      <input type="text" class="ai-chat-input" id="ai-chat-input" placeholder="Hỏi về thời tiết, ô nhiễm, hoạt động ngoài trời..." autocomplete="off">
+      <button type="submit" class="ai-chat-send" title="Gửi câu hỏi"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+
 </body>
 </html>
