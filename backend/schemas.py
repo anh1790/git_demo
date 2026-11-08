@@ -6,7 +6,7 @@ from typing import Optional, Literal
 from pydantic import BaseModel, Field
 
 class HealthResponse(BaseModel):
-    status: str = Field(..., example="healthy")
+    status: str = Field(..., json_schema_extra={"example": "healthy"})
     uptime_seconds: float
     cpu_percent: float
     memory_mb: float
@@ -85,3 +85,24 @@ class ModelEvaluationItem(BaseModel):
     test_samples: int
     epochs_trained: Optional[int] = None
     top_features: Optional[list[dict]] = None
+
+
+class ChatMessage(BaseModel):
+    role: str = Field(..., description="Vai trò: user, assistant, system")
+    content: str = Field(..., description="Nội dung tin nhắn")
+
+class ChatRequest(BaseModel):
+    message: str = Field(..., min_length=1, description="Câu hỏi của người dùng")
+    session_id: Optional[str] = Field(None, description="Mã phiên trò chuyện đa lượt")
+    province_id: Optional[str] = Field(None, description="Mã tỉnh đang chọn trên giao diện (nếu có)")
+    history: Optional[list[ChatMessage]] = Field(default_factory=list, description="Lịch sử hội thoại trước đó")
+
+class ChatResponse(BaseModel):
+    reply: str = Field(..., description="Nội dung trả lời từ Trợ lý AI AirSense")
+    session_id: str = Field(..., description="Mã phiên trò chuyện ghi nhớ ngữ cảnh")
+    province_id: Optional[str] = Field(None, description="Mã định danh tỉnh thành đang trao đổi")
+    province_name: Optional[str] = Field(None, description="Tên tỉnh thành đang trao đổi")
+    grounded: Optional[dict] = Field(None, description="Dữ liệu quan trắc thực tế trích xuất")
+    suggested_followups: list[str] = Field(default_factory=list, description="Các câu hỏi gợi ý tiếp nối")
+    model_used: str = Field(..., description="Bộ máy AI đã phân tích câu trả lời")
+    timestamp: str = Field(..., description="Thời điểm tạo phản hồi")

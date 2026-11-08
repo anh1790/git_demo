@@ -18,7 +18,7 @@ if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
 from backend.lifespan import state
-from backend.routes import health, spatial, air_quality, evaluation, weather
+from backend.routes import health, spatial, air_quality, evaluation, weather, ai_chat
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -50,6 +50,7 @@ app.include_router(spatial.router)
 app.include_router(air_quality.router)
 app.include_router(evaluation.router)
 app.include_router(weather.router)
+app.include_router(ai_chat.router)
 
 # Mount thư mục static phục vụ Frontend giao diện
 STATIC_DIR = BASE_DIR / "static"

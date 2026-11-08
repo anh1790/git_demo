@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import shutil
 import zipfile
@@ -7,7 +8,7 @@ import io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 ROOT = os.path.abspath('.')
-DOWNLOAD_DIR = r"C:\Users\dlhch\Downloads\airsense-ai"
+DOWNLOAD_DIR = r"C:\Users\dlhch\Downloads"
 STATIC_DIR = os.path.join(ROOT, 'static')
 DIST_DIR = os.path.join(ROOT, 'dist')
 
@@ -75,5 +76,28 @@ with zipfile.ZipFile(zip_full_path, 'w', zipfile.ZIP_DEFLATED) as zf:
                     rel_p = os.path.relpath(full_p, ROOT)
                     zf.write(full_p, rel_p)
 print(f"Created {zip_full_path} ({os.path.getsize(zip_full_path)} bytes)")
+
+# C. Full Codebase zip (air-quality-ai-fullcode.zip)
+zip_fullcode_path = os.path.join(ROOT, 'air-quality-ai-fullcode.zip')
+EXCLUDE_DIRS = {'.git', '__pycache__', '.pytest_cache'}
+EXCLUDE_FILES = {'cloudflared.exe', 'air-quality-ai-fullcode.zip', 'airsense-ai-website-standalone.zip', 'airsense-ai-website.zip'}
+
+with zipfile.ZipFile(zip_fullcode_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+    for root_dir, dirs, files in os.walk(ROOT):
+        # Filter out excluded directories
+        dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS and not d.startswith('.')]
+        for file in files:
+            if file in EXCLUDE_FILES or file.endswith('.pyc'):
+                continue
+            full_p = os.path.join(root_dir, file)
+            rel_p = os.path.relpath(full_p, ROOT)
+            zf.write(full_p, rel_p)
+print(f"Created {zip_fullcode_path} ({os.path.getsize(zip_fullcode_path)} bytes)")
+
+# Copy to Downloads
+if os.path.exists(DOWNLOAD_DIR):
+    dst_dl = os.path.join(DOWNLOAD_DIR, 'air-quality-ai-fullcode.zip')
+    shutil.copy2(zip_fullcode_path, dst_dl)
+    print(f"Copied fullcode zip to Downloads: {dst_dl} ({os.path.getsize(dst_dl)} bytes)")
 
 print("ALL SYNC & PACKAGING COMPLETE!")
