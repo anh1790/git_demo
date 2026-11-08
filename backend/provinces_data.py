@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Master 34 Provinces and 101 Monitoring Stations for Backend Service
+Master 34 Provinces and 105 Monitoring Stations for Backend Service
+Synchronized Real-Time Meteorological & Air Quality Data (2026-11-08 12:45:43)
 """
 
 PROVINCES_34 = [
@@ -12,24 +13,24 @@ PROVINCES_34 = [
     "type": "Thành phố",
     "lat": 21.0285,
     "lon": 105.8542,
-    "condition": "partly_cloudy",
-    "weather_text": "Mây thay đổi, trời hanh khô",
-    "temp": 22.4,
-    "feels_like": 23.0,
-    "humidity": 72,
-    "wind_speed": 3.2,
-    "wind_dir": "Đông Bắc",
-    "rain_prob": 10,
-    "rain_mm": 0.0,
-    "uv": 4.5,
-    "pressure": 1014,
-    "visibility": 9.0,
-    "pm25": 38.5,
-    "pm10": 58.2,
-    "no2": 21.4,
-    "co": 0.82,
-    "o3": 18.5,
-    "so2": 6.4,
+    "condition": "light_rain",
+    "weather_text": "Mưa rào rải rác, ngắt quãng",
+    "temp": 26.2,
+    "feels_like": 31.0,
+    "humidity": 80,
+    "wind_speed": 1.9,
+    "wind_dir": "Tây",
+    "rain_prob": 14,
+    "rain_mm": 0.1,
+    "uv": 6.1,
+    "pressure": 1016,
+    "visibility": 13.3,
+    "pm25": 11.0,
+    "pm10": 11.6,
+    "no2": 6.0,
+    "co": 0.87,
+    "o3": 113.0,
+    "so2": 19.0,
     "outdoor_activities": [
       "Đi dạo",
       "Chụp ảnh",
@@ -43,11 +44,11 @@ PROVINCES_34 = [
     "district": "Hà Nội",
     "latitude": 21.0285,
     "longitude": 105.8542,
-    "temperature": 22.4,
-    "aqi_level": "Kém (Nhạy cảm)",
-    "color": "#f97316",
-    "health_advice": "Trẻ em, người lớn tuổi và người có bệnh hô hấp nên giảm thiểu vận động ngoài trời.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 26.2,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_HN_01",
@@ -56,16 +57,17 @@ PROVINCES_34 = [
         "address": "Số 1 Hoàng Hoa Thám, P. Ba Đình",
         "lat": 21.0342,
         "lon": 105.836,
-        "pm25": 38.5,
-        "pm10": 58.2,
-        "aqi": 69,
-        "temp": 22.4,
-        "humidity": 72,
-        "wind": 3.2,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HN"
+        "pm25": 11.0,
+        "pm10": 16.5,
+        "aqi": 20,
+        "temp": 26.2,
+        "humidity": 82,
+        "wind": 1.9,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HN_02",
@@ -74,16 +76,17 @@ PROVINCES_34 = [
         "address": "Số 2 Hàng Trống, P. Hàng Trống",
         "lat": 21.0289,
         "lon": 105.8524,
-        "pm25": 42.1,
-        "pm10": 63.5,
-        "aqi": 74,
-        "temp": 22.8,
-        "humidity": 71,
-        "wind": 2.8,
+        "pm25": 12.2,
+        "pm10": 18.3,
+        "aqi": 22,
+        "temp": 26.6,
+        "humidity": 82,
+        "wind": 2.3,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HN"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HN_03",
@@ -92,34 +95,282 @@ PROVINCES_34 = [
         "address": "Đường Cầu Giấy, P. Dịch Vọng",
         "lat": 21.0365,
         "lon": 105.7952,
-        "pm25": 48.0,
-        "pm10": 72.8,
-        "aqi": 82,
-        "temp": 23.1,
-        "humidity": 69,
-        "wind": 3.5,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HN"
+        "pm25": 11.0,
+        "pm10": 16.5,
+        "aqi": 20,
+        "temp": 26.2,
+        "humidity": 83,
+        "wind": 1.9,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HN_04",
-        "name": "Trạm Sóc Sơn - Nền Sinh thái Ngoại ô",
-        "type": "Trạm nền sinh thái",
-        "address": "Xã Nam Sơn, H. Sóc Sơn",
-        "lat": 21.312,
-        "lon": 105.845,
-        "pm25": 22.0,
-        "pm10": 34.0,
-        "aqi": 45,
-        "temp": 21.5,
-        "humidity": 75,
-        "wind": 3.0,
+        "name": "Trạm Đống Đa - Nguyễn Lương Bằng",
+        "type": "Khu dân cư mật độ cao",
+        "address": "Đường Nguyễn Lương Bằng, Q. Đống Đa",
+        "lat": 21.0189,
+        "lon": 105.8267,
+        "pm25": 11.0,
+        "pm10": 16.5,
+        "aqi": 20,
+        "temp": 26.2,
+        "humidity": 79,
+        "wind": 1.9,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HN"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HN",
+        "timestamp": "2026-11-08 12:45:43"
+      },
+      {
+        "id": "VN_HN_05",
+        "name": "Trạm Hai Bà Trưng - Minh Khai",
+        "type": "Giao thông và dân cư",
+        "address": "Đường Minh Khai, Q. Hai Bà Trưng",
+        "lat": 21.0025,
+        "lon": 105.8569,
+        "pm25": 11.0,
+        "pm10": 16.5,
+        "aqi": 20,
+        "temp": 26.2,
+        "humidity": 78,
+        "wind": 1.9,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HN",
+        "timestamp": "2026-11-08 12:45:43"
+      },
+      {
+        "id": "VN_HN_06",
+        "name": "Trạm Tây Hồ - Lạc Long Quân",
+        "type": "Đô thị sinh thái hồ",
+        "address": "Đường Lạc Long Quân, Q. Tây Hồ",
+        "lat": 21.0652,
+        "lon": 105.8123,
+        "pm25": 9.8,
+        "pm10": 14.7,
+        "aqi": 18,
+        "temp": 25.8,
+        "humidity": 77,
+        "wind": 1.5,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HN",
+        "timestamp": "2026-11-08 12:45:43"
+      },
+      {
+        "id": "VN_HN_07",
+        "name": "Trạm Long Biên - Nguyễn Văn Cừ",
+        "type": "Khu cửa ngõ phía Đông",
+        "address": "Đường Nguyễn Văn Cừ, Q. Long Biên",
+        "lat": 21.0489,
+        "lon": 105.8785,
+        "pm25": 11.0,
+        "pm10": 16.5,
+        "aqi": 20,
+        "temp": 26.2,
+        "humidity": 78,
+        "wind": 1.9,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HN",
+        "timestamp": "2026-11-08 12:45:43"
+      },
+      {
+        "id": "VN_HN_08",
+        "name": "Trạm Hà Đông - Quang Trung",
+        "type": "Khu đô thị vệ tinh",
+        "address": "Đường Quang Trung, Q. Hà Đông",
+        "lat": 20.9712,
+        "lon": 105.7725,
+        "pm25": 10.4,
+        "pm10": 15.6,
+        "aqi": 19,
+        "temp": 26.0,
+        "humidity": 79,
+        "wind": 1.7,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HN",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 23.3,
+        "humidity": 96,
+        "rain_prob": 78,
+        "condition": "light_rain"
+      },
+      {
+        "time": "01:00",
+        "temp": 23.1,
+        "humidity": 97,
+        "rain_prob": 88,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 22.2,
+        "humidity": 100,
+        "rain_prob": 95,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 22.1,
+        "humidity": 97,
+        "rain_prob": 98,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "04:00",
+        "temp": 22.5,
+        "humidity": 96,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 22.5,
+        "humidity": 98,
+        "rain_prob": 99,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.6,
+        "humidity": 97,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 22.9,
+        "humidity": 94,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "08:00",
+        "temp": 23.5,
+        "humidity": 92,
+        "rain_prob": 87,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 24.5,
+        "humidity": 87,
+        "rain_prob": 80,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 26.3,
+        "humidity": 80,
+        "rain_prob": 78,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 27.2,
+        "humidity": 77,
+        "rain_prob": 83,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 27.1,
+        "humidity": 78,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 25.9,
+        "humidity": 81,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 25.5,
+        "humidity": 87,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 23.3,
+        "humidity": 94,
+        "rain_prob": 100,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "16:00",
+        "temp": 24.0,
+        "humidity": 91,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 24.1,
+        "humidity": 92,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 22.8,
+        "humidity": 96,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 23.1,
+        "humidity": 94,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 23.0,
+        "humidity": 95,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 23.1,
+        "humidity": 94,
+        "rain_prob": 95,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 22.5,
+        "humidity": 94,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 22.6,
+        "humidity": 94,
+        "rain_prob": 97,
+        "condition": "light_rain"
       }
     ]
   },
@@ -131,24 +382,24 @@ PROVINCES_34 = [
     "type": "Thành phố",
     "lat": 20.8449,
     "lon": 106.6881,
-    "condition": "cloudy",
-    "weather_text": "Nhiều mây, gió biển nhẹ",
-    "temp": 23.0,
-    "feels_like": 23.8,
-    "humidity": 78,
-    "wind_speed": 4.5,
-    "wind_dir": "Đông Bắc",
-    "rain_prob": 15,
-    "rain_mm": 0.0,
-    "uv": 4.0,
-    "pressure": 1013,
-    "visibility": 10.0,
-    "pm25": 32.0,
-    "pm10": 51.5,
-    "no2": 23.4,
-    "co": 0.86,
-    "o3": 20.2,
-    "so2": 7.5,
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn vừa phải, không khí ẩm",
+    "temp": 28.7,
+    "feels_like": 31.8,
+    "humidity": 70,
+    "wind_speed": 16.4,
+    "wind_dir": "Đông",
+    "rain_prob": 10,
+    "rain_mm": 0.1,
+    "uv": 6.2,
+    "pressure": 1017,
+    "visibility": 13.6,
+    "pm25": 6.1,
+    "pm10": 6.8,
+    "no2": 3.4,
+    "co": 0.45,
+    "o3": 120.0,
+    "so2": 13.4,
     "outdoor_activities": [
       "Du lịch",
       "Đi dạo",
@@ -162,11 +413,11 @@ PROVINCES_34 = [
     "district": "Hải Phòng",
     "latitude": 20.8449,
     "longitude": 106.6881,
-    "temperature": 23.0,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 28.7,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_HP_01",
@@ -175,16 +426,17 @@ PROVINCES_34 = [
         "address": "Đường Tam Bạc, P. Phan Bội Châu",
         "lat": 20.8601,
         "lon": 106.6782,
-        "pm25": 32.0,
-        "pm10": 51.5,
-        "aqi": 65,
-        "temp": 23.0,
-        "humidity": 78,
-        "wind": 4.5,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HP"
+        "pm25": 6.1,
+        "pm10": 9.1,
+        "aqi": 11,
+        "temp": 28.7,
+        "humidity": 72,
+        "wind": 16.4,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HP",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HP_02",
@@ -193,16 +445,17 @@ PROVINCES_34 = [
         "address": "Bán đảo Đình Vũ, Q. Hải An",
         "lat": 20.8415,
         "lon": 106.7582,
-        "pm25": 41.5,
-        "pm10": 64.2,
-        "aqi": 76,
-        "temp": 23.5,
-        "humidity": 76,
-        "wind": 4.8,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HP"
+        "pm25": 5.5,
+        "pm10": 8.2,
+        "aqi": 10,
+        "temp": 28.5,
+        "humidity": 70,
+        "wind": 16.2,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HP",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HP_03",
@@ -211,16 +464,187 @@ PROVINCES_34 = [
         "address": "Khu 2 Đồ Sơn, Q. Đồ Sơn",
         "lat": 20.7125,
         "lon": 106.7891,
-        "pm25": 16.2,
-        "pm10": 26.5,
-        "aqi": 40,
-        "temp": 22.8,
-        "humidity": 80,
-        "wind": 5.2,
+        "pm25": 4.9,
+        "pm10": 7.4,
+        "aqi": 9,
+        "temp": 28.3,
+        "humidity": 68,
+        "wind": 16.0,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HP"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HP",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 25.4,
+        "humidity": 88,
+        "rain_prob": 74,
+        "condition": "light_rain"
+      },
+      {
+        "time": "01:00",
+        "temp": 25.2,
+        "humidity": 90,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 24.8,
+        "humidity": 90,
+        "rain_prob": 97,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "03:00",
+        "temp": 24.7,
+        "humidity": 90,
+        "rain_prob": 99,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 24.2,
+        "humidity": 92,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 23.4,
+        "humidity": 96,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 23.4,
+        "humidity": 97,
+        "rain_prob": 87,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "07:00",
+        "temp": 24.7,
+        "humidity": 87,
+        "rain_prob": 78,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 25.9,
+        "humidity": 79,
+        "rain_prob": 66,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 27.4,
+        "humidity": 73,
+        "rain_prob": 54,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "10:00",
+        "temp": 28.4,
+        "humidity": 70,
+        "rain_prob": 47,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "11:00",
+        "temp": 28.9,
+        "humidity": 69,
+        "rain_prob": 53,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 28.5,
+        "humidity": 68,
+        "rain_prob": 66,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 28.8,
+        "humidity": 70,
+        "rain_prob": 73,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 28.8,
+        "humidity": 69,
+        "rain_prob": 69,
+        "condition": "sunny"
+      },
+      {
+        "time": "15:00",
+        "temp": 28.6,
+        "humidity": 68,
+        "rain_prob": 59,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 28.1,
+        "humidity": 71,
+        "rain_prob": 51,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 27.5,
+        "humidity": 72,
+        "rain_prob": 45,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.6,
+        "humidity": 79,
+        "rain_prob": 40,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 26.4,
+        "humidity": 79,
+        "rain_prob": 41,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 26.1,
+        "humidity": 80,
+        "rain_prob": 54,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 24.7,
+        "humidity": 85,
+        "rain_prob": 75,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 24.0,
+        "humidity": 92,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 23.6,
+        "humidity": 94,
+        "rain_prob": 96,
+        "condition": "light_rain"
       }
     ]
   },
@@ -232,24 +656,24 @@ PROVINCES_34 = [
     "type": "Thành phố",
     "lat": 16.4637,
     "lon": 107.5909,
-    "condition": "light_rain",
-    "weather_text": "Mưa rào nhẹ rải rác, se lạnh",
-    "temp": 24.0,
-    "feels_like": 24.5,
-    "humidity": 85,
-    "wind_speed": 2.8,
-    "wind_dir": "Đông",
-    "rain_prob": 65,
-    "rain_mm": 3.5,
-    "uv": 2.5,
-    "pressure": 1012,
-    "visibility": 7.5,
-    "pm25": 16.2,
-    "pm10": 26.8,
-    "no2": 12.0,
-    "co": 0.42,
-    "o3": 29.5,
-    "so2": 3.2,
+    "condition": "sunny",
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
+    "temp": 29.1,
+    "feels_like": 34.3,
+    "humidity": 73,
+    "wind_speed": 12.2,
+    "wind_dir": "Đông Bắc",
+    "rain_prob": 5,
+    "rain_mm": 0.0,
+    "uv": 6.8,
+    "pressure": 1015,
+    "visibility": 14.7,
+    "pm25": 4.9,
+    "pm10": 7.0,
+    "no2": 0.8,
+    "co": 0.34,
+    "o3": 89.0,
+    "so2": 2.2,
     "outdoor_activities": [
       "Tham quan",
       "Chụp ảnh"
@@ -262,11 +686,11 @@ PROVINCES_34 = [
     "district": "Huế",
     "latitude": 16.4637,
     "longitude": 107.5909,
-    "temperature": 24.0,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 29.1,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_HUE_01",
@@ -275,16 +699,17 @@ PROVINCES_34 = [
         "address": "Đường Đoàn Thị Điểm, P. Thuận Thành",
         "lat": 16.469,
         "lon": 107.578,
-        "pm25": 16.2,
-        "pm10": 26.8,
-        "aqi": 42,
-        "temp": 24.0,
-        "humidity": 85,
-        "wind": 2.8,
+        "pm25": 4.3,
+        "pm10": 6.4,
+        "aqi": 8,
+        "temp": 28.9,
+        "humidity": 73,
+        "wind": 12.0,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HUE"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HUE",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HUE_02",
@@ -293,16 +718,17 @@ PROVINCES_34 = [
         "address": "Bờ sông Hương, P. Vĩnh Ninh",
         "lat": 16.462,
         "lon": 107.589,
-        "pm25": 17.5,
-        "pm10": 28.0,
-        "aqi": 44,
-        "temp": 24.1,
-        "humidity": 84,
-        "wind": 2.6,
+        "pm25": 5.5,
+        "pm10": 8.2,
+        "aqi": 10,
+        "temp": 29.3,
+        "humidity": 72,
+        "wind": 12.4,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HUE"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HUE",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HUE_03",
@@ -311,16 +737,187 @@ PROVINCES_34 = [
         "address": "TX. Hương Thủy",
         "lat": 16.398,
         "lon": 107.698,
-        "pm25": 24.8,
-        "pm10": 39.5,
-        "aqi": 54,
+        "pm25": 4.9,
+        "pm10": 7.4,
+        "aqi": 9,
+        "temp": 29.1,
+        "humidity": 73,
+        "wind": 12.2,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HUE",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
         "temp": 24.5,
+        "humidity": 96,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 25.2,
+        "humidity": 94,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "02:00",
+        "temp": 25.0,
+        "humidity": 93,
+        "rain_prob": 20,
+        "condition": "sunny"
+      },
+      {
+        "time": "03:00",
+        "temp": 24.9,
+        "humidity": 94,
+        "rain_prob": 41,
+        "condition": "sunny"
+      },
+      {
+        "time": "04:00",
+        "temp": 24.4,
+        "humidity": 96,
+        "rain_prob": 53,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "05:00",
+        "temp": 24.0,
+        "humidity": 97,
+        "rain_prob": 43,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "06:00",
+        "temp": 23.8,
+        "humidity": 97,
+        "rain_prob": 24,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "07:00",
+        "temp": 24.8,
+        "humidity": 92,
+        "rain_prob": 14,
+        "condition": "light_rain"
+      },
+      {
+        "time": "08:00",
+        "temp": 25.6,
+        "humidity": 88,
+        "rain_prob": 24,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 27.8,
+        "humidity": 75,
+        "rain_prob": 43,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 28.3,
+        "humidity": 75,
+        "rain_prob": 59,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 29.2,
+        "humidity": 71,
+        "rain_prob": 66,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 28.8,
+        "humidity": 74,
+        "rain_prob": 70,
+        "condition": "sunny"
+      },
+      {
+        "time": "13:00",
+        "temp": 29.1,
+        "humidity": 73,
+        "rain_prob": 71,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 29.0,
+        "humidity": 73,
+        "rain_prob": 69,
+        "condition": "sunny"
+      },
+      {
+        "time": "15:00",
+        "temp": 28.6,
+        "humidity": 73,
+        "rain_prob": 65,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 28.1,
+        "humidity": 75,
+        "rain_prob": 59,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 27.5,
+        "humidity": 77,
+        "rain_prob": 49,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 27.0,
+        "humidity": 78,
+        "rain_prob": 37,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 26.8,
+        "humidity": 79,
+        "rain_prob": 31,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 26.6,
+        "humidity": 80,
+        "rain_prob": 35,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 26.3,
+        "humidity": 81,
+        "rain_prob": 45,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 26.1,
         "humidity": 82,
-        "wind": 3.2,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HUE"
+        "rain_prob": 55,
+        "condition": "sunny"
+      },
+      {
+        "time": "23:00",
+        "temp": 25.4,
+        "humidity": 86,
+        "rain_prob": 64,
+        "condition": "sunny"
       }
     ]
   },
@@ -332,24 +929,24 @@ PROVINCES_34 = [
     "type": "Thành phố",
     "lat": 16.0544,
     "lon": 108.2022,
-    "condition": "sunny",
-    "weather_text": "Trời nắng ráo, biển êm, gió lộng",
-    "temp": 27.5,
-    "feels_like": 28.5,
-    "humidity": 70,
-    "wind_speed": 4.2,
-    "wind_dir": "Đông",
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn nhẹ lất phất, se lạnh",
+    "temp": 29.5,
+    "feels_like": 34.2,
+    "humidity": 66,
+    "wind_speed": 11.8,
+    "wind_dir": "Đông Bắc",
     "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 7.2,
-    "pressure": 1012,
-    "visibility": 12.0,
-    "pm25": 14.5,
-    "pm10": 24.0,
-    "no2": 11.5,
-    "co": 0.4,
-    "o3": 34.0,
-    "so2": 3.2,
+    "uv": 6.8,
+    "pressure": 1015,
+    "visibility": 14.3,
+    "pm25": 10.9,
+    "pm10": 14.8,
+    "no2": 2.7,
+    "co": 0.37,
+    "o3": 102.0,
+    "so2": 4.0,
     "outdoor_activities": [
       "Đi biển",
       "Chạy bộ",
@@ -365,11 +962,11 @@ PROVINCES_34 = [
     "district": "Đà Nẵng",
     "latitude": 16.0544,
     "longitude": 108.2022,
-    "temperature": 27.5,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 29.5,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_DN_01",
@@ -378,16 +975,17 @@ PROVINCES_34 = [
         "address": "Đường Bạch Đằng, Q. Hải Châu",
         "lat": 16.062,
         "lon": 108.223,
-        "pm25": 14.5,
-        "pm10": 24.0,
-        "aqi": 38,
-        "temp": 27.5,
-        "humidity": 70,
-        "wind": 4.2,
+        "pm25": 11.5,
+        "pm10": 17.2,
+        "aqi": 21,
+        "temp": 29.7,
+        "humidity": 64,
+        "wind": 12.0,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DN"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_DN_02",
@@ -396,16 +994,17 @@ PROVINCES_34 = [
         "address": "Bán đảo Sơn Trà, Q. Sơn Trà",
         "lat": 16.115,
         "lon": 108.275,
-        "pm25": 8.2,
-        "pm10": 13.5,
-        "aqi": 22,
-        "temp": 25.8,
-        "humidity": 76,
-        "wind": 4.8,
+        "pm25": 11.5,
+        "pm10": 17.2,
+        "aqi": 21,
+        "temp": 29.7,
+        "humidity": 63,
+        "wind": 12.0,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DN"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_DN_03",
@@ -414,16 +1013,17 @@ PROVINCES_34 = [
         "address": "KCN Hòa Khánh, Q. Liên Chiểu",
         "lat": 16.072,
         "lon": 108.145,
-        "pm25": 23.5,
-        "pm10": 38.2,
-        "aqi": 53,
-        "temp": 27.8,
-        "humidity": 68,
-        "wind": 3.8,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DN"
+        "pm25": 11.5,
+        "pm10": 17.2,
+        "aqi": 21,
+        "temp": 29.7,
+        "humidity": 63,
+        "wind": 12.0,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_DN_04",
@@ -432,16 +1032,187 @@ PROVINCES_34 = [
         "address": "Đường Võ Nguyên Giáp, Q. Ngũ Hành Sơn",
         "lat": 16.048,
         "lon": 108.245,
-        "pm25": 11.0,
-        "pm10": 18.0,
-        "aqi": 29,
-        "temp": 27.2,
-        "humidity": 72,
-        "wind": 4.5,
+        "pm25": 10.9,
+        "pm10": 16.4,
+        "aqi": 20,
+        "temp": 29.5,
+        "humidity": 68,
+        "wind": 11.8,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DN"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DN",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 26.2,
+        "humidity": 90,
+        "rain_prob": 53,
+        "condition": "light_rain"
+      },
+      {
+        "time": "01:00",
+        "temp": 26.5,
+        "humidity": 84,
+        "rain_prob": 45,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 26.2,
+        "humidity": 85,
+        "rain_prob": 52,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 25.5,
+        "humidity": 87,
+        "rain_prob": 65,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 25.6,
+        "humidity": 88,
+        "rain_prob": 71,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 25.1,
+        "humidity": 93,
+        "rain_prob": 60,
+        "condition": "overcast"
+      },
+      {
+        "time": "06:00",
+        "temp": 25.2,
+        "humidity": 94,
+        "rain_prob": 42,
+        "condition": "overcast"
+      },
+      {
+        "time": "07:00",
+        "temp": 25.9,
+        "humidity": 88,
+        "rain_prob": 31,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "08:00",
+        "temp": 26.9,
+        "humidity": 79,
+        "rain_prob": 34,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "09:00",
+        "temp": 28.0,
+        "humidity": 73,
+        "rain_prob": 44,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 28.8,
+        "humidity": 70,
+        "rain_prob": 49,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 29.4,
+        "humidity": 69,
+        "rain_prob": 44,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 29.5,
+        "humidity": 68,
+        "rain_prob": 34,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 29.5,
+        "humidity": 66,
+        "rain_prob": 27,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 28.8,
+        "humidity": 71,
+        "rain_prob": 27,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 28.3,
+        "humidity": 75,
+        "rain_prob": 29,
+        "condition": "sunny"
+      },
+      {
+        "time": "16:00",
+        "temp": 28.3,
+        "humidity": 74,
+        "rain_prob": 29,
+        "condition": "sunny"
+      },
+      {
+        "time": "17:00",
+        "temp": 27.9,
+        "humidity": 77,
+        "rain_prob": 23,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 27.4,
+        "humidity": 79,
+        "rain_prob": 14,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 27.1,
+        "humidity": 80,
+        "rain_prob": 14,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 26.5,
+        "humidity": 85,
+        "rain_prob": 29,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 26.1,
+        "humidity": 89,
+        "rain_prob": 52,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 25.7,
+        "humidity": 91,
+        "rain_prob": 69,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 25.0,
+        "humidity": 92,
+        "rain_prob": 74,
+        "condition": "light_rain"
       }
     ]
   },
@@ -453,24 +1224,24 @@ PROVINCES_34 = [
     "type": "Thành phố",
     "lat": 10.7769,
     "lon": 106.7009,
-    "condition": "partly_cloudy",
-    "weather_text": "Nắng gián đoạn, chiều tối thoáng mát",
-    "temp": 31.5,
-    "feels_like": 34.0,
-    "humidity": 66,
-    "wind_speed": 3.0,
-    "wind_dir": "Nam - Đông Nam",
-    "rain_prob": 20,
+    "condition": "sunny",
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
+    "temp": 32.6,
+    "feels_like": 38.4,
+    "humidity": 56,
+    "wind_speed": 8.0,
+    "wind_dir": "Đông",
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 8.0,
+    "uv": 7.6,
     "pressure": 1010,
-    "visibility": 10.0,
-    "pm25": 31.5,
-    "pm10": 51.0,
-    "no2": 24.6,
-    "co": 0.95,
-    "o3": 26.4,
-    "so2": 4.8,
+    "visibility": 13.9,
+    "pm25": 16.8,
+    "pm10": 18.3,
+    "no2": 7.8,
+    "co": 0.79,
+    "o3": 159.0,
+    "so2": 20.3,
     "outdoor_activities": [
       "Đi dạo",
       "Chạy bộ",
@@ -485,11 +1256,11 @@ PROVINCES_34 = [
     "district": "Thành phố Hồ Chí Minh",
     "latitude": 10.7769,
     "longitude": 106.7009,
-    "temperature": 31.5,
+    "temperature": 32.6,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_HCM_01",
@@ -498,16 +1269,17 @@ PROVINCES_34 = [
         "address": "Đường Nguyễn Huệ, P. Bến Nghé, Q. 1",
         "lat": 10.775,
         "lon": 106.704,
-        "pm25": 31.5,
-        "pm10": 51.0,
-        "aqi": 68,
-        "temp": 31.5,
-        "humidity": 66,
-        "wind": 3.0,
+        "pm25": 16.2,
+        "pm10": 24.3,
+        "aqi": 29,
+        "temp": 32.4,
+        "humidity": 54,
+        "wind": 7.8,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HCM"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HCM",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HCM_02",
@@ -516,16 +1288,17 @@ PROVINCES_34 = [
         "address": "Ngã tư Hàng Xanh, Q. Bình Thạnh",
         "lat": 10.802,
         "lon": 106.712,
-        "pm25": 44.0,
-        "pm10": 68.5,
-        "aqi": 78,
-        "temp": 32.2,
-        "humidity": 63,
-        "wind": 3.2,
+        "pm25": 16.2,
+        "pm10": 24.3,
+        "aqi": 29,
+        "temp": 32.4,
+        "humidity": 58,
+        "wind": 7.8,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HCM"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HCM",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HCM_03",
@@ -534,16 +1307,17 @@ PROVINCES_34 = [
         "address": "Đường D1, Khu CNC, TP. Thủ Đức",
         "lat": 10.854,
         "lon": 106.795,
-        "pm25": 27.5,
-        "pm10": 44.2,
-        "aqi": 60,
-        "temp": 31.8,
-        "humidity": 65,
-        "wind": 3.0,
+        "pm25": 17.4,
+        "pm10": 26.1,
+        "aqi": 31,
+        "temp": 32.8,
+        "humidity": 54,
+        "wind": 8.2,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HCM"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HCM",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HCM_04",
@@ -552,16 +1326,17 @@ PROVINCES_34 = [
         "address": "KCN Tân Bình & Bình Chánh",
         "lat": 10.812,
         "lon": 106.625,
-        "pm25": 41.8,
-        "pm10": 65.0,
-        "aqi": 75,
-        "temp": 32.5,
-        "humidity": 62,
-        "wind": 2.8,
+        "pm25": 18.0,
+        "pm10": 27.0,
+        "aqi": 32,
+        "temp": 33.0,
+        "humidity": 58,
+        "wind": 8.4,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HCM"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HCM",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HCM_05",
@@ -570,16 +1345,187 @@ PROVINCES_34 = [
         "address": "Xã Long Hòa, H. Cần Giờ",
         "lat": 10.415,
         "lon": 106.915,
-        "pm25": 12.8,
-        "pm10": 20.5,
-        "aqi": 32,
-        "temp": 29.8,
+        "pm25": 16.8,
+        "pm10": 25.2,
+        "aqi": 30,
+        "temp": 32.6,
+        "humidity": 59,
+        "wind": 8.0,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HCM",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 25.1,
+        "humidity": 95,
+        "rain_prob": 26,
+        "condition": "overcast"
+      },
+      {
+        "time": "01:00",
+        "temp": 26.1,
+        "humidity": 87,
+        "rain_prob": 12,
+        "condition": "overcast"
+      },
+      {
+        "time": "02:00",
+        "temp": 25.5,
+        "humidity": 94,
+        "rain_prob": 7,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 25.2,
+        "humidity": 95,
+        "rain_prob": 6,
+        "condition": "overcast"
+      },
+      {
+        "time": "04:00",
+        "temp": 24.9,
+        "humidity": 94,
+        "rain_prob": 6,
+        "condition": "overcast"
+      },
+      {
+        "time": "05:00",
+        "temp": 24.5,
+        "humidity": 93,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "06:00",
+        "temp": 24.5,
+        "humidity": 92,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 25.5,
+        "humidity": 88,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 27.0,
+        "humidity": 83,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 28.8,
         "humidity": 75,
-        "wind": 4.5,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HCM"
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 30.2,
+        "humidity": 68,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 31.3,
+        "humidity": 62,
+        "rain_prob": 1,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 32.0,
+        "humidity": 59,
+        "rain_prob": 3,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 32.8,
+        "humidity": 56,
+        "rain_prob": 12,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 33.0,
+        "humidity": 56,
+        "rain_prob": 36,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 32.7,
+        "humidity": 57,
+        "rain_prob": 67,
+        "condition": "overcast"
+      },
+      {
+        "time": "16:00",
+        "temp": 26.4,
+        "humidity": 93,
+        "rain_prob": 86,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "17:00",
+        "temp": 26.4,
+        "humidity": 89,
+        "rain_prob": 83,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.5,
+        "humidity": 88,
+        "rain_prob": 68,
+        "condition": "overcast"
+      },
+      {
+        "time": "19:00",
+        "temp": 26.7,
+        "humidity": 90,
+        "rain_prob": 51,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "20:00",
+        "temp": 26.6,
+        "humidity": 89,
+        "rain_prob": 34,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 26.5,
+        "humidity": 90,
+        "rain_prob": 15,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 26.2,
+        "humidity": 93,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "23:00",
+        "temp": 25.9,
+        "humidity": 94,
+        "rain_prob": 0,
+        "condition": "sunny"
       }
     ]
   },
@@ -591,24 +1537,24 @@ PROVINCES_34 = [
     "type": "Thành phố",
     "lat": 10.0452,
     "lon": 105.7469,
-    "condition": "sunny",
-    "weather_text": "Nắng ấm miền Tây, gió sông dịu mát",
-    "temp": 30.2,
-    "feels_like": 32.5,
-    "humidity": 72,
-    "wind_speed": 2.8,
-    "wind_dir": "Đông Nam",
-    "rain_prob": 15,
-    "rain_mm": 0.0,
-    "uv": 7.5,
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn nhẹ lất phất, se lạnh",
+    "temp": 31.2,
+    "feels_like": 35.3,
+    "humidity": 62,
+    "wind_speed": 19.4,
+    "wind_dir": "Đông",
+    "rain_prob": 10,
+    "rain_mm": 0.1,
+    "uv": 7.7,
     "pressure": 1011,
-    "visibility": 11.0,
-    "pm25": 21.4,
-    "pm10": 36.8,
-    "no2": 15.2,
-    "co": 0.58,
-    "o3": 24.6,
-    "so2": 3.8,
+    "visibility": 12.9,
+    "pm25": 16.4,
+    "pm10": 18.8,
+    "no2": 3.8,
+    "co": 0.73,
+    "o3": 151.0,
+    "so2": 15.0,
     "outdoor_activities": [
       "Du lịch",
       "Tham quan",
@@ -622,11 +1568,11 @@ PROVINCES_34 = [
     "district": "Cần Thơ",
     "latitude": 10.0452,
     "longitude": 105.7469,
-    "temperature": 30.2,
+    "temperature": 31.2,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_CT_01",
@@ -635,16 +1581,17 @@ PROVINCES_34 = [
         "address": "Đường Hai Bà Trưng, P. Tân An, Q. Ninh Kiều",
         "lat": 10.035,
         "lon": 105.789,
-        "pm25": 21.4,
-        "pm10": 36.8,
-        "aqi": 52,
-        "temp": 30.2,
-        "humidity": 72,
-        "wind": 2.8,
+        "pm25": 15.2,
+        "pm10": 22.8,
+        "aqi": 27,
+        "temp": 30.8,
+        "humidity": 65,
+        "wind": 19.0,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_CT"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_CT",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_CT_02",
@@ -653,16 +1600,17 @@ PROVINCES_34 = [
         "address": "KCN Trà Nóc 1, Q. Bình Thủy",
         "lat": 10.085,
         "lon": 105.725,
-        "pm25": 29.8,
-        "pm10": 47.5,
-        "aqi": 64,
-        "temp": 30.8,
-        "humidity": 70,
-        "wind": 3.1,
+        "pm25": 17.6,
+        "pm10": 26.4,
+        "aqi": 32,
+        "temp": 31.6,
+        "humidity": 65,
+        "wind": 19.8,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_CT"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_CT",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_CT_03",
@@ -671,16 +1619,187 @@ PROVINCES_34 = [
         "address": "Quận Cái Răng",
         "lat": 10.005,
         "lon": 105.745,
-        "pm25": 15.5,
-        "pm10": 24.8,
-        "aqi": 42,
-        "temp": 29.8,
+        "pm25": 16.4,
+        "pm10": 24.6,
+        "aqi": 30,
+        "temp": 31.2,
+        "humidity": 62,
+        "wind": 19.4,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_CT",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 25.6,
+        "humidity": 90,
+        "rain_prob": 19,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 25.5,
+        "humidity": 94,
+        "rain_prob": 18,
+        "condition": "overcast"
+      },
+      {
+        "time": "02:00",
+        "temp": 24.9,
+        "humidity": 94,
+        "rain_prob": 19,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 24.7,
+        "humidity": 95,
+        "rain_prob": 21,
+        "condition": "overcast"
+      },
+      {
+        "time": "04:00",
+        "temp": 24.7,
+        "humidity": 94,
+        "rain_prob": 20,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "05:00",
+        "temp": 24.6,
+        "humidity": 95,
+        "rain_prob": 14,
+        "condition": "sunny"
+      },
+      {
+        "time": "06:00",
+        "temp": 24.6,
+        "humidity": 94,
+        "rain_prob": 6,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 25.7,
+        "humidity": 90,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 27.2,
+        "humidity": 82,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "09:00",
+        "temp": 28.5,
         "humidity": 75,
-        "wind": 2.6,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_CT"
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 29.6,
+        "humidity": 70,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 30.5,
+        "humidity": 65,
+        "rain_prob": 13,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 31.0,
+        "humidity": 63,
+        "rain_prob": 28,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 31.3,
+        "humidity": 62,
+        "rain_prob": 39,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 31.3,
+        "humidity": 63,
+        "rain_prob": 45,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 29.6,
+        "humidity": 69,
+        "rain_prob": 47,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 29.2,
+        "humidity": 74,
+        "rain_prob": 45,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 28.7,
+        "humidity": 78,
+        "rain_prob": 35,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 27.9,
+        "humidity": 82,
+        "rain_prob": 19,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 27.4,
+        "humidity": 84,
+        "rain_prob": 8,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 27.1,
+        "humidity": 85,
+        "rain_prob": 5,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 26.5,
+        "humidity": 89,
+        "rain_prob": 6,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 26.0,
+        "humidity": 93,
+        "rain_prob": 6,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "23:00",
+        "temp": 25.9,
+        "humidity": 94,
+        "rain_prob": 4,
+        "condition": "partly_cloudy"
       }
     ]
   },
@@ -692,24 +1811,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 22.6667,
     "lon": 106.25,
-    "condition": "foggy",
-    "weather_text": "Sương mù buổi sáng, trưa hửng nắng nhẹ",
-    "temp": 17.5,
-    "feels_like": 17.5,
-    "humidity": 84,
-    "wind_speed": 2.0,
-    "wind_dir": "Bắc",
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn vừa phải, không khí ẩm",
+    "temp": 25.8,
+    "feels_like": 29.9,
+    "humidity": 79,
+    "wind_speed": 5.6,
+    "wind_dir": "Đông",
     "rain_prob": 10,
-    "rain_mm": 0.0,
-    "uv": 3.5,
-    "pressure": 1016,
-    "visibility": 6.5,
-    "pm25": 15.0,
-    "pm10": 24.5,
-    "no2": 8.5,
-    "co": 0.35,
-    "o3": 31.0,
-    "so2": 2.5,
+    "rain_mm": 0.1,
+    "uv": 4.8,
+    "pressure": 994,
+    "visibility": 13.6,
+    "pm25": 5.9,
+    "pm10": 7.0,
+    "no2": 1.3,
+    "co": 0.42,
+    "o3": 98.0,
+    "so2": 2.1,
     "outdoor_activities": [
       "Leo núi",
       "Du lịch",
@@ -723,11 +1842,11 @@ PROVINCES_34 = [
     "district": "Cao Bằng",
     "latitude": 22.6667,
     "longitude": 106.25,
-    "temperature": 17.5,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 25.8,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_CB_01",
@@ -736,16 +1855,17 @@ PROVINCES_34 = [
         "address": "Đường Kim Đồng, P. Hợp Giang",
         "lat": 22.668,
         "lon": 106.255,
-        "pm25": 15.0,
-        "pm10": 24.5,
-        "aqi": 38,
-        "temp": 17.5,
-        "humidity": 84,
-        "wind": 2.0,
+        "pm25": 7.1,
+        "pm10": 10.6,
+        "aqi": 13,
+        "temp": 26.2,
+        "humidity": 81,
+        "wind": 6.0,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_CB"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_CB",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_CB_02",
@@ -754,16 +1874,187 @@ PROVINCES_34 = [
         "address": "Xã Đàm Thủy, H. Trùng Khánh",
         "lat": 22.854,
         "lon": 106.723,
-        "pm25": 9.5,
-        "pm10": 15.2,
-        "aqi": 26,
-        "temp": 16.0,
-        "humidity": 88,
-        "wind": 1.8,
+        "pm25": 4.7,
+        "pm10": 7.1,
+        "aqi": 8,
+        "temp": 25.4,
+        "humidity": 80,
+        "wind": 5.2,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_CB"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_CB",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 22.4,
+        "humidity": 94,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "01:00",
+        "temp": 23.0,
+        "humidity": 92,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "02:00",
+        "temp": 22.2,
+        "humidity": 93,
+        "rain_prob": 21,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 22.2,
+        "humidity": 96,
+        "rain_prob": 51,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 22.2,
+        "humidity": 97,
+        "rain_prob": 71,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 22.2,
+        "humidity": 97,
+        "rain_prob": 67,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.3,
+        "humidity": 96,
+        "rain_prob": 53,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 22.4,
+        "humidity": 96,
+        "rain_prob": 47,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 22.7,
+        "humidity": 95,
+        "rain_prob": 60,
+        "condition": "overcast"
+      },
+      {
+        "time": "09:00",
+        "temp": 23.6,
+        "humidity": 90,
+        "rain_prob": 81,
+        "condition": "overcast"
+      },
+      {
+        "time": "10:00",
+        "temp": 25.2,
+        "humidity": 82,
+        "rain_prob": 96,
+        "condition": "overcast"
+      },
+      {
+        "time": "11:00",
+        "temp": 26.2,
+        "humidity": 73,
+        "rain_prob": 100,
+        "condition": "overcast"
+      },
+      {
+        "time": "12:00",
+        "temp": 25.5,
+        "humidity": 78,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 25.9,
+        "humidity": 79,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 26.3,
+        "humidity": 76,
+        "rain_prob": 95,
+        "condition": "overcast"
+      },
+      {
+        "time": "15:00",
+        "temp": 24.5,
+        "humidity": 87,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 23.1,
+        "humidity": 89,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 21.7,
+        "humidity": 98,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 21.5,
+        "humidity": 99,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 21.3,
+        "humidity": 98,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 20.7,
+        "humidity": 96,
+        "rain_prob": 99,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 19.5,
+        "humidity": 95,
+        "rain_prob": 97,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 18.7,
+        "humidity": 96,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 18.5,
+        "humidity": 97,
+        "rain_prob": 96,
+        "condition": "light_rain"
       }
     ]
   },
@@ -775,24 +2066,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 21.8233,
     "lon": 105.2153,
-    "condition": "partly_cloudy",
-    "weather_text": "Mây rải rác, không khí thoáng đãng",
-    "temp": 21.0,
-    "feels_like": 21.5,
-    "humidity": 76,
-    "wind_speed": 2.2,
-    "wind_dir": "Đông Bắc",
-    "rain_prob": 15,
-    "rain_mm": 0.0,
-    "uv": 4.5,
-    "pressure": 1015,
-    "visibility": 9.5,
-    "pm25": 22.1,
-    "pm10": 35.4,
-    "no2": 13.5,
-    "co": 0.52,
-    "o3": 25.0,
-    "so2": 4.1,
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn nhẹ lất phất, se lạnh",
+    "temp": 24.7,
+    "feels_like": 29.7,
+    "humidity": 91,
+    "wind_speed": 3.7,
+    "wind_dir": "Tây Bắc",
+    "rain_prob": 10,
+    "rain_mm": 0.1,
+    "uv": 6.0,
+    "pressure": 1016,
+    "visibility": 13.2,
+    "pm25": 12.3,
+    "pm10": 14.6,
+    "no2": 2.1,
+    "co": 0.54,
+    "o3": 108.0,
+    "so2": 7.6,
     "outdoor_activities": [
       "Du lịch",
       "Dã ngoại",
@@ -806,11 +2097,11 @@ PROVINCES_34 = [
     "district": "Tuyên Quang",
     "latitude": 21.8233,
     "longitude": 105.2153,
-    "temperature": 21.0,
+    "temperature": 24.7,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_TQ_01",
@@ -819,16 +2110,17 @@ PROVINCES_34 = [
         "address": "Đường Tân Trào, P. Phan Thiết",
         "lat": 21.824,
         "lon": 105.217,
-        "pm25": 22.1,
-        "pm10": 35.4,
-        "aqi": 52,
-        "temp": 21.0,
-        "humidity": 76,
-        "wind": 2.2,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TQ"
+        "pm25": 11.7,
+        "pm10": 17.5,
+        "aqi": 21,
+        "temp": 24.5,
+        "humidity": 91,
+        "wind": 3.5,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TQ",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_TQ_02",
@@ -837,16 +2129,187 @@ PROVINCES_34 = [
         "address": "Thị trấn Na Hang, H. Na Hang",
         "lat": 22.348,
         "lon": 105.385,
-        "pm25": 12.0,
-        "pm10": 19.5,
-        "aqi": 32,
-        "temp": 19.5,
-        "humidity": 82,
-        "wind": 2.0,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TQ"
+        "pm25": 12.3,
+        "pm10": 18.5,
+        "aqi": 22,
+        "temp": 24.7,
+        "humidity": 93,
+        "wind": 3.7,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TQ",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 22.2,
+        "humidity": 99,
+        "rain_prob": 71,
+        "condition": "light_rain"
+      },
+      {
+        "time": "01:00",
+        "temp": 23.6,
+        "humidity": 96,
+        "rain_prob": 73,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "02:00",
+        "temp": 22.6,
+        "humidity": 98,
+        "rain_prob": 81,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 22.2,
+        "humidity": 99,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 22.1,
+        "humidity": 98,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 22.4,
+        "humidity": 96,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.0,
+        "humidity": 97,
+        "rain_prob": 82,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 22.4,
+        "humidity": 96,
+        "rain_prob": 76,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "08:00",
+        "temp": 23.0,
+        "humidity": 96,
+        "rain_prob": 79,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 23.8,
+        "humidity": 93,
+        "rain_prob": 86,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 24.7,
+        "humidity": 91,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 23.1,
+        "humidity": 94,
+        "rain_prob": 89,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "12:00",
+        "temp": 23.7,
+        "humidity": 93,
+        "rain_prob": 86,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 25.0,
+        "humidity": 90,
+        "rain_prob": 84,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 25.7,
+        "humidity": 85,
+        "rain_prob": 86,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 26.0,
+        "humidity": 83,
+        "rain_prob": 89,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 25.3,
+        "humidity": 89,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 24.2,
+        "humidity": 96,
+        "rain_prob": 87,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 23.8,
+        "humidity": 98,
+        "rain_prob": 83,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "19:00",
+        "temp": 23.0,
+        "humidity": 100,
+        "rain_prob": 82,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 22.3,
+        "humidity": 99,
+        "rain_prob": 87,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 22.0,
+        "humidity": 99,
+        "rain_prob": 95,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 22.0,
+        "humidity": 99,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 22.2,
+        "humidity": 98,
+        "rain_prob": 98,
+        "condition": "light_rain"
       }
     ]
   },
@@ -858,24 +2321,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 21.386,
     "lon": 103.023,
-    "condition": "sunny",
-    "weather_text": "Nắng vàng hanh hao, trời trong xanh",
-    "temp": 20.5,
-    "feels_like": 20.5,
-    "humidity": 68,
-    "wind_speed": 2.5,
-    "wind_dir": "Tây Bắc",
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn nhẹ lất phất, se lạnh",
+    "temp": 29.4,
+    "feels_like": 32.9,
+    "humidity": 57,
+    "wind_speed": 10.1,
+    "wind_dir": "Đông",
     "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 5.0,
-    "pressure": 1015,
-    "visibility": 12.0,
-    "pm25": 18.4,
-    "pm10": 29.8,
-    "no2": 10.2,
-    "co": 0.41,
-    "o3": 28.5,
-    "so2": 3.0,
+    "uv": 6.0,
+    "pressure": 964,
+    "visibility": 14.6,
+    "pm25": 6.1,
+    "pm10": 6.4,
+    "no2": 1.0,
+    "co": 0.46,
+    "o3": 85.0,
+    "so2": 7.2,
     "outdoor_activities": [
       "Tham quan",
       "Chụp ảnh",
@@ -889,11 +2352,11 @@ PROVINCES_34 = [
     "district": "Điện Biên",
     "latitude": 21.386,
     "longitude": 103.023,
-    "temperature": 20.5,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 29.4,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_DB_01",
@@ -902,16 +2365,17 @@ PROVINCES_34 = [
         "address": "Đường Võ Nguyên Giáp, P. Mường Thanh",
         "lat": 21.388,
         "lon": 103.021,
-        "pm25": 18.4,
-        "pm10": 29.8,
-        "aqi": 46,
-        "temp": 20.5,
-        "humidity": 68,
-        "wind": 2.5,
+        "pm25": 6.1,
+        "pm10": 9.1,
+        "aqi": 11,
+        "temp": 29.4,
+        "humidity": 58,
+        "wind": 10.1,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DB"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DB",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_DB_02",
@@ -920,16 +2384,187 @@ PROVINCES_34 = [
         "address": "Xã Na Ư, H. Điện Biên",
         "lat": 21.215,
         "lon": 102.915,
-        "pm25": 11.5,
-        "pm10": 18.5,
-        "aqi": 30,
-        "temp": 19.8,
-        "humidity": 72,
-        "wind": 2.2,
+        "pm25": 7.3,
+        "pm10": 10.9,
+        "aqi": 13,
+        "temp": 29.8,
+        "humidity": 56,
+        "wind": 10.5,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DB"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DB",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 22.0,
+        "humidity": 96,
+        "rain_prob": 7,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 21.9,
+        "humidity": 98,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "02:00",
+        "temp": 21.3,
+        "humidity": 99,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "03:00",
+        "temp": 20.7,
+        "humidity": 100,
+        "rain_prob": 4,
+        "condition": "foggy"
+      },
+      {
+        "time": "04:00",
+        "temp": 20.5,
+        "humidity": 99,
+        "rain_prob": 6,
+        "condition": "overcast"
+      },
+      {
+        "time": "05:00",
+        "temp": 20.6,
+        "humidity": 98,
+        "rain_prob": 6,
+        "condition": "foggy"
+      },
+      {
+        "time": "06:00",
+        "temp": 20.3,
+        "humidity": 99,
+        "rain_prob": 5,
+        "condition": "foggy"
+      },
+      {
+        "time": "07:00",
+        "temp": 20.7,
+        "humidity": 97,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 23.1,
+        "humidity": 85,
+        "rain_prob": 1,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 25.5,
+        "humidity": 71,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "10:00",
+        "temp": 27.3,
+        "humidity": 60,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 28.5,
+        "humidity": 57,
+        "rain_prob": 17,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 29.2,
+        "humidity": 57,
+        "rain_prob": 39,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 29.3,
+        "humidity": 57,
+        "rain_prob": 57,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 28.0,
+        "humidity": 61,
+        "rain_prob": 71,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 28.5,
+        "humidity": 60,
+        "rain_prob": 81,
+        "condition": "sunny"
+      },
+      {
+        "time": "16:00",
+        "temp": 28.0,
+        "humidity": 61,
+        "rain_prob": 80,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 26.8,
+        "humidity": 65,
+        "rain_prob": 58,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "18:00",
+        "temp": 25.3,
+        "humidity": 73,
+        "rain_prob": 25,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 24.2,
+        "humidity": 80,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "20:00",
+        "temp": 23.4,
+        "humidity": 86,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 22.6,
+        "humidity": 89,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 22.0,
+        "humidity": 92,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "23:00",
+        "temp": 21.5,
+        "humidity": 94,
+        "rain_prob": 2,
+        "condition": "sunny"
       }
     ]
   },
@@ -941,24 +2576,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 22.3964,
     "lon": 103.4589,
-    "condition": "foggy",
-    "weather_text": "Sương mờ giăng đèo, se lạnh vùng cao",
-    "temp": 16.2,
-    "feels_like": 16.0,
-    "humidity": 86,
-    "wind_speed": 2.1,
-    "wind_dir": "Bắc",
-    "rain_prob": 10,
+    "condition": "partly_cloudy",
+    "weather_text": "Mây thay đổi, nắng gián đoạn, thời tiết dễ chịu",
+    "temp": 24.3,
+    "feels_like": 27.1,
+    "humidity": 71,
+    "wind_speed": 4.2,
+    "wind_dir": "Tây",
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 3.8,
-    "pressure": 1017,
-    "visibility": 6.0,
-    "pm25": 12.0,
-    "pm10": 19.5,
-    "no2": 7.5,
-    "co": 0.28,
-    "o3": 35.0,
-    "so2": 2.0,
+    "uv": 5.4,
+    "pressure": 918,
+    "visibility": 14.8,
+    "pm25": 3.2,
+    "pm10": 3.3,
+    "no2": 1.0,
+    "co": 0.37,
+    "o3": 97.0,
+    "so2": 8.6,
     "outdoor_activities": [
       "Leo núi",
       "Chụp ảnh"
@@ -971,11 +2606,11 @@ PROVINCES_34 = [
     "district": "Lai Châu",
     "latitude": 22.3964,
     "longitude": 103.4589,
-    "temperature": 16.2,
+    "temperature": 24.3,
     "aqi_level": "Tốt",
     "color": "#10b981",
-    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động thể chất và thể thao ngoài trời.",
-    "timestamp": "2026-10-31 15:00:00",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_LC_01",
@@ -984,16 +2619,17 @@ PROVINCES_34 = [
         "address": "Đường Trần Phú, P. Tân Phong",
         "lat": 22.398,
         "lon": 103.461,
-        "pm25": 12.0,
-        "pm10": 19.5,
-        "aqi": 32,
-        "temp": 16.2,
-        "humidity": 86,
-        "wind": 2.1,
+        "pm25": 4.4,
+        "pm10": 6.6,
+        "aqi": 8,
+        "temp": 24.7,
+        "humidity": 70,
+        "wind": 4.6,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_LC"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_LC",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_LC_02",
@@ -1002,16 +2638,187 @@ PROVINCES_34 = [
         "address": "Đèo Ô Quy Hồ, H. Tam Đường",
         "lat": 22.355,
         "lon": 103.778,
-        "pm25": 7.8,
-        "pm10": 12.6,
-        "aqi": 22,
-        "temp": 12.5,
-        "humidity": 92,
-        "wind": 3.8,
+        "pm25": 3.2,
+        "pm10": 4.8,
+        "aqi": 6,
+        "temp": 24.3,
+        "humidity": 73,
+        "wind": 4.2,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_LC"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_LC",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 18.5,
+        "humidity": 98,
+        "rain_prob": 73,
+        "condition": "light_rain"
+      },
+      {
+        "time": "01:00",
+        "temp": 18.5,
+        "humidity": 100,
+        "rain_prob": 80,
+        "condition": "foggy"
+      },
+      {
+        "time": "02:00",
+        "temp": 18.0,
+        "humidity": 100,
+        "rain_prob": 74,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 17.3,
+        "humidity": 100,
+        "rain_prob": 60,
+        "condition": "foggy"
+      },
+      {
+        "time": "04:00",
+        "temp": 17.0,
+        "humidity": 100,
+        "rain_prob": 45,
+        "condition": "foggy"
+      },
+      {
+        "time": "05:00",
+        "temp": 16.6,
+        "humidity": 100,
+        "rain_prob": 30,
+        "condition": "foggy"
+      },
+      {
+        "time": "06:00",
+        "temp": 16.1,
+        "humidity": 100,
+        "rain_prob": 15,
+        "condition": "foggy"
+      },
+      {
+        "time": "07:00",
+        "temp": 16.5,
+        "humidity": 100,
+        "rain_prob": 4,
+        "condition": "foggy"
+      },
+      {
+        "time": "08:00",
+        "temp": 19.0,
+        "humidity": 99,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "09:00",
+        "temp": 21.0,
+        "humidity": 89,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "10:00",
+        "temp": 22.8,
+        "humidity": 76,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "11:00",
+        "temp": 23.6,
+        "humidity": 73,
+        "rain_prob": 7,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "12:00",
+        "temp": 24.2,
+        "humidity": 71,
+        "rain_prob": 18,
+        "condition": "overcast"
+      },
+      {
+        "time": "13:00",
+        "temp": 24.3,
+        "humidity": 70,
+        "rain_prob": 31,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 24.8,
+        "humidity": 69,
+        "rain_prob": 48,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 23.5,
+        "humidity": 74,
+        "rain_prob": 67,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 22.0,
+        "humidity": 85,
+        "rain_prob": 76,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 21.3,
+        "humidity": 93,
+        "rain_prob": 67,
+        "condition": "overcast"
+      },
+      {
+        "time": "18:00",
+        "temp": 20.3,
+        "humidity": 95,
+        "rain_prob": 48,
+        "condition": "overcast"
+      },
+      {
+        "time": "19:00",
+        "temp": 20.2,
+        "humidity": 94,
+        "rain_prob": 31,
+        "condition": "overcast"
+      },
+      {
+        "time": "20:00",
+        "temp": 20.3,
+        "humidity": 91,
+        "rain_prob": 18,
+        "condition": "overcast"
+      },
+      {
+        "time": "21:00",
+        "temp": 20.4,
+        "humidity": 88,
+        "rain_prob": 7,
+        "condition": "overcast"
+      },
+      {
+        "time": "22:00",
+        "temp": 20.1,
+        "humidity": 87,
+        "rain_prob": 4,
+        "condition": "overcast"
+      },
+      {
+        "time": "23:00",
+        "temp": 19.7,
+        "humidity": 89,
+        "rain_prob": 14,
+        "condition": "light_rain"
       }
     ]
   },
@@ -1024,23 +2831,23 @@ PROVINCES_34 = [
     "lat": 21.3283,
     "lon": 103.9148,
     "condition": "sunny",
-    "weather_text": "Trời trong lành, nắng ấm cao nguyên Mộc Châu",
-    "temp": 18.5,
-    "feels_like": 18.5,
-    "humidity": 70,
-    "wind_speed": 2.6,
-    "wind_dir": "Đông Bắc",
+    "weather_text": "Trời trong xanh, ít mây, nắng dịu",
+    "temp": 25.5,
+    "feels_like": 28.5,
+    "humidity": 77,
+    "wind_speed": 11.9,
+    "wind_dir": "Đông",
     "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 5.2,
-    "pressure": 1016,
-    "visibility": 11.5,
-    "pm25": 14.5,
-    "pm10": 23.2,
-    "no2": 9.4,
-    "co": 0.38,
-    "o3": 32.1,
-    "so2": 2.8,
+    "uv": 6.2,
+    "pressure": 952,
+    "visibility": 14.6,
+    "pm25": 5.7,
+    "pm10": 6.1,
+    "no2": 1.5,
+    "co": 0.46,
+    "o3": 93.0,
+    "so2": 11.4,
     "outdoor_activities": [
       "Picnic",
       "Chụp ảnh",
@@ -1054,11 +2861,11 @@ PROVINCES_34 = [
     "district": "Sơn La",
     "latitude": 21.3283,
     "longitude": 103.9148,
-    "temperature": 18.5,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 25.5,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_SL_01",
@@ -1067,16 +2874,17 @@ PROVINCES_34 = [
         "address": "Đường Tô Hiệu, P. Chiềng Lề",
         "lat": 21.33,
         "lon": 103.918,
-        "pm25": 14.5,
-        "pm10": 23.2,
-        "aqi": 37,
-        "temp": 18.5,
-        "humidity": 70,
-        "wind": 2.6,
+        "pm25": 5.7,
+        "pm10": 8.6,
+        "aqi": 10,
+        "temp": 25.5,
+        "humidity": 79,
+        "wind": 11.9,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_SL"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_SL",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_SL_02",
@@ -1085,16 +2893,187 @@ PROVINCES_34 = [
         "address": "Thị trấn Nông trường Mộc Châu",
         "lat": 20.842,
         "lon": 104.654,
-        "pm25": 9.2,
-        "pm10": 14.8,
-        "aqi": 25,
-        "temp": 16.8,
-        "humidity": 76,
-        "wind": 2.8,
+        "pm25": 6.3,
+        "pm10": 9.4,
+        "aqi": 11,
+        "temp": 25.7,
+        "humidity": 79,
+        "wind": 12.1,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_SL"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_SL",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 21.1,
+        "humidity": 94,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 21.1,
+        "humidity": 95,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "02:00",
+        "temp": 20.5,
+        "humidity": 95,
+        "rain_prob": 1,
+        "condition": "sunny"
+      },
+      {
+        "time": "03:00",
+        "temp": 20.1,
+        "humidity": 96,
+        "rain_prob": 1,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "04:00",
+        "temp": 20.0,
+        "humidity": 97,
+        "rain_prob": 2,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "05:00",
+        "temp": 20.2,
+        "humidity": 97,
+        "rain_prob": 1,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "06:00",
+        "temp": 20.5,
+        "humidity": 97,
+        "rain_prob": 1,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 21.0,
+        "humidity": 95,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "08:00",
+        "temp": 22.0,
+        "humidity": 88,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "09:00",
+        "temp": 23.2,
+        "humidity": 81,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "10:00",
+        "temp": 25.1,
+        "humidity": 72,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 23.9,
+        "humidity": 81,
+        "rain_prob": 30,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 25.2,
+        "humidity": 79,
+        "rain_prob": 69,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 25.5,
+        "humidity": 77,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 25.2,
+        "humidity": 76,
+        "rain_prob": 95,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 24.9,
+        "humidity": 78,
+        "rain_prob": 82,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 24.8,
+        "humidity": 76,
+        "rain_prob": 65,
+        "condition": "sunny"
+      },
+      {
+        "time": "17:00",
+        "temp": 23.9,
+        "humidity": 78,
+        "rain_prob": 44,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 22.6,
+        "humidity": 80,
+        "rain_prob": 18,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 22.1,
+        "humidity": 83,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 21.7,
+        "humidity": 85,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 21.0,
+        "humidity": 89,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 20.9,
+        "humidity": 89,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "23:00",
+        "temp": 20.8,
+        "humidity": 89,
+        "rain_prob": 5,
+        "condition": "partly_cloudy"
       }
     ]
   },
@@ -1106,24 +3085,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 22.4856,
     "lon": 103.9707,
-    "condition": "foggy",
-    "weather_text": "Sương mờ bồng bềnh Sa Pa, se lạnh",
-    "temp": 15.0,
-    "feels_like": 14.5,
-    "humidity": 88,
-    "wind_speed": 2.3,
-    "wind_dir": "Bắc",
-    "rain_prob": 15,
+    "condition": "partly_cloudy",
+    "weather_text": "Mây thay đổi, nắng gián đoạn, thời tiết dễ chịu",
+    "temp": 26.3,
+    "feels_like": 30.2,
+    "humidity": 75,
+    "wind_speed": 6.6,
+    "wind_dir": "Nam",
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 3.6,
-    "pressure": 1018,
-    "visibility": 5.5,
-    "pm25": 11.2,
-    "pm10": 18.4,
-    "no2": 7.8,
-    "co": 0.3,
-    "o3": 36.2,
-    "so2": 2.2,
+    "uv": 5.5,
+    "pressure": 1009,
+    "visibility": 14.6,
+    "pm25": 5.5,
+    "pm10": 5.9,
+    "no2": 1.4,
+    "co": 0.5,
+    "o3": 95.0,
+    "so2": 13.5,
     "outdoor_activities": [
       "Leo núi",
       "Chụp ảnh",
@@ -1137,11 +3116,11 @@ PROVINCES_34 = [
     "district": "Lào Cai",
     "latitude": 22.4856,
     "longitude": 103.9707,
-    "temperature": 15.0,
+    "temperature": 26.3,
     "aqi_level": "Tốt",
     "color": "#10b981",
-    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động thể chất và thể thao ngoài trời.",
-    "timestamp": "2026-10-31 15:00:00",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_LCAI_01",
@@ -1150,16 +3129,17 @@ PROVINCES_34 = [
         "address": "Đường Hoàng Liên, P. Cốc Lếu",
         "lat": 22.489,
         "lon": 103.968,
-        "pm25": 16.5,
-        "pm10": 26.2,
-        "aqi": 42,
-        "temp": 17.2,
-        "humidity": 82,
-        "wind": 2.5,
+        "pm25": 4.3,
+        "pm10": 6.4,
+        "aqi": 8,
+        "temp": 25.9,
+        "humidity": 74,
+        "wind": 6.2,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_LCAI"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_LCAI",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_LCAI_02",
@@ -1168,16 +3148,187 @@ PROVINCES_34 = [
         "address": "Thị xã Sa Pa",
         "lat": 22.336,
         "lon": 103.844,
-        "pm25": 8.2,
-        "pm10": 13.5,
-        "aqi": 24,
-        "temp": 12.0,
-        "humidity": 90,
-        "wind": 3.2,
+        "pm25": 6.7,
+        "pm10": 10.1,
+        "aqi": 12,
+        "temp": 26.7,
+        "humidity": 74,
+        "wind": 7.0,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_LCAI"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_LCAI",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 22.2,
+        "humidity": 97,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "01:00",
+        "temp": 22.6,
+        "humidity": 96,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 22.4,
+        "humidity": 95,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 21.9,
+        "humidity": 98,
+        "rain_prob": 85,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 21.4,
+        "humidity": 98,
+        "rain_prob": 82,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 21.9,
+        "humidity": 96,
+        "rain_prob": 85,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.1,
+        "humidity": 95,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 22.6,
+        "humidity": 94,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "08:00",
+        "temp": 22.7,
+        "humidity": 94,
+        "rain_prob": 82,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 23.1,
+        "humidity": 93,
+        "rain_prob": 67,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 23.9,
+        "humidity": 86,
+        "rain_prob": 55,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 25.3,
+        "humidity": 78,
+        "rain_prob": 50,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 25.7,
+        "humidity": 78,
+        "rain_prob": 48,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 26.4,
+        "humidity": 75,
+        "rain_prob": 49,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "14:00",
+        "temp": 26.2,
+        "humidity": 77,
+        "rain_prob": 55,
+        "condition": "overcast"
+      },
+      {
+        "time": "15:00",
+        "temp": 26.1,
+        "humidity": 79,
+        "rain_prob": 64,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 26.0,
+        "humidity": 80,
+        "rain_prob": 71,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 25.4,
+        "humidity": 86,
+        "rain_prob": 71,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "18:00",
+        "temp": 24.6,
+        "humidity": 87,
+        "rain_prob": 68,
+        "condition": "overcast"
+      },
+      {
+        "time": "19:00",
+        "temp": 24.0,
+        "humidity": 93,
+        "rain_prob": 69,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 22.3,
+        "humidity": 97,
+        "rain_prob": 78,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 21.7,
+        "humidity": 98,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 22.0,
+        "humidity": 96,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 22.1,
+        "humidity": 94,
+        "rain_prob": 99,
+        "condition": "light_rain"
       }
     ]
   },
@@ -1189,24 +3340,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 21.5942,
     "lon": 105.8482,
-    "condition": "cloudy",
-    "weather_text": "Nhiều mây, gió nhẹ",
-    "temp": 22.0,
-    "feels_like": 22.5,
-    "humidity": 75,
-    "wind_speed": 2.8,
-    "wind_dir": "Đông Bắc",
-    "rain_prob": 20,
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn vừa phải, không khí ẩm",
+    "temp": 26.8,
+    "feels_like": 31.4,
+    "humidity": 80,
+    "wind_speed": 6.0,
+    "wind_dir": "Đông Nam",
+    "rain_prob": 7,
     "rain_mm": 0.0,
-    "uv": 4.2,
+    "uv": 5.3,
     "pressure": 1014,
-    "visibility": 9.0,
-    "pm25": 36.8,
-    "pm10": 58.4,
-    "no2": 22.1,
-    "co": 0.88,
-    "o3": 17.0,
-    "so2": 8.5,
+    "visibility": 14.4,
+    "pm25": 9.0,
+    "pm10": 9.5,
+    "no2": 4.8,
+    "co": 0.59,
+    "o3": 107.0,
+    "so2": 17.9,
     "outdoor_activities": [
       "Dã ngoại",
       "Tham quan"
@@ -1219,11 +3370,11 @@ PROVINCES_34 = [
     "district": "Thái Nguyên",
     "latitude": 21.5942,
     "longitude": 105.8482,
-    "temperature": 22.0,
-    "aqi_level": "Kém (Nhạy cảm)",
-    "color": "#f97316",
-    "health_advice": "Trẻ em, người lớn tuổi và người có bệnh hô hấp nên giảm thiểu vận động ngoài trời.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 26.8,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_TN_01",
@@ -1232,16 +3383,17 @@ PROVINCES_34 = [
         "address": "Đường Lương Ngọc Quyến, P. Quang Trung",
         "lat": 21.596,
         "lon": 105.845,
-        "pm25": 36.8,
-        "pm10": 58.4,
-        "aqi": 68,
-        "temp": 22.0,
-        "humidity": 75,
-        "wind": 2.8,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TN"
+        "pm25": 9.0,
+        "pm10": 13.5,
+        "aqi": 16,
+        "temp": 26.8,
+        "humidity": 77,
+        "wind": 6.0,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_TN_02",
@@ -1250,16 +3402,17 @@ PROVINCES_34 = [
         "address": "Phường Đồng Tiến, TX. Phổ Yên",
         "lat": 21.432,
         "lon": 105.885,
-        "pm25": 44.5,
-        "pm10": 68.5,
-        "aqi": 78,
-        "temp": 22.8,
-        "humidity": 73,
-        "wind": 3.0,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TN"
+        "pm25": 8.4,
+        "pm10": 12.6,
+        "aqi": 15,
+        "temp": 26.6,
+        "humidity": 82,
+        "wind": 5.8,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_TN_03",
@@ -1268,16 +3421,187 @@ PROVINCES_34 = [
         "address": "Xã Tân Thái, H. Đại Từ",
         "lat": 21.602,
         "lon": 105.715,
-        "pm25": 18.0,
-        "pm10": 28.5,
-        "aqi": 44,
-        "temp": 21.2,
-        "humidity": 78,
-        "wind": 2.5,
+        "pm25": 10.2,
+        "pm10": 15.3,
+        "aqi": 18,
+        "temp": 27.2,
+        "humidity": 81,
+        "wind": 6.4,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TN"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TN",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 23.0,
+        "humidity": 98,
+        "rain_prob": 45,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 22.9,
+        "humidity": 98,
+        "rain_prob": 47,
+        "condition": "overcast"
+      },
+      {
+        "time": "02:00",
+        "temp": 23.0,
+        "humidity": 97,
+        "rain_prob": 63,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 22.4,
+        "humidity": 96,
+        "rain_prob": 85,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 22.5,
+        "humidity": 97,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 22.2,
+        "humidity": 98,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.3,
+        "humidity": 98,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 22.4,
+        "humidity": 97,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "08:00",
+        "temp": 22.8,
+        "humidity": 96,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 23.8,
+        "humidity": 93,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 25.8,
+        "humidity": 88,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 28.0,
+        "humidity": 76,
+        "rain_prob": 87,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 28.4,
+        "humidity": 73,
+        "rain_prob": 83,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 26.3,
+        "humidity": 83,
+        "rain_prob": 82,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 25.6,
+        "humidity": 86,
+        "rain_prob": 87,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 26.1,
+        "humidity": 82,
+        "rain_prob": 95,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "16:00",
+        "temp": 24.6,
+        "humidity": 89,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 24.0,
+        "humidity": 94,
+        "rain_prob": 97,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 23.8,
+        "humidity": 95,
+        "rain_prob": 90,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 23.5,
+        "humidity": 95,
+        "rain_prob": 86,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 22.3,
+        "humidity": 99,
+        "rain_prob": 89,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 22.4,
+        "humidity": 97,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 22.6,
+        "humidity": 95,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 22.1,
+        "humidity": 88,
+        "rain_prob": 100,
+        "condition": "light_rain"
       }
     ]
   },
@@ -1289,24 +3613,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 21.8533,
     "lon": 106.7583,
-    "condition": "partly_cloudy",
-    "weather_text": "Gió mùa se lạnh, trời tạnh ráo",
-    "temp": 18.0,
-    "feels_like": 17.8,
-    "humidity": 78,
-    "wind_speed": 3.4,
-    "wind_dir": "Bắc - Đông Bắc",
-    "rain_prob": 10,
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn nhẹ lất phất, se lạnh",
+    "temp": 25.6,
+    "feels_like": 29.4,
+    "humidity": 81,
+    "wind_speed": 9.3,
+    "wind_dir": "Đông Bắc",
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 4.0,
-    "pressure": 1016,
-    "visibility": 10.0,
-    "pm25": 20.5,
-    "pm10": 33.2,
-    "no2": 14.2,
-    "co": 0.54,
-    "o3": 26.5,
-    "so2": 4.5,
+    "uv": 4.5,
+    "pressure": 990,
+    "visibility": 14.7,
+    "pm25": 4.6,
+    "pm10": 5.7,
+    "no2": 1.8,
+    "co": 0.43,
+    "o3": 93.0,
+    "so2": 3.2,
     "outdoor_activities": [
       "Tham quan",
       "Mua sắm",
@@ -1320,11 +3644,11 @@ PROVINCES_34 = [
     "district": "Lạng Sơn",
     "latitude": 21.8533,
     "longitude": 106.7583,
-    "temperature": 18.0,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 25.6,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_LS_01",
@@ -1333,16 +3657,17 @@ PROVINCES_34 = [
         "address": "Đường Lê Lợi, P. Vĩnh Trại",
         "lat": 21.855,
         "lon": 106.76,
-        "pm25": 20.5,
-        "pm10": 33.2,
-        "aqi": 49,
-        "temp": 18.0,
-        "humidity": 78,
-        "wind": 3.4,
+        "pm25": 4.6,
+        "pm10": 6.9,
+        "aqi": 8,
+        "temp": 25.6,
+        "humidity": 80,
+        "wind": 9.3,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_LS"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_LS",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_LS_02",
@@ -1351,16 +3676,17 @@ PROVINCES_34 = [
         "address": "Thị trấn Đồng Đăng, H. Cao Lộc",
         "lat": 21.985,
         "lon": 106.712,
-        "pm25": 28.5,
-        "pm10": 44.5,
-        "aqi": 58,
-        "temp": 17.5,
+        "pm25": 5.2,
+        "pm10": 7.8,
+        "aqi": 9,
+        "temp": 25.8,
         "humidity": 80,
-        "wind": 3.6,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_LS"
+        "wind": 9.5,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_LS",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_LS_03",
@@ -1369,16 +3695,187 @@ PROVINCES_34 = [
         "address": "Khu du lịch Mẫu Sơn, H. Lộc Bình",
         "lat": 21.848,
         "lon": 106.915,
-        "pm25": 9.8,
-        "pm10": 15.8,
-        "aqi": 26,
-        "temp": 13.5,
-        "humidity": 88,
-        "wind": 4.2,
+        "pm25": 5.8,
+        "pm10": 8.7,
+        "aqi": 10,
+        "temp": 26.0,
+        "humidity": 82,
+        "wind": 9.7,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_LS"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_LS",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 21.2,
+        "humidity": 98,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "01:00",
+        "temp": 22.8,
+        "humidity": 97,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "02:00",
+        "temp": 22.3,
+        "humidity": 96,
+        "rain_prob": 18,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 21.9,
+        "humidity": 96,
+        "rain_prob": 41,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 21.3,
+        "humidity": 98,
+        "rain_prob": 53,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "05:00",
+        "temp": 21.4,
+        "humidity": 98,
+        "rain_prob": 41,
+        "condition": "overcast"
+      },
+      {
+        "time": "06:00",
+        "temp": 21.4,
+        "humidity": 98,
+        "rain_prob": 18,
+        "condition": "overcast"
+      },
+      {
+        "time": "07:00",
+        "temp": 21.6,
+        "humidity": 97,
+        "rain_prob": 2,
+        "condition": "overcast"
+      },
+      {
+        "time": "08:00",
+        "temp": 22.6,
+        "humidity": 91,
+        "rain_prob": 1,
+        "condition": "overcast"
+      },
+      {
+        "time": "09:00",
+        "temp": 24.2,
+        "humidity": 81,
+        "rain_prob": 7,
+        "condition": "overcast"
+      },
+      {
+        "time": "10:00",
+        "temp": 25.4,
+        "humidity": 76,
+        "rain_prob": 18,
+        "condition": "overcast"
+      },
+      {
+        "time": "11:00",
+        "temp": 25.6,
+        "humidity": 75,
+        "rain_prob": 37,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 23.6,
+        "humidity": 89,
+        "rain_prob": 61,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 26.0,
+        "humidity": 79,
+        "rain_prob": 80,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 23.9,
+        "humidity": 87,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 24.3,
+        "humidity": 85,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 22.8,
+        "humidity": 96,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 22.3,
+        "humidity": 98,
+        "rain_prob": 85,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 21.8,
+        "humidity": 98,
+        "rain_prob": 61,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 21.5,
+        "humidity": 98,
+        "rain_prob": 47,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 20.2,
+        "humidity": 97,
+        "rain_prob": 51,
+        "condition": "overcast"
+      },
+      {
+        "time": "21:00",
+        "temp": 20.3,
+        "humidity": 96,
+        "rain_prob": 65,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 20.2,
+        "humidity": 96,
+        "rain_prob": 75,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 18.9,
+        "humidity": 95,
+        "rain_prob": 79,
+        "condition": "light_rain"
       }
     ]
   },
@@ -1391,23 +3888,23 @@ PROVINCES_34 = [
     "lat": 20.9505,
     "lon": 107.0734,
     "condition": "sunny",
-    "weather_text": "Nắng đẹp vịnh Hạ Long, biển lặng gió mát",
-    "temp": 24.5,
-    "feels_like": 25.2,
-    "humidity": 74,
-    "wind_speed": 4.6,
-    "wind_dir": "Đông Bắc",
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
+    "temp": 28.5,
+    "feels_like": 31.3,
+    "humidity": 69,
+    "wind_speed": 20.0,
+    "wind_dir": "Đông",
     "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 5.8,
-    "pressure": 1013,
-    "visibility": 13.0,
-    "pm25": 23.0,
-    "pm10": 38.0,
-    "no2": 16.5,
-    "co": 0.62,
-    "o3": 26.0,
-    "so2": 8.2,
+    "uv": 6.2,
+    "pressure": 1018,
+    "visibility": 14.5,
+    "pm25": 7.3,
+    "pm10": 9.0,
+    "no2": 1.8,
+    "co": 0.44,
+    "o3": 119.0,
+    "so2": 5.4,
     "outdoor_activities": [
       "Đi biển",
       "Du lịch",
@@ -1422,11 +3919,11 @@ PROVINCES_34 = [
     "district": "Quảng Ninh",
     "latitude": 20.9505,
     "longitude": 107.0734,
-    "temperature": 24.5,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 28.5,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_QN_01",
@@ -1435,16 +3932,17 @@ PROVINCES_34 = [
         "address": "Đường Hạ Long, P. Bãi Cháy",
         "lat": 20.958,
         "lon": 107.035,
-        "pm25": 23.0,
-        "pm10": 38.0,
-        "aqi": 54,
-        "temp": 24.5,
-        "humidity": 74,
-        "wind": 4.6,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_QN"
+        "pm25": 7.9,
+        "pm10": 11.9,
+        "aqi": 14,
+        "temp": 28.7,
+        "humidity": 68,
+        "wind": 20.2,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_QN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_QN_02",
@@ -1453,16 +3951,17 @@ PROVINCES_34 = [
         "address": "Đường Trần Phú, P. Cẩm Thành",
         "lat": 21.018,
         "lon": 107.288,
-        "pm25": 38.0,
-        "pm10": 62.5,
-        "aqi": 72,
-        "temp": 24.0,
-        "humidity": 76,
-        "wind": 4.2,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_QN"
+        "pm25": 6.7,
+        "pm10": 10.1,
+        "aqi": 12,
+        "temp": 28.3,
+        "humidity": 69,
+        "wind": 19.8,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_QN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_QN_03",
@@ -1471,16 +3970,187 @@ PROVINCES_34 = [
         "address": "Huyện Vân Đồn",
         "lat": 21.125,
         "lon": 107.412,
-        "pm25": 14.5,
-        "pm10": 23.5,
-        "aqi": 36,
-        "temp": 23.8,
-        "humidity": 78,
-        "wind": 5.0,
+        "pm25": 6.7,
+        "pm10": 10.1,
+        "aqi": 12,
+        "temp": 28.3,
+        "humidity": 67,
+        "wind": 19.8,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_QN"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_QN",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 25.1,
+        "humidity": 83,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 24.9,
+        "humidity": 87,
+        "rain_prob": 8,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 24.0,
+        "humidity": 94,
+        "rain_prob": 17,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 24.0,
+        "humidity": 91,
+        "rain_prob": 28,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "04:00",
+        "temp": 23.8,
+        "humidity": 91,
+        "rain_prob": 33,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "05:00",
+        "temp": 23.7,
+        "humidity": 90,
+        "rain_prob": 28,
+        "condition": "sunny"
+      },
+      {
+        "time": "06:00",
+        "temp": 23.4,
+        "humidity": 88,
+        "rain_prob": 18,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 24.2,
+        "humidity": 83,
+        "rain_prob": 10,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 25.6,
+        "humidity": 77,
+        "rain_prob": 3,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 27.0,
+        "humidity": 73,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 27.6,
+        "humidity": 71,
+        "rain_prob": 4,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 27.9,
+        "humidity": 70,
+        "rain_prob": 31,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 27.8,
+        "humidity": 73,
+        "rain_prob": 68,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 28.7,
+        "humidity": 68,
+        "rain_prob": 92,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 28.2,
+        "humidity": 71,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 27.7,
+        "humidity": 73,
+        "rain_prob": 76,
+        "condition": "sunny"
+      },
+      {
+        "time": "16:00",
+        "temp": 27.4,
+        "humidity": 74,
+        "rain_prob": 59,
+        "condition": "sunny"
+      },
+      {
+        "time": "17:00",
+        "temp": 26.5,
+        "humidity": 78,
+        "rain_prob": 38,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 25.9,
+        "humidity": 81,
+        "rain_prob": 15,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 25.8,
+        "humidity": 81,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 25.5,
+        "humidity": 82,
+        "rain_prob": 14,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 25.2,
+        "humidity": 82,
+        "rain_prob": 35,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 23.6,
+        "humidity": 91,
+        "rain_prob": 55,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 22.5,
+        "humidity": 94,
+        "rain_prob": 70,
+        "condition": "light_rain"
       }
     ]
   },
@@ -1492,24 +4162,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 21.1861,
     "lon": 106.0763,
-    "condition": "overcast",
-    "weather_text": "Trời âm u, lặng gió, độ ẩm cao",
-    "temp": 22.0,
-    "feels_like": 22.8,
-    "humidity": 76,
-    "wind_speed": 2.8,
-    "wind_dir": "Đông",
-    "rain_prob": 25,
-    "rain_mm": 0.2,
-    "uv": 3.8,
-    "pressure": 1014,
-    "visibility": 8.0,
-    "pm25": 41.2,
-    "pm10": 65.2,
-    "no2": 24.8,
-    "co": 0.94,
-    "o3": 15.2,
-    "so2": 7.8,
+    "condition": "partly_cloudy",
+    "weather_text": "Mây thay đổi, nắng gián đoạn, thời tiết dễ chịu",
+    "temp": 28.5,
+    "feels_like": 32.8,
+    "humidity": 70,
+    "wind_speed": 6.4,
+    "wind_dir": "Đông Bắc",
+    "rain_prob": 5,
+    "rain_mm": 0.0,
+    "uv": 5.7,
+    "pressure": 1017,
+    "visibility": 14.3,
+    "pm25": 11.0,
+    "pm10": 11.6,
+    "no2": 6.0,
+    "co": 0.5,
+    "o3": 113.0,
+    "so2": 19.0,
     "outdoor_activities": [
       "Tham quan di tích"
     ],
@@ -1521,11 +4191,11 @@ PROVINCES_34 = [
     "district": "Bắc Ninh",
     "latitude": 21.1861,
     "longitude": 106.0763,
-    "temperature": 22.0,
-    "aqi_level": "Kém (Nhạy cảm)",
-    "color": "#f97316",
-    "health_advice": "Trẻ em, người lớn tuổi và người có bệnh hô hấp nên giảm thiểu vận động ngoài trời.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 28.5,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_BN_01",
@@ -1534,16 +4204,17 @@ PROVINCES_34 = [
         "address": "Đường Ngô Gia Tự, P. Tiền An",
         "lat": 21.189,
         "lon": 106.072,
-        "pm25": 41.2,
-        "pm10": 65.2,
-        "aqi": 73,
-        "temp": 22.0,
-        "humidity": 76,
-        "wind": 2.8,
+        "pm25": 12.2,
+        "pm10": 18.3,
+        "aqi": 22,
+        "temp": 28.9,
+        "humidity": 70,
+        "wind": 6.8,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_BN"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_BN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_BN_02",
@@ -1552,16 +4223,17 @@ PROVINCES_34 = [
         "address": "KCN Quế Võ, TX. Quế Võ",
         "lat": 21.162,
         "lon": 106.145,
-        "pm25": 49.5,
-        "pm10": 76.5,
-        "aqi": 84,
-        "temp": 22.6,
-        "humidity": 74,
-        "wind": 3.0,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_BN"
+        "pm25": 9.8,
+        "pm10": 14.7,
+        "aqi": 18,
+        "temp": 28.1,
+        "humidity": 67,
+        "wind": 6.0,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_BN",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_BN_03",
@@ -1570,16 +4242,187 @@ PROVINCES_34 = [
         "address": "KCN Yên Phong, H. Yên Phong",
         "lat": 21.225,
         "lon": 105.985,
-        "pm25": 45.0,
-        "pm10": 70.0,
-        "aqi": 79,
-        "temp": 22.4,
+        "pm25": 10.4,
+        "pm10": 15.6,
+        "aqi": 19,
+        "temp": 28.3,
+        "humidity": 68,
+        "wind": 6.2,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_BN",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 24.0,
+        "humidity": 91,
+        "rain_prob": 53,
+        "condition": "overcast"
+      },
+      {
+        "time": "01:00",
+        "temp": 23.1,
+        "humidity": 97,
+        "rain_prob": 69,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 22.5,
+        "humidity": 97,
+        "rain_prob": 82,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "03:00",
+        "temp": 22.5,
+        "humidity": 97,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 22.3,
+        "humidity": 97,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 22.1,
+        "humidity": 98,
+        "rain_prob": 97,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.2,
+        "humidity": 98,
+        "rain_prob": 89,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 22.7,
+        "humidity": 97,
+        "rain_prob": 78,
+        "condition": "light_rain"
+      },
+      {
+        "time": "08:00",
+        "temp": 23.8,
+        "humidity": 91,
+        "rain_prob": 62,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "09:00",
+        "temp": 25.8,
+        "humidity": 82,
+        "rain_prob": 43,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "10:00",
+        "temp": 27.6,
         "humidity": 75,
-        "wind": 2.9,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_BN"
+        "rain_prob": 35,
+        "condition": "overcast"
+      },
+      {
+        "time": "11:00",
+        "temp": 28.3,
+        "humidity": 72,
+        "rain_prob": 46,
+        "condition": "overcast"
+      },
+      {
+        "time": "12:00",
+        "temp": 28.3,
+        "humidity": 71,
+        "rain_prob": 67,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 28.2,
+        "humidity": 72,
+        "rain_prob": 84,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 24.2,
+        "humidity": 91,
+        "rain_prob": 93,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "15:00",
+        "temp": 24.5,
+        "humidity": 90,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 25.0,
+        "humidity": 88,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 24.5,
+        "humidity": 89,
+        "rain_prob": 97,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 24.0,
+        "humidity": 92,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 22.6,
+        "humidity": 96,
+        "rain_prob": 86,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 22.7,
+        "humidity": 98,
+        "rain_prob": 87,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 23.3,
+        "humidity": 94,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 23.0,
+        "humidity": 90,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 22.5,
+        "humidity": 90,
+        "rain_prob": 92,
+        "condition": "light_rain"
       }
     ]
   },
@@ -1591,24 +4434,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 21.3228,
     "lon": 105.228,
-    "condition": "partly_cloudy",
-    "weather_text": "Trời tạnh ráo mát mẻ, nắng nhẹ",
-    "temp": 22.5,
-    "feels_like": 23.0,
-    "humidity": 73,
-    "wind_speed": 2.6,
-    "wind_dir": "Đông Bắc",
-    "rain_prob": 10,
+    "condition": "overcast",
+    "weather_text": "Trời nhiều mây, âm u, không khí mát mẻ",
+    "temp": 26.4,
+    "feels_like": 31.5,
+    "humidity": 79,
+    "wind_speed": 4.1,
+    "wind_dir": "Tây Bắc",
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 4.5,
-    "pressure": 1014,
-    "visibility": 10.0,
-    "pm25": 25.4,
-    "pm10": 40.8,
-    "no2": 15.6,
-    "co": 0.6,
-    "o3": 23.5,
-    "so2": 4.8,
+    "uv": 6.0,
+    "pressure": 1015,
+    "visibility": 14.0,
+    "pm25": 14.9,
+    "pm10": 15.8,
+    "no2": 6.3,
+    "co": 0.5,
+    "o3": 110.0,
+    "so2": 22.4,
     "outdoor_activities": [
       "Tham quan",
       "Đi dạo"
@@ -1621,11 +4464,11 @@ PROVINCES_34 = [
     "district": "Phú Thọ",
     "latitude": 21.3228,
     "longitude": 105.228,
-    "temperature": 22.5,
+    "temperature": 26.4,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_PT_01",
@@ -1634,16 +4477,17 @@ PROVINCES_34 = [
         "address": "Đường Hùng Vương, P. Gia Cẩm",
         "lat": 21.318,
         "lon": 105.412,
-        "pm25": 25.4,
-        "pm10": 40.8,
-        "aqi": 56,
-        "temp": 22.5,
-        "humidity": 73,
-        "wind": 2.6,
+        "pm25": 15.5,
+        "pm10": 23.2,
+        "aqi": 28,
+        "temp": 26.6,
+        "humidity": 79,
+        "wind": 4.3,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_PT"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_PT",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_PT_02",
@@ -1652,16 +4496,17 @@ PROVINCES_34 = [
         "address": "Khu di tích lịch sử Đền Hùng",
         "lat": 21.378,
         "lon": 105.335,
-        "pm25": 16.5,
-        "pm10": 26.5,
-        "aqi": 41,
-        "temp": 22.0,
-        "humidity": 76,
-        "wind": 2.5,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_PT"
+        "pm25": 14.9,
+        "pm10": 22.4,
+        "aqi": 27,
+        "temp": 26.4,
+        "humidity": 77,
+        "wind": 4.1,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_PT",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_PT_03",
@@ -1670,16 +4515,187 @@ PROVINCES_34 = [
         "address": "KCN Thụy Vân, TP. Việt Trì",
         "lat": 21.345,
         "lon": 105.378,
-        "pm25": 36.8,
-        "pm10": 58.0,
-        "aqi": 67,
-        "temp": 23.0,
-        "humidity": 72,
-        "wind": 2.8,
+        "pm25": 14.3,
+        "pm10": 21.5,
+        "aqi": 26,
+        "temp": 26.2,
+        "humidity": 80,
+        "wind": 3.9,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_PT"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_PT",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 22.2,
+        "humidity": 97,
+        "rain_prob": 78,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 22.2,
+        "humidity": 98,
+        "rain_prob": 78,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "02:00",
+        "temp": 21.6,
+        "humidity": 97,
+        "rain_prob": 84,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 21.2,
+        "humidity": 97,
+        "rain_prob": 94,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "04:00",
+        "temp": 21.5,
+        "humidity": 96,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 21.2,
+        "humidity": 98,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 21.0,
+        "humidity": 100,
+        "rain_prob": 99,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 21.4,
+        "humidity": 97,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "08:00",
+        "temp": 22.5,
+        "humidity": 93,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 23.5,
+        "humidity": 89,
+        "rain_prob": 99,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 23.9,
+        "humidity": 87,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 24.2,
+        "humidity": 89,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 25.0,
+        "humidity": 86,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 26.8,
+        "humidity": 78,
+        "rain_prob": 90,
+        "condition": "overcast"
+      },
+      {
+        "time": "14:00",
+        "temp": 27.2,
+        "humidity": 75,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 26.7,
+        "humidity": 76,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 25.2,
+        "humidity": 82,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 24.3,
+        "humidity": 90,
+        "rain_prob": 95,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 23.5,
+        "humidity": 96,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 22.5,
+        "humidity": 97,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 22.6,
+        "humidity": 95,
+        "rain_prob": 99,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 22.1,
+        "humidity": 96,
+        "rain_prob": 97,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 22.0,
+        "humidity": 98,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 22.5,
+        "humidity": 93,
+        "rain_prob": 97,
+        "condition": "light_rain"
       }
     ]
   },
@@ -1691,24 +4707,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 20.6464,
     "lon": 106.0511,
-    "condition": "cloudy",
-    "weather_text": "Nhiều mây, hanh khô nhẹ",
-    "temp": 23.0,
-    "feels_like": 23.5,
-    "humidity": 76,
-    "wind_speed": 3.1,
-    "wind_dir": "Đông",
-    "rain_prob": 15,
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn nhẹ lất phất, se lạnh",
+    "temp": 26.7,
+    "feels_like": 32.5,
+    "humidity": 86,
+    "wind_speed": 2.2,
+    "wind_dir": "Đông Bắc",
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 4.2,
-    "pressure": 1014,
-    "visibility": 9.0,
-    "pm25": 34.0,
-    "pm10": 53.6,
-    "no2": 21.0,
-    "co": 0.78,
-    "o3": 19.5,
-    "so2": 6.2,
+    "uv": 5.9,
+    "pressure": 1016,
+    "visibility": 14.1,
+    "pm25": 13.8,
+    "pm10": 14.8,
+    "no2": 13.7,
+    "co": 0.59,
+    "o3": 100.0,
+    "so2": 27.0,
     "outdoor_activities": [
       "Đi dạo",
       "Chụp ảnh"
@@ -1721,11 +4737,11 @@ PROVINCES_34 = [
     "district": "Hưng Yên",
     "latitude": 20.6464,
     "longitude": 106.0511,
-    "temperature": 23.0,
+    "temperature": 26.7,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_HY_01",
@@ -1734,16 +4750,17 @@ PROVINCES_34 = [
         "address": "Đường Bãi Sậy, P. Quang Trung",
         "lat": 20.648,
         "lon": 106.053,
-        "pm25": 34.0,
-        "pm10": 53.6,
-        "aqi": 64,
-        "temp": 23.0,
-        "humidity": 76,
-        "wind": 3.1,
+        "pm25": 14.4,
+        "pm10": 21.6,
+        "aqi": 26,
+        "temp": 26.9,
+        "humidity": 86,
+        "wind": 2.4,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HY"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HY",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HY_02",
@@ -1752,16 +4769,17 @@ PROVINCES_34 = [
         "address": "Huyện Văn Lâm & Mỹ Hào",
         "lat": 20.935,
         "lon": 106.035,
-        "pm25": 44.2,
-        "pm10": 69.5,
-        "aqi": 77,
-        "temp": 23.5,
-        "humidity": 74,
-        "wind": 3.2,
+        "pm25": 14.4,
+        "pm10": 21.6,
+        "aqi": 26,
+        "temp": 26.9,
+        "humidity": 88,
+        "wind": 2.4,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HY"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HY",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HY_03",
@@ -1770,16 +4788,187 @@ PROVINCES_34 = [
         "address": "Khu đô thị Ecopark, Văn Giang",
         "lat": 20.965,
         "lon": 105.932,
-        "pm25": 21.5,
-        "pm10": 34.5,
-        "aqi": 50,
+        "pm25": 13.2,
+        "pm10": 19.8,
+        "aqi": 24,
+        "temp": 26.5,
+        "humidity": 84,
+        "wind": 2.0,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HY",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 23.4,
+        "humidity": 95,
+        "rain_prob": 82,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "01:00",
+        "temp": 23.8,
+        "humidity": 98,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
         "temp": 22.7,
-        "humidity": 77,
-        "wind": 3.0,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HY"
+        "humidity": 99,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 22.6,
+        "humidity": 96,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 22.6,
+        "humidity": 95,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 22.8,
+        "humidity": 94,
+        "rain_prob": 93,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.7,
+        "humidity": 96,
+        "rain_prob": 83,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 23.2,
+        "humidity": 94,
+        "rain_prob": 73,
+        "condition": "overcast"
+      },
+      {
+        "time": "08:00",
+        "temp": 23.7,
+        "humidity": 92,
+        "rain_prob": 62,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 25.3,
+        "humidity": 85,
+        "rain_prob": 50,
+        "condition": "overcast"
+      },
+      {
+        "time": "10:00",
+        "temp": 26.6,
+        "humidity": 81,
+        "rain_prob": 47,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 28.2,
+        "humidity": 73,
+        "rain_prob": 59,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 26.6,
+        "humidity": 85,
+        "rain_prob": 79,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 26.9,
+        "humidity": 84,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 28.0,
+        "humidity": 76,
+        "rain_prob": 99,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 26.6,
+        "humidity": 79,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 25.3,
+        "humidity": 85,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 25.0,
+        "humidity": 90,
+        "rain_prob": 99,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 23.5,
+        "humidity": 95,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 23.2,
+        "humidity": 95,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 23.2,
+        "humidity": 95,
+        "rain_prob": 93,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 23.1,
+        "humidity": 94,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 22.5,
+        "humidity": 96,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 23.0,
+        "humidity": 93,
+        "rain_prob": 94,
+        "condition": "light_rain"
       }
     ]
   },
@@ -1791,24 +4980,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 20.2506,
     "lon": 105.9744,
-    "condition": "sunny",
-    "weather_text": "Nắng thu dịu nhẹ, non nước Tràng An hữu tình",
-    "temp": 23.5,
-    "feels_like": 24.0,
-    "humidity": 72,
-    "wind_speed": 3.3,
-    "wind_dir": "Đông Bắc",
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn nhẹ lất phất, se lạnh",
+    "temp": 26.3,
+    "feels_like": 30.1,
+    "humidity": 82,
+    "wind_speed": 12.0,
+    "wind_dir": "Bắc",
     "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 5.4,
-    "pressure": 1014,
-    "visibility": 12.0,
-    "pm25": 21.8,
-    "pm10": 36.0,
-    "no2": 14.8,
-    "co": 0.55,
-    "o3": 26.2,
-    "so2": 4.5,
+    "uv": 5.3,
+    "pressure": 1017,
+    "visibility": 14.2,
+    "pm25": 12.4,
+    "pm10": 14.5,
+    "no2": 11.2,
+    "co": 0.56,
+    "o3": 98.0,
+    "so2": 18.0,
     "outdoor_activities": [
       "Du lịch",
       "Đi thuyền",
@@ -1823,11 +5012,11 @@ PROVINCES_34 = [
     "district": "Ninh Bình",
     "latitude": 20.2506,
     "longitude": 105.9744,
-    "temperature": 23.5,
+    "temperature": 26.3,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_NB_01",
@@ -1836,16 +5025,17 @@ PROVINCES_34 = [
         "address": "Đường Lê Thái Tổ, P. Đông Thành",
         "lat": 20.255,
         "lon": 105.978,
-        "pm25": 21.8,
-        "pm10": 36.0,
-        "aqi": 51,
-        "temp": 23.5,
-        "humidity": 72,
-        "wind": 3.3,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_NB"
+        "pm25": 11.2,
+        "pm10": 16.8,
+        "aqi": 20,
+        "temp": 25.9,
+        "humidity": 82,
+        "wind": 11.6,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_NB",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_NB_02",
@@ -1854,16 +5044,17 @@ PROVINCES_34 = [
         "address": "Quần thể danh thắng Tràng An",
         "lat": 20.258,
         "lon": 105.908,
-        "pm25": 13.5,
-        "pm10": 21.5,
-        "aqi": 34,
-        "temp": 23.0,
-        "humidity": 75,
-        "wind": 3.0,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_NB"
+        "pm25": 12.4,
+        "pm10": 18.6,
+        "aqi": 22,
+        "temp": 26.3,
+        "humidity": 79,
+        "wind": 12.0,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_NB",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_NB_03",
@@ -1872,16 +5063,187 @@ PROVINCES_34 = [
         "address": "Huyện Gia Viễn",
         "lat": 20.325,
         "lon": 105.912,
-        "pm25": 33.5,
-        "pm10": 52.8,
-        "aqi": 63,
-        "temp": 23.8,
-        "humidity": 71,
-        "wind": 3.4,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_NB"
+        "pm25": 11.8,
+        "pm10": 17.7,
+        "aqi": 21,
+        "temp": 26.1,
+        "humidity": 84,
+        "wind": 11.8,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_NB",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 22.7,
+        "humidity": 99,
+        "rain_prob": 98,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "01:00",
+        "temp": 22.8,
+        "humidity": 95,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 22.7,
+        "humidity": 96,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 22.8,
+        "humidity": 96,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 22.6,
+        "humidity": 97,
+        "rain_prob": 100,
+        "condition": "sunny"
+      },
+      {
+        "time": "05:00",
+        "temp": 22.5,
+        "humidity": 98,
+        "rain_prob": 85,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.7,
+        "humidity": 95,
+        "rain_prob": 65,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 22.7,
+        "humidity": 94,
+        "rain_prob": 51,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "08:00",
+        "temp": 23.3,
+        "humidity": 91,
+        "rain_prob": 50,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 24.4,
+        "humidity": 87,
+        "rain_prob": 55,
+        "condition": "overcast"
+      },
+      {
+        "time": "10:00",
+        "temp": 25.5,
+        "humidity": 85,
+        "rain_prob": 63,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 27.6,
+        "humidity": 76,
+        "rain_prob": 75,
+        "condition": "overcast"
+      },
+      {
+        "time": "12:00",
+        "temp": 25.7,
+        "humidity": 84,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 26.6,
+        "humidity": 81,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 27.8,
+        "humidity": 77,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 27.8,
+        "humidity": 75,
+        "rain_prob": 99,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 27.3,
+        "humidity": 79,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 25.4,
+        "humidity": 85,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 23.9,
+        "humidity": 92,
+        "rain_prob": 88,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 23.3,
+        "humidity": 96,
+        "rain_prob": 86,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 23.6,
+        "humidity": 94,
+        "rain_prob": 89,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 23.1,
+        "humidity": 95,
+        "rain_prob": 95,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 22.7,
+        "humidity": 97,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 22.4,
+        "humidity": 97,
+        "rain_prob": 100,
+        "condition": "thunderstorm"
       }
     ]
   },
@@ -1893,24 +5255,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 19.8077,
     "lon": 105.7765,
-    "condition": "partly_cloudy",
-    "weather_text": "Mây đan xen nắng, gió biển Sầm Sơn",
-    "temp": 23.8,
-    "feels_like": 24.5,
-    "humidity": 79,
-    "wind_speed": 3.5,
-    "wind_dir": "Đông",
-    "rain_prob": 20,
-    "rain_mm": 0.0,
-    "uv": 4.8,
-    "pressure": 1013,
-    "visibility": 10.0,
-    "pm25": 27.6,
-    "pm10": 43.5,
-    "no2": 18.2,
-    "co": 0.68,
-    "o3": 23.0,
-    "so2": 5.5,
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn dày hạt, trời se lạnh",
+    "temp": 27.7,
+    "feels_like": 31.5,
+    "humidity": 77,
+    "wind_speed": 15.5,
+    "wind_dir": "Đông Bắc",
+    "rain_prob": 10,
+    "rain_mm": 0.2,
+    "uv": 6.3,
+    "pressure": 1017,
+    "visibility": 13.3,
+    "pm25": 10.1,
+    "pm10": 11.4,
+    "no2": 7.5,
+    "co": 0.55,
+    "o3": 102.0,
+    "so2": 19.9,
     "outdoor_activities": [
       "Đi biển",
       "Đi dạo",
@@ -1924,11 +5286,11 @@ PROVINCES_34 = [
     "district": "Thanh Hóa",
     "latitude": 19.8077,
     "longitude": 105.7765,
-    "temperature": 23.8,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 27.7,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_TH_01",
@@ -1937,16 +5299,17 @@ PROVINCES_34 = [
         "address": "Đường Trần Phú, P. Điện Biên",
         "lat": 19.812,
         "lon": 105.782,
-        "pm25": 27.6,
-        "pm10": 43.5,
-        "aqi": 59,
-        "temp": 23.8,
-        "humidity": 79,
-        "wind": 3.5,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TH"
+        "pm25": 10.7,
+        "pm10": 16.0,
+        "aqi": 19,
+        "temp": 27.9,
+        "humidity": 75,
+        "wind": 15.7,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TH",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_TH_02",
@@ -1955,16 +5318,17 @@ PROVINCES_34 = [
         "address": "Đường Hồ Xuân Hương, TP. Sầm Sơn",
         "lat": 19.745,
         "lon": 105.905,
-        "pm25": 18.2,
-        "pm10": 29.5,
-        "aqi": 43,
-        "temp": 24.2,
-        "humidity": 82,
-        "wind": 4.2,
+        "pm25": 9.5,
+        "pm10": 14.2,
+        "aqi": 17,
+        "temp": 27.5,
+        "humidity": 77,
+        "wind": 15.3,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TH"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TH",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_TH_03",
@@ -1973,16 +5337,187 @@ PROVINCES_34 = [
         "address": "Khu kinh tế Nghi Sơn, TX. Nghi Sơn",
         "lat": 19.345,
         "lon": 105.785,
-        "pm25": 43.0,
-        "pm10": 67.5,
-        "aqi": 75,
-        "temp": 24.5,
+        "pm25": 10.1,
+        "pm10": 15.1,
+        "aqi": 18,
+        "temp": 27.7,
+        "humidity": 80,
+        "wind": 15.5,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TH",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 22.6,
+        "humidity": 97,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "01:00",
+        "temp": 23.2,
+        "humidity": 98,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 22.4,
+        "humidity": 97,
+        "rain_prob": 81,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 22.3,
+        "humidity": 98,
+        "rain_prob": 60,
+        "condition": "sunny"
+      },
+      {
+        "time": "04:00",
+        "temp": 22.3,
+        "humidity": 99,
+        "rain_prob": 45,
+        "condition": "sunny"
+      },
+      {
+        "time": "05:00",
+        "temp": 22.3,
+        "humidity": 98,
+        "rain_prob": 42,
+        "condition": "sunny"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.2,
+        "humidity": 98,
+        "rain_prob": 44,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 22.7,
+        "humidity": 92,
+        "rain_prob": 49,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 24.4,
+        "humidity": 86,
+        "rain_prob": 54,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "09:00",
+        "temp": 25.3,
+        "humidity": 83,
+        "rain_prob": 61,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 26.5,
+        "humidity": 78,
+        "rain_prob": 69,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 27.1,
+        "humidity": 78,
+        "rain_prob": 79,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 27.8,
+        "humidity": 74,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 27.7,
+        "humidity": 78,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 27.7,
         "humidity": 77,
-        "wind": 4.0,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TH"
+        "rain_prob": 99,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 26.7,
+        "humidity": 82,
+        "rain_prob": 95,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 25.4,
+        "humidity": 88,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 25.1,
+        "humidity": 93,
+        "rain_prob": 89,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 24.4,
+        "humidity": 96,
+        "rain_prob": 87,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 24.2,
+        "humidity": 95,
+        "rain_prob": 86,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 23.0,
+        "humidity": 97,
+        "rain_prob": 88,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 22.9,
+        "humidity": 98,
+        "rain_prob": 93,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 22.8,
+        "humidity": 97,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 22.2,
+        "humidity": 97,
+        "rain_prob": 98,
+        "condition": "thunderstorm"
       }
     ]
   },
@@ -1994,24 +5529,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 18.6734,
     "lon": 105.6813,
-    "condition": "cloudy",
-    "weather_text": "Nhiều mây, se lạnh, tạnh ráo",
-    "temp": 23.2,
-    "feels_like": 24.0,
-    "humidity": 81,
-    "wind_speed": 3.6,
-    "wind_dir": "Đông Bắc",
-    "rain_prob": 25,
-    "rain_mm": 0.0,
-    "uv": 4.0,
-    "pressure": 1013,
-    "visibility": 9.5,
-    "pm25": 26.2,
-    "pm10": 41.5,
-    "no2": 17.5,
-    "co": 0.64,
-    "o3": 25.1,
-    "so2": 5.2,
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn nhẹ lất phất, se lạnh",
+    "temp": 26.3,
+    "feels_like": 30.1,
+    "humidity": 82,
+    "wind_speed": 11.2,
+    "wind_dir": "Bắc",
+    "rain_prob": 10,
+    "rain_mm": 0.1,
+    "uv": 6.5,
+    "pressure": 1016,
+    "visibility": 13.2,
+    "pm25": 12.3,
+    "pm10": 15.8,
+    "no2": 4.5,
+    "co": 0.57,
+    "o3": 109.0,
+    "so2": 10.1,
     "outdoor_activities": [
       "Tham quan",
       "Du lịch"
@@ -2024,11 +5559,11 @@ PROVINCES_34 = [
     "district": "Nghệ An",
     "latitude": 18.6734,
     "longitude": 105.6813,
-    "temperature": 23.2,
+    "temperature": 26.3,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_NA_01",
@@ -2037,16 +5572,17 @@ PROVINCES_34 = [
         "address": "Đường Lê Mao, P. Lê Mao",
         "lat": 18.675,
         "lon": 105.684,
-        "pm25": 26.2,
-        "pm10": 41.5,
-        "aqi": 57,
-        "temp": 23.2,
-        "humidity": 81,
-        "wind": 3.6,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_NA"
+        "pm25": 11.1,
+        "pm10": 16.6,
+        "aqi": 20,
+        "temp": 25.9,
+        "humidity": 83,
+        "wind": 10.8,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_NA",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_NA_02",
@@ -2055,16 +5591,17 @@ PROVINCES_34 = [
         "address": "Khu di tích Kim Liên, H. Nam Đàn",
         "lat": 18.685,
         "lon": 105.545,
-        "pm25": 15.8,
-        "pm10": 25.0,
-        "aqi": 38,
-        "temp": 23.0,
-        "humidity": 83,
-        "wind": 3.2,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_NA"
+        "pm25": 12.3,
+        "pm10": 18.5,
+        "aqi": 22,
+        "temp": 26.3,
+        "humidity": 80,
+        "wind": 11.2,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_NA",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_NA_03",
@@ -2073,16 +5610,187 @@ PROVINCES_34 = [
         "address": "Đường Bình Minh, TX. Cửa Lò",
         "lat": 18.805,
         "lon": 105.725,
-        "pm25": 19.4,
-        "pm10": 30.8,
-        "aqi": 45,
-        "temp": 23.5,
+        "pm25": 12.3,
+        "pm10": 18.5,
+        "aqi": 22,
+        "temp": 26.3,
+        "humidity": 85,
+        "wind": 11.2,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_NA",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 24.1,
+        "humidity": 97,
+        "rain_prob": 84,
+        "condition": "light_rain"
+      },
+      {
+        "time": "01:00",
+        "temp": 24.7,
+        "humidity": 98,
+        "rain_prob": 78,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 24.3,
+        "humidity": 99,
+        "rain_prob": 77,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 23.8,
+        "humidity": 97,
+        "rain_prob": 79,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 24.1,
+        "humidity": 96,
+        "rain_prob": 82,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 23.7,
+        "humidity": 97,
+        "rain_prob": 86,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 23.7,
+        "humidity": 97,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 23.7,
+        "humidity": 96,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "08:00",
+        "temp": 24.4,
+        "humidity": 93,
+        "rain_prob": 96,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 25.3,
+        "humidity": 87,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 26.1,
         "humidity": 84,
-        "wind": 4.0,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_NA"
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 26.3,
+        "humidity": 83,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 25.7,
+        "humidity": 83,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 26.6,
+        "humidity": 81,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 28.0,
+        "humidity": 76,
+        "rain_prob": 85,
+        "condition": "sunny"
+      },
+      {
+        "time": "15:00",
+        "temp": 27.8,
+        "humidity": 76,
+        "rain_prob": 72,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 27.5,
+        "humidity": 80,
+        "rain_prob": 61,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 27.3,
+        "humidity": 80,
+        "rain_prob": 53,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.8,
+        "humidity": 84,
+        "rain_prob": 46,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 26.5,
+        "humidity": 84,
+        "rain_prob": 45,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 26.3,
+        "humidity": 85,
+        "rain_prob": 53,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 25.2,
+        "humidity": 91,
+        "rain_prob": 68,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 24.3,
+        "humidity": 96,
+        "rain_prob": 80,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 23.8,
+        "humidity": 95,
+        "rain_prob": 89,
+        "condition": "light_rain"
       }
     ]
   },
@@ -2094,24 +5802,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 18.3433,
     "lon": 105.9058,
-    "condition": "overcast",
-    "weather_text": "Trời âm u, mây thấp, gió nhẹ",
-    "temp": 23.0,
-    "feels_like": 23.8,
-    "humidity": 82,
-    "wind_speed": 3.4,
-    "wind_dir": "Đông",
-    "rain_prob": 30,
-    "rain_mm": 0.5,
-    "uv": 3.5,
-    "pressure": 1013,
-    "visibility": 8.5,
-    "pm25": 22.0,
-    "pm10": 35.8,
-    "no2": 15.0,
-    "co": 0.55,
-    "o3": 26.0,
-    "so2": 4.6,
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn nhẹ lất phất, se lạnh",
+    "temp": 28.3,
+    "feels_like": 33.0,
+    "humidity": 71,
+    "wind_speed": 11.3,
+    "wind_dir": "Bắc",
+    "rain_prob": 10,
+    "rain_mm": 0.1,
+    "uv": 6.7,
+    "pressure": 1016,
+    "visibility": 13.4,
+    "pm25": 9.3,
+    "pm10": 12.5,
+    "no2": 4.3,
+    "co": 0.47,
+    "o3": 100.0,
+    "so2": 6.7,
     "outdoor_activities": [
       "Tham quan"
     ],
@@ -2123,11 +5831,11 @@ PROVINCES_34 = [
     "district": "Hà Tĩnh",
     "latitude": 18.3433,
     "longitude": 105.9058,
-    "temperature": 23.0,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 28.3,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_HT_01",
@@ -2136,16 +5844,17 @@ PROVINCES_34 = [
         "address": "Đường Phan Đình Phùng, P. Bắc Hà",
         "lat": 18.345,
         "lon": 105.908,
-        "pm25": 22.0,
-        "pm10": 35.8,
-        "aqi": 52,
-        "temp": 23.0,
-        "humidity": 82,
-        "wind": 3.4,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HT"
+        "pm25": 9.9,
+        "pm10": 14.9,
+        "aqi": 18,
+        "temp": 28.5,
+        "humidity": 70,
+        "wind": 11.5,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HT",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HT_02",
@@ -2154,16 +5863,17 @@ PROVINCES_34 = [
         "address": "Khu kinh tế Vũng Áng, TX. Kỳ Anh",
         "lat": 18.065,
         "lon": 106.385,
-        "pm25": 39.5,
-        "pm10": 62.0,
-        "aqi": 71,
-        "temp": 23.6,
-        "humidity": 80,
-        "wind": 4.5,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HT"
+        "pm25": 10.5,
+        "pm10": 15.8,
+        "aqi": 19,
+        "temp": 28.7,
+        "humidity": 70,
+        "wind": 11.7,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HT",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_HT_03",
@@ -2172,16 +5882,187 @@ PROVINCES_34 = [
         "address": "Huyện Can Lộc",
         "lat": 18.425,
         "lon": 105.752,
-        "pm25": 14.0,
-        "pm10": 22.5,
-        "aqi": 35,
-        "temp": 22.6,
-        "humidity": 85,
-        "wind": 3.0,
+        "pm25": 8.1,
+        "pm10": 12.1,
+        "aqi": 15,
+        "temp": 27.9,
+        "humidity": 71,
+        "wind": 10.9,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_HT"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_HT",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 23.7,
+        "humidity": 96,
+        "rain_prob": 56,
+        "condition": "light_rain"
+      },
+      {
+        "time": "01:00",
+        "temp": 24.2,
+        "humidity": 95,
+        "rain_prob": 55,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 24.1,
+        "humidity": 96,
+        "rain_prob": 60,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 24.1,
+        "humidity": 97,
+        "rain_prob": 69,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 23.4,
+        "humidity": 96,
+        "rain_prob": 76,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 22.5,
+        "humidity": 96,
+        "rain_prob": 79,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.3,
+        "humidity": 97,
+        "rain_prob": 80,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 22.1,
+        "humidity": 96,
+        "rain_prob": 82,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "08:00",
+        "temp": 22.7,
+        "humidity": 96,
+        "rain_prob": 85,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 24.7,
+        "humidity": 89,
+        "rain_prob": 89,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 27.4,
+        "humidity": 77,
+        "rain_prob": 90,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 28.2,
+        "humidity": 72,
+        "rain_prob": 89,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "12:00",
+        "temp": 27.0,
+        "humidity": 78,
+        "rain_prob": 86,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 28.7,
+        "humidity": 69,
+        "rain_prob": 80,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 28.4,
+        "humidity": 70,
+        "rain_prob": 70,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 28.2,
+        "humidity": 72,
+        "rain_prob": 57,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 27.9,
+        "humidity": 75,
+        "rain_prob": 45,
+        "condition": "sunny"
+      },
+      {
+        "time": "17:00",
+        "temp": 27.0,
+        "humidity": 81,
+        "rain_prob": 33,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.2,
+        "humidity": 86,
+        "rain_prob": 21,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 25.8,
+        "humidity": 89,
+        "rain_prob": 14,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 25.4,
+        "humidity": 91,
+        "rain_prob": 13,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 24.8,
+        "humidity": 94,
+        "rain_prob": 16,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 24.3,
+        "humidity": 95,
+        "rain_prob": 25,
+        "condition": "sunny"
+      },
+      {
+        "time": "23:00",
+        "temp": 23.4,
+        "humidity": 96,
+        "rain_prob": 44,
+        "condition": "light_rain"
       }
     ]
   },
@@ -2193,24 +6074,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 16.8167,
     "lon": 107.1,
-    "condition": "light_rain",
-    "weather_text": "Mưa rào nhẹ từng cơn, mát mẻ",
-    "temp": 24.2,
-    "feels_like": 25.0,
-    "humidity": 84,
-    "wind_speed": 3.1,
-    "wind_dir": "Đông",
-    "rain_prob": 50,
-    "rain_mm": 2.8,
-    "uv": 3.2,
-    "pressure": 1012,
-    "visibility": 8.0,
-    "pm25": 18.0,
-    "pm10": 28.5,
-    "no2": 13.0,
-    "co": 0.48,
-    "o3": 28.0,
-    "so2": 3.6,
+    "condition": "sunny",
+    "weather_text": "Trời trong xanh, ít mây, nắng dịu",
+    "temp": 28.3,
+    "feels_like": 32.4,
+    "humidity": 75,
+    "wind_speed": 16.0,
+    "wind_dir": "Đông Bắc",
+    "rain_prob": 5,
+    "rain_mm": 0.0,
+    "uv": 6.8,
+    "pressure": 1014,
+    "visibility": 14.6,
+    "pm25": 6.1,
+    "pm10": 9.5,
+    "no2": 0.6,
+    "co": 0.34,
+    "o3": 83.0,
+    "so2": 1.2,
     "outdoor_activities": [
       "Tham quan di tích lịch sử"
     ],
@@ -2222,11 +6103,11 @@ PROVINCES_34 = [
     "district": "Quảng Trị",
     "latitude": 16.8167,
     "longitude": 107.1,
-    "temperature": 24.2,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 28.3,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_QT_01",
@@ -2235,16 +6116,17 @@ PROVINCES_34 = [
         "address": "Đường Hùng Vương, P. 1",
         "lat": 16.822,
         "lon": 107.098,
-        "pm25": 18.0,
-        "pm10": 28.5,
-        "aqi": 44,
-        "temp": 24.2,
-        "humidity": 84,
-        "wind": 3.1,
+        "pm25": 6.1,
+        "pm10": 9.1,
+        "aqi": 11,
+        "temp": 28.3,
+        "humidity": 74,
+        "wind": 16.0,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_QT"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_QT",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_QT_02",
@@ -2253,16 +6135,17 @@ PROVINCES_34 = [
         "address": "Đường Hai Bà Trưng, P. 2",
         "lat": 16.748,
         "lon": 107.185,
-        "pm25": 15.2,
-        "pm10": 24.0,
-        "aqi": 38,
-        "temp": 24.0,
-        "humidity": 85,
-        "wind": 2.8,
+        "pm25": 4.9,
+        "pm10": 7.4,
+        "aqi": 9,
+        "temp": 27.9,
+        "humidity": 77,
+        "wind": 15.6,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_QT"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_QT",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_QT_03",
@@ -2271,16 +6154,187 @@ PROVINCES_34 = [
         "address": "Thị trấn Lao Bảo, H. Hướng Hóa",
         "lat": 16.615,
         "lon": 106.592,
-        "pm25": 12.0,
-        "pm10": 19.2,
-        "aqi": 31,
-        "temp": 22.8,
-        "humidity": 80,
-        "wind": 3.5,
+        "pm25": 6.1,
+        "pm10": 9.1,
+        "aqi": 11,
+        "temp": 28.3,
+        "humidity": 75,
+        "wind": 16.0,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_QT"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_QT",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 25.5,
+        "humidity": 89,
+        "rain_prob": 14,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 25.6,
+        "humidity": 88,
+        "rain_prob": 8,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 25.1,
+        "humidity": 88,
+        "rain_prob": 19,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 25.0,
+        "humidity": 91,
+        "rain_prob": 39,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 24.6,
+        "humidity": 93,
+        "rain_prob": 55,
+        "condition": "sunny"
+      },
+      {
+        "time": "05:00",
+        "temp": 24.3,
+        "humidity": 91,
+        "rain_prob": 60,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 23.0,
+        "humidity": 99,
+        "rain_prob": 61,
+        "condition": "light_rain"
+      },
+      {
+        "time": "07:00",
+        "temp": 24.1,
+        "humidity": 94,
+        "rain_prob": 63,
+        "condition": "light_rain"
+      },
+      {
+        "time": "08:00",
+        "temp": 26.1,
+        "humidity": 84,
+        "rain_prob": 66,
+        "condition": "light_rain"
+      },
+      {
+        "time": "09:00",
+        "temp": 27.7,
+        "humidity": 76,
+        "rain_prob": 70,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 28.4,
+        "humidity": 73,
+        "rain_prob": 75,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 27.8,
+        "humidity": 74,
+        "rain_prob": 83,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 27.6,
+        "humidity": 78,
+        "rain_prob": 91,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 28.5,
+        "humidity": 73,
+        "rain_prob": 98,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 29.1,
+        "humidity": 72,
+        "rain_prob": 100,
+        "condition": "sunny"
+      },
+      {
+        "time": "15:00",
+        "temp": 28.5,
+        "humidity": 74,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 27.9,
+        "humidity": 77,
+        "rain_prob": 100,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 27.4,
+        "humidity": 78,
+        "rain_prob": 94,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.7,
+        "humidity": 82,
+        "rain_prob": 85,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 26.4,
+        "humidity": 84,
+        "rain_prob": 78,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 26.4,
+        "humidity": 84,
+        "rain_prob": 74,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 26.4,
+        "humidity": 83,
+        "rain_prob": 71,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 26.1,
+        "humidity": 84,
+        "rain_prob": 69,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 25.6,
+        "humidity": 86,
+        "rain_prob": 69,
+        "condition": "light_rain"
       }
     ]
   },
@@ -2293,23 +6347,23 @@ PROVINCES_34 = [
     "lat": 15.1205,
     "lon": 108.7923,
     "condition": "sunny",
-    "weather_text": "Nắng rực rỡ, trời biển xanh ngắt",
-    "temp": 27.0,
-    "feels_like": 28.5,
-    "humidity": 73,
-    "wind_speed": 3.8,
-    "wind_dir": "Đông Nam",
-    "rain_prob": 10,
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
+    "temp": 30.5,
+    "feels_like": 35.2,
+    "humidity": 63,
+    "wind_speed": 12.1,
+    "wind_dir": "Đông Bắc",
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 6.8,
-    "pressure": 1012,
-    "visibility": 12.0,
-    "pm25": 15.5,
-    "pm10": 25.2,
-    "no2": 11.8,
-    "co": 0.42,
-    "o3": 31.5,
-    "so2": 3.4,
+    "uv": 6.9,
+    "pressure": 1014,
+    "visibility": 14.3,
+    "pm25": 9.9,
+    "pm10": 13.8,
+    "no2": 1.2,
+    "co": 0.33,
+    "o3": 100.0,
+    "so2": 2.9,
     "outdoor_activities": [
       "Đi biển",
       "Du lịch đảo",
@@ -2323,11 +6377,11 @@ PROVINCES_34 = [
     "district": "Quảng Ngãi",
     "latitude": 15.1205,
     "longitude": 108.7923,
-    "temperature": 27.0,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 30.5,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_QNG_01",
@@ -2336,16 +6390,17 @@ PROVINCES_34 = [
         "address": "Đường Quang Trung, P. Lê Hồng Phong",
         "lat": 15.122,
         "lon": 108.795,
-        "pm25": 15.5,
-        "pm10": 25.2,
-        "aqi": 39,
-        "temp": 27.0,
-        "humidity": 73,
-        "wind": 3.8,
+        "pm25": 8.7,
+        "pm10": 13.0,
+        "aqi": 16,
+        "temp": 30.1,
+        "humidity": 62,
+        "wind": 11.7,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_QNG"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_QNG",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_QNG_02",
@@ -2354,16 +6409,17 @@ PROVINCES_34 = [
         "address": "Khu kinh tế Dung Quất, H. Bình Sơn",
         "lat": 15.412,
         "lon": 108.785,
-        "pm25": 31.0,
-        "pm10": 49.5,
-        "aqi": 61,
-        "temp": 27.5,
-        "humidity": 71,
-        "wind": 4.2,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_QNG"
+        "pm25": 10.5,
+        "pm10": 15.8,
+        "aqi": 19,
+        "temp": 30.7,
+        "humidity": 62,
+        "wind": 12.3,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_QNG",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_QNG_03",
@@ -2372,16 +6428,187 @@ PROVINCES_34 = [
         "address": "Huyện đảo Lý Sơn",
         "lat": 15.378,
         "lon": 109.125,
-        "pm25": 8.5,
-        "pm10": 13.8,
-        "aqi": 23,
-        "temp": 26.5,
-        "humidity": 76,
-        "wind": 5.2,
+        "pm25": 11.1,
+        "pm10": 16.6,
+        "aqi": 20,
+        "temp": 30.9,
+        "humidity": 61,
+        "wind": 12.5,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_QNG"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_QNG",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 24.4,
+        "humidity": 97,
+        "rain_prob": 39,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 24.6,
+        "humidity": 98,
+        "rain_prob": 29,
+        "condition": "sunny"
+      },
+      {
+        "time": "02:00",
+        "temp": 24.4,
+        "humidity": 99,
+        "rain_prob": 38,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 24.1,
+        "humidity": 100,
+        "rain_prob": 54,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 23.9,
+        "humidity": 99,
+        "rain_prob": 61,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 23.7,
+        "humidity": 99,
+        "rain_prob": 48,
+        "condition": "light_rain"
+      },
+      {
+        "time": "06:00",
+        "temp": 23.6,
+        "humidity": 99,
+        "rain_prob": 26,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "07:00",
+        "temp": 24.9,
+        "humidity": 96,
+        "rain_prob": 14,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 26.9,
+        "humidity": 82,
+        "rain_prob": 22,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 28.7,
+        "humidity": 71,
+        "rain_prob": 39,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 29.8,
+        "humidity": 67,
+        "rain_prob": 53,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 30.3,
+        "humidity": 64,
+        "rain_prob": 59,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 30.6,
+        "humidity": 62,
+        "rain_prob": 61,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 30.4,
+        "humidity": 63,
+        "rain_prob": 61,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 29.9,
+        "humidity": 66,
+        "rain_prob": 56,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 29.2,
+        "humidity": 70,
+        "rain_prob": 49,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 28.5,
+        "humidity": 74,
+        "rain_prob": 43,
+        "condition": "sunny"
+      },
+      {
+        "time": "17:00",
+        "temp": 27.5,
+        "humidity": 79,
+        "rain_prob": 40,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.4,
+        "humidity": 84,
+        "rain_prob": 38,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 26.0,
+        "humidity": 84,
+        "rain_prob": 41,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 25.8,
+        "humidity": 85,
+        "rain_prob": 51,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 25.6,
+        "humidity": 85,
+        "rain_prob": 65,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 24.6,
+        "humidity": 93,
+        "rain_prob": 76,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 23.5,
+        "humidity": 98,
+        "rain_prob": 79,
+        "condition": "light_rain"
       }
     ]
   },
@@ -2394,23 +6621,23 @@ PROVINCES_34 = [
     "lat": 13.9833,
     "lon": 108.0,
     "condition": "sunny",
-    "weather_text": "Nắng cao nguyên Pleiku mát lộng, trời trong vắt",
-    "temp": 22.8,
-    "feels_like": 22.5,
-    "humidity": 65,
-    "wind_speed": 3.5,
-    "wind_dir": "Đông Bắc",
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
+    "temp": 27.7,
+    "feels_like": 28.8,
+    "humidity": 56,
+    "wind_speed": 21.6,
+    "wind_dir": "Đông",
     "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 7.0,
-    "pressure": 1015,
-    "visibility": 14.0,
-    "pm25": 11.5,
-    "pm10": 18.2,
-    "no2": 8.5,
-    "co": 0.32,
-    "o3": 35.8,
-    "so2": 2.2,
+    "uv": 7.2,
+    "pressure": 932,
+    "visibility": 14.7,
+    "pm25": 4.3,
+    "pm10": 5.7,
+    "no2": 0.4,
+    "co": 0.31,
+    "o3": 84.0,
+    "so2": 1.5,
     "outdoor_activities": [
       "Picnic",
       "Chụp ảnh",
@@ -2425,11 +6652,11 @@ PROVINCES_34 = [
     "district": "Gia Lai",
     "latitude": 13.9833,
     "longitude": 108.0,
-    "temperature": 22.8,
+    "temperature": 27.7,
     "aqi_level": "Tốt",
     "color": "#10b981",
-    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động thể chất và thể thao ngoài trời.",
-    "timestamp": "2026-10-31 15:00:00",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_GL_01",
@@ -2438,16 +6665,17 @@ PROVINCES_34 = [
         "address": "Đường Trần Hưng Đạo, P. Tây Sơn",
         "lat": 13.985,
         "lon": 108.005,
-        "pm25": 11.5,
-        "pm10": 18.2,
-        "aqi": 31,
-        "temp": 22.8,
-        "humidity": 65,
-        "wind": 3.5,
+        "pm25": 4.3,
+        "pm10": 6.4,
+        "aqi": 8,
+        "temp": 27.7,
+        "humidity": 53,
+        "wind": 21.6,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_GL"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_GL",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_GL_02",
@@ -2456,16 +6684,17 @@ PROVINCES_34 = [
         "address": "Xã Biển Hồ, TP. Pleiku",
         "lat": 14.048,
         "lon": 108.002,
-        "pm25": 7.2,
-        "pm10": 11.5,
-        "aqi": 19,
-        "temp": 21.5,
-        "humidity": 70,
-        "wind": 3.8,
+        "pm25": 3.1,
+        "pm10": 4.7,
+        "aqi": 6,
+        "temp": 27.3,
+        "humidity": 57,
+        "wind": 21.2,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_GL"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_GL",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_GL_03",
@@ -2474,16 +6703,187 @@ PROVINCES_34 = [
         "address": "Huyện Mang Yang",
         "lat": 14.315,
         "lon": 108.385,
-        "pm25": 5.8,
-        "pm10": 9.2,
-        "aqi": 16,
-        "temp": 19.8,
-        "humidity": 75,
-        "wind": 3.0,
+        "pm25": 3.7,
+        "pm10": 5.6,
+        "aqi": 7,
+        "temp": 27.5,
+        "humidity": 57,
+        "wind": 21.4,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_GL"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_GL",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 20.6,
+        "humidity": 91,
+        "rain_prob": 1,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 20.6,
+        "humidity": 91,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "02:00",
+        "temp": 20.4,
+        "humidity": 92,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "03:00",
+        "temp": 20.2,
+        "humidity": 92,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "04:00",
+        "temp": 20.2,
+        "humidity": 92,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "05:00",
+        "temp": 20.2,
+        "humidity": 92,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "06:00",
+        "temp": 20.2,
+        "humidity": 91,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "07:00",
+        "temp": 21.7,
+        "humidity": 83,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 23.3,
+        "humidity": 78,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 25.1,
+        "humidity": 70,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 26.2,
+        "humidity": 65,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 27.1,
+        "humidity": 61,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 27.4,
+        "humidity": 57,
+        "rain_prob": 1,
+        "condition": "sunny"
+      },
+      {
+        "time": "13:00",
+        "temp": 27.8,
+        "humidity": 55,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 27.5,
+        "humidity": 56,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "15:00",
+        "temp": 26.9,
+        "humidity": 58,
+        "rain_prob": 5,
+        "condition": "sunny"
+      },
+      {
+        "time": "16:00",
+        "temp": 25.8,
+        "humidity": 63,
+        "rain_prob": 6,
+        "condition": "sunny"
+      },
+      {
+        "time": "17:00",
+        "temp": 24.0,
+        "humidity": 71,
+        "rain_prob": 5,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 22.8,
+        "humidity": 76,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 22.1,
+        "humidity": 79,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 21.5,
+        "humidity": 81,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 21.1,
+        "humidity": 82,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 21.1,
+        "humidity": 83,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "23:00",
+        "temp": 21.0,
+        "humidity": 86,
+        "rain_prob": 0,
+        "condition": "sunny"
       }
     ]
   },
@@ -2496,23 +6896,23 @@ PROVINCES_34 = [
     "lat": 12.2388,
     "lon": 109.1967,
     "condition": "sunny",
-    "weather_text": "Nắng vàng biển xanh Nha Trang, sóng êm",
-    "temp": 28.2,
-    "feels_like": 29.5,
-    "humidity": 70,
-    "wind_speed": 4.8,
-    "wind_dir": "Đông",
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
+    "temp": 30.1,
+    "feels_like": 32.9,
+    "humidity": 61,
+    "wind_speed": 21.6,
+    "wind_dir": "Đông Bắc",
     "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 7.8,
-    "pressure": 1012,
-    "visibility": 14.0,
-    "pm25": 12.4,
-    "pm10": 20.8,
-    "no2": 9.8,
-    "co": 0.32,
-    "o3": 36.4,
-    "so2": 2.8,
+    "uv": 7.3,
+    "pressure": 1013,
+    "visibility": 14.4,
+    "pm25": 9.3,
+    "pm10": 13.6,
+    "no2": 0.6,
+    "co": 0.27,
+    "o3": 97.0,
+    "so2": 1.6,
     "outdoor_activities": [
       "Đi biển",
       "Chạy bộ",
@@ -2527,11 +6927,11 @@ PROVINCES_34 = [
     "district": "Khánh Hòa",
     "latitude": 12.2388,
     "longitude": 109.1967,
-    "temperature": 28.2,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 30.1,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_KH_01",
@@ -2540,16 +6940,17 @@ PROVINCES_34 = [
         "address": "Đường Trần Phú, TP. Nha Trang",
         "lat": 12.242,
         "lon": 109.198,
-        "pm25": 12.4,
-        "pm10": 20.8,
-        "aqi": 34,
-        "temp": 28.2,
-        "humidity": 70,
-        "wind": 4.8,
+        "pm25": 10.5,
+        "pm10": 15.8,
+        "aqi": 19,
+        "temp": 30.5,
+        "humidity": 58,
+        "wind": 22.0,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_KH"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_KH",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_KH_02",
@@ -2558,16 +6959,17 @@ PROVINCES_34 = [
         "address": "TP. Cam Ranh",
         "lat": 11.995,
         "lon": 109.135,
-        "pm25": 10.8,
-        "pm10": 17.5,
-        "aqi": 30,
-        "temp": 28.5,
-        "humidity": 68,
-        "wind": 5.0,
+        "pm25": 9.9,
+        "pm10": 14.9,
+        "aqi": 18,
+        "temp": 30.3,
+        "humidity": 58,
+        "wind": 21.8,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_KH"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_KH",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_KH_03",
@@ -2576,16 +6978,187 @@ PROVINCES_34 = [
         "address": "Vịnh Nha Trang",
         "lat": 12.215,
         "lon": 109.255,
-        "pm25": 7.5,
-        "pm10": 12.2,
-        "aqi": 20,
-        "temp": 27.6,
-        "humidity": 73,
-        "wind": 4.6,
+        "pm25": 8.1,
+        "pm10": 12.1,
+        "aqi": 15,
+        "temp": 29.7,
+        "humidity": 61,
+        "wind": 21.2,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_KH"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_KH",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 24.7,
+        "humidity": 87,
+        "rain_prob": 23,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 23.6,
+        "humidity": 96,
+        "rain_prob": 22,
+        "condition": "light_rain"
+      },
+      {
+        "time": "02:00",
+        "temp": 23.4,
+        "humidity": 97,
+        "rain_prob": 46,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 23.4,
+        "humidity": 97,
+        "rain_prob": 82,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 23.4,
+        "humidity": 96,
+        "rain_prob": 100,
+        "condition": "overcast"
+      },
+      {
+        "time": "05:00",
+        "temp": 23.5,
+        "humidity": 94,
+        "rain_prob": 81,
+        "condition": "overcast"
+      },
+      {
+        "time": "06:00",
+        "temp": 23.8,
+        "humidity": 92,
+        "rain_prob": 45,
+        "condition": "overcast"
+      },
+      {
+        "time": "07:00",
+        "temp": 25.1,
+        "humidity": 84,
+        "rain_prob": 22,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 27.1,
+        "humidity": 75,
+        "rain_prob": 29,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 28.6,
+        "humidity": 68,
+        "rain_prob": 49,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 29.3,
+        "humidity": 65,
+        "rain_prob": 65,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 29.5,
+        "humidity": 65,
+        "rain_prob": 71,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 30.0,
+        "humidity": 62,
+        "rain_prob": 74,
+        "condition": "sunny"
+      },
+      {
+        "time": "13:00",
+        "temp": 30.1,
+        "humidity": 61,
+        "rain_prob": 76,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 29.5,
+        "humidity": 66,
+        "rain_prob": 78,
+        "condition": "sunny"
+      },
+      {
+        "time": "15:00",
+        "temp": 29.0,
+        "humidity": 71,
+        "rain_prob": 79,
+        "condition": "sunny"
+      },
+      {
+        "time": "16:00",
+        "temp": 28.6,
+        "humidity": 71,
+        "rain_prob": 80,
+        "condition": "sunny"
+      },
+      {
+        "time": "17:00",
+        "temp": 25.8,
+        "humidity": 89,
+        "rain_prob": 79,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 24.4,
+        "humidity": 94,
+        "rain_prob": 77,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 24.6,
+        "humidity": 96,
+        "rain_prob": 78,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 24.6,
+        "humidity": 95,
+        "rain_prob": 84,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 24.4,
+        "humidity": 94,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "22:00",
+        "temp": 23.8,
+        "humidity": 94,
+        "rain_prob": 98,
+        "condition": "light_rain"
+      },
+      {
+        "time": "23:00",
+        "temp": 24.0,
+        "humidity": 94,
+        "rain_prob": 99,
+        "condition": "light_rain"
       }
     ]
   },
@@ -2597,24 +7170,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 12.6667,
     "lon": 108.05,
-    "condition": "partly_cloudy",
-    "weather_text": "Nắng dịu cà phê Buôn Ma Thuột, gió mát",
-    "temp": 24.5,
-    "feels_like": 25.0,
-    "humidity": 67,
-    "wind_speed": 3.2,
-    "wind_dir": "Đông Bắc",
-    "rain_prob": 10,
+    "condition": "sunny",
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
+    "temp": 29.8,
+    "feels_like": 31.7,
+    "humidity": 55,
+    "wind_speed": 21.5,
+    "wind_dir": "Đông",
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 6.5,
-    "pressure": 1014,
-    "visibility": 12.0,
-    "pm25": 13.8,
-    "pm10": 22.0,
-    "no2": 9.5,
-    "co": 0.35,
-    "o3": 33.2,
-    "so2": 2.6,
+    "uv": 7.3,
+    "pressure": 961,
+    "visibility": 14.6,
+    "pm25": 5.5,
+    "pm10": 7.4,
+    "no2": 0.8,
+    "co": 0.29,
+    "o3": 91.0,
+    "so2": 2.0,
     "outdoor_activities": [
       "Du lịch",
       "Picnic",
@@ -2628,11 +7201,11 @@ PROVINCES_34 = [
     "district": "Đắk Lắk",
     "latitude": 12.6667,
     "longitude": 108.05,
-    "temperature": 24.5,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 29.8,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_DLAK_01",
@@ -2641,16 +7214,17 @@ PROVINCES_34 = [
         "address": "Đường Lê Duẩn, P. Tân Thành",
         "lat": 12.671,
         "lon": 108.048,
-        "pm25": 13.8,
-        "pm10": 22.0,
-        "aqi": 36,
-        "temp": 24.5,
-        "humidity": 67,
-        "wind": 3.2,
+        "pm25": 6.1,
+        "pm10": 9.1,
+        "aqi": 11,
+        "temp": 30.0,
+        "humidity": 58,
+        "wind": 21.7,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DLAK"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DLAK",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_DLAK_02",
@@ -2659,16 +7233,17 @@ PROVINCES_34 = [
         "address": "Thị trấn Liên Sơn, H. Lắk",
         "lat": 12.415,
         "lon": 108.185,
-        "pm25": 8.6,
-        "pm10": 13.8,
-        "aqi": 23,
-        "temp": 23.8,
-        "humidity": 72,
-        "wind": 2.8,
+        "pm25": 6.7,
+        "pm10": 10.1,
+        "aqi": 12,
+        "temp": 30.2,
+        "humidity": 55,
+        "wind": 21.9,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DLAK"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DLAK",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_DLAK_03",
@@ -2677,16 +7252,187 @@ PROVINCES_34 = [
         "address": "Xã Hòa Phú, TP. Buôn Ma Thuột",
         "lat": 12.585,
         "lon": 107.955,
-        "pm25": 22.5,
-        "pm10": 36.0,
-        "aqi": 52,
-        "temp": 25.2,
-        "humidity": 64,
-        "wind": 3.0,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DLAK"
+        "pm25": 4.9,
+        "pm10": 7.4,
+        "aqi": 9,
+        "temp": 29.6,
+        "humidity": 57,
+        "wind": 21.3,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DLAK",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 23.3,
+        "humidity": 87,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 23.1,
+        "humidity": 87,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "02:00",
+        "temp": 22.7,
+        "humidity": 88,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "03:00",
+        "temp": 22.6,
+        "humidity": 89,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "04:00",
+        "temp": 22.7,
+        "humidity": 87,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "05:00",
+        "temp": 22.8,
+        "humidity": 85,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "06:00",
+        "temp": 22.6,
+        "humidity": 88,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "07:00",
+        "temp": 23.8,
+        "humidity": 83,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 25.3,
+        "humidity": 75,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 26.8,
+        "humidity": 68,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 28.0,
+        "humidity": 62,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 28.8,
+        "humidity": 58,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 29.6,
+        "humidity": 55,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "13:00",
+        "temp": 29.8,
+        "humidity": 55,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 29.4,
+        "humidity": 56,
+        "rain_prob": 1,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 28.7,
+        "humidity": 58,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "16:00",
+        "temp": 27.6,
+        "humidity": 60,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "17:00",
+        "temp": 26.2,
+        "humidity": 67,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 25.0,
+        "humidity": 73,
+        "rain_prob": 1,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 24.3,
+        "humidity": 79,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 23.9,
+        "humidity": 84,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "21:00",
+        "temp": 23.8,
+        "humidity": 85,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "22:00",
+        "temp": 23.8,
+        "humidity": 86,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "23:00",
+        "temp": 23.7,
+        "humidity": 86,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
       }
     ]
   },
@@ -2698,24 +7444,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 11.9404,
     "lon": 108.4583,
-    "condition": "partly_cloudy",
-    "weather_text": "Đà Lạt se lạnh ngàn hoa, mây bảng lảng hồ Xuân Hương",
-    "temp": 17.0,
-    "feels_like": 16.5,
-    "humidity": 82,
-    "wind_speed": 2.2,
+    "condition": "sunny",
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
+    "temp": 24.0,
+    "feels_like": 24.1,
+    "humidity": 61,
+    "wind_speed": 21.5,
     "wind_dir": "Đông Bắc",
-    "rain_prob": 10,
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 6.0,
-    "pressure": 1017,
-    "visibility": 11.0,
-    "pm25": 8.5,
-    "pm10": 14.8,
-    "no2": 6.5,
-    "co": 0.25,
-    "o3": 41.2,
-    "so2": 1.8,
+    "uv": 7.7,
+    "pressure": 856,
+    "visibility": 14.7,
+    "pm25": 4.2,
+    "pm10": 5.7,
+    "no2": 0.5,
+    "co": 0.27,
+    "o3": 84.0,
+    "so2": 1.3,
     "outdoor_activities": [
       "Đi dạo",
       "Chụp ảnh",
@@ -2732,11 +7478,11 @@ PROVINCES_34 = [
     "district": "Lâm Đồng",
     "latitude": 11.9404,
     "longitude": 108.4583,
-    "temperature": 17.0,
+    "temperature": 24.0,
     "aqi_level": "Tốt",
     "color": "#10b981",
-    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động thể chất và thể thao ngoài trời.",
-    "timestamp": "2026-10-31 15:00:00",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_LD_01",
@@ -2745,16 +7491,17 @@ PROVINCES_34 = [
         "address": "Đường Trần Quốc Toản, P. 1, TP. Đà Lạt",
         "lat": 11.944,
         "lon": 108.448,
-        "pm25": 8.5,
-        "pm10": 14.8,
-        "aqi": 23,
-        "temp": 17.0,
-        "humidity": 82,
-        "wind": 2.2,
+        "pm25": 5.4,
+        "pm10": 8.1,
+        "aqi": 10,
+        "temp": 24.4,
+        "humidity": 62,
+        "wind": 21.9,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_LD"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_LD",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_LD_02",
@@ -2763,16 +7510,17 @@ PROVINCES_34 = [
         "address": "Đèo Prenn, TP. Đà Lạt",
         "lat": 11.895,
         "lon": 108.442,
-        "pm25": 6.2,
-        "pm10": 10.2,
-        "aqi": 17,
-        "temp": 16.2,
-        "humidity": 86,
-        "wind": 2.5,
+        "pm25": 4.2,
+        "pm10": 6.3,
+        "aqi": 8,
+        "temp": 24.0,
+        "humidity": 63,
+        "wind": 21.5,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_LD"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_LD",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_LD_03",
@@ -2781,16 +7529,187 @@ PROVINCES_34 = [
         "address": "Đường Lê Hồng Phong, TP. Bảo Lộc",
         "lat": 11.545,
         "lon": 107.805,
-        "pm25": 10.4,
-        "pm10": 16.8,
-        "aqi": 27,
-        "temp": 21.0,
-        "humidity": 78,
-        "wind": 2.6,
+        "pm25": 4.8,
+        "pm10": 7.2,
+        "aqi": 9,
+        "temp": 24.2,
+        "humidity": 58,
+        "wind": 21.7,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_LD"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_LD",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 15.7,
+        "humidity": 97,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 15.6,
+        "humidity": 98,
+        "rain_prob": 0,
+        "condition": "foggy"
+      },
+      {
+        "time": "02:00",
+        "temp": 15.4,
+        "humidity": 97,
+        "rain_prob": 4,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "03:00",
+        "temp": 15.2,
+        "humidity": 95,
+        "rain_prob": 9,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "04:00",
+        "temp": 15.4,
+        "humidity": 95,
+        "rain_prob": 12,
+        "condition": "sunny"
+      },
+      {
+        "time": "05:00",
+        "temp": 15.3,
+        "humidity": 96,
+        "rain_prob": 9,
+        "condition": "sunny"
+      },
+      {
+        "time": "06:00",
+        "temp": 15.5,
+        "humidity": 96,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 17.7,
+        "humidity": 91,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "08:00",
+        "temp": 19.7,
+        "humidity": 82,
+        "rain_prob": 0,
+        "condition": "overcast"
+      },
+      {
+        "time": "09:00",
+        "temp": 21.2,
+        "humidity": 73,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "10:00",
+        "temp": 22.6,
+        "humidity": 66,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 23.3,
+        "humidity": 63,
+        "rain_prob": 3,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 24.2,
+        "humidity": 59,
+        "rain_prob": 8,
+        "condition": "sunny"
+      },
+      {
+        "time": "13:00",
+        "temp": 23.9,
+        "humidity": 61,
+        "rain_prob": 12,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 23.3,
+        "humidity": 62,
+        "rain_prob": 14,
+        "condition": "sunny"
+      },
+      {
+        "time": "15:00",
+        "temp": 22.4,
+        "humidity": 63,
+        "rain_prob": 15,
+        "condition": "sunny"
+      },
+      {
+        "time": "16:00",
+        "temp": 21.0,
+        "humidity": 70,
+        "rain_prob": 14,
+        "condition": "sunny"
+      },
+      {
+        "time": "17:00",
+        "temp": 19.1,
+        "humidity": 80,
+        "rain_prob": 10,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 18.0,
+        "humidity": 86,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 17.5,
+        "humidity": 88,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 17.5,
+        "humidity": 89,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 17.8,
+        "humidity": 89,
+        "rain_prob": 1,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 17.9,
+        "humidity": 88,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "23:00",
+        "temp": 17.7,
+        "humidity": 92,
+        "rain_prob": 1,
+        "condition": "overcast"
       }
     ]
   },
@@ -2802,24 +7721,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 10.9574,
     "lon": 106.8427,
-    "condition": "cloudy",
-    "weather_text": "Nhiều mây, trưa chiều hửng nắng ấm",
-    "temp": 31.0,
-    "feels_like": 33.5,
-    "humidity": 68,
-    "wind_speed": 2.9,
-    "wind_dir": "Đông Nam",
-    "rain_prob": 20,
+    "condition": "sunny",
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
+    "temp": 31.9,
+    "feels_like": 38.8,
+    "humidity": 63,
+    "wind_speed": 6.3,
+    "wind_dir": "Đông Bắc",
+    "rain_prob": 5,
     "rain_mm": 0.0,
     "uv": 7.5,
-    "pressure": 1011,
-    "visibility": 10.0,
-    "pm25": 34.2,
-    "pm10": 54.6,
-    "no2": 23.9,
-    "co": 0.92,
-    "o3": 23.5,
-    "so2": 6.1,
+    "pressure": 1010,
+    "visibility": 13.9,
+    "pm25": 16.8,
+    "pm10": 18.3,
+    "no2": 7.8,
+    "co": 0.45,
+    "o3": 159.0,
+    "so2": 20.3,
     "outdoor_activities": [
       "Dã ngoại",
       "Tham quan sinh thái"
@@ -2832,11 +7751,11 @@ PROVINCES_34 = [
     "district": "Đồng Nai",
     "latitude": 10.9574,
     "longitude": 106.8427,
-    "temperature": 31.0,
+    "temperature": 31.9,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_DNAI_01",
@@ -2845,16 +7764,17 @@ PROVINCES_34 = [
         "address": "Đường 30/4, P. Thanh Bình",
         "lat": 10.959,
         "lon": 106.839,
-        "pm25": 34.2,
-        "pm10": 54.6,
-        "aqi": 70,
-        "temp": 31.0,
-        "humidity": 68,
-        "wind": 2.9,
+        "pm25": 15.6,
+        "pm10": 23.4,
+        "aqi": 28,
+        "temp": 31.5,
+        "humidity": 66,
+        "wind": 5.9,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DNAI"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DNAI",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_DNAI_02",
@@ -2863,16 +7783,17 @@ PROVINCES_34 = [
         "address": "KCN Biên Hòa 2, TP. Biên Hòa",
         "lat": 10.925,
         "lon": 106.885,
-        "pm25": 46.5,
-        "pm10": 72.8,
-        "aqi": 82,
-        "temp": 32.0,
-        "humidity": 65,
-        "wind": 3.1,
+        "pm25": 16.8,
+        "pm10": 25.2,
+        "aqi": 30,
+        "temp": 31.9,
+        "humidity": 66,
+        "wind": 6.3,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DNAI"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DNAI",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_DNAI_03",
@@ -2881,16 +7802,187 @@ PROVINCES_34 = [
         "address": "Huyện Tân Phú",
         "lat": 11.425,
         "lon": 107.415,
-        "pm25": 11.0,
-        "pm10": 17.5,
-        "aqi": 28,
-        "temp": 27.5,
-        "humidity": 78,
-        "wind": 2.4,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DNAI"
+        "pm25": 16.2,
+        "pm10": 24.3,
+        "aqi": 29,
+        "temp": 31.7,
+        "humidity": 66,
+        "wind": 6.1,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DNAI",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 25.0,
+        "humidity": 98,
+        "rain_prob": 50,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "01:00",
+        "temp": 25.4,
+        "humidity": 96,
+        "rain_prob": 25,
+        "condition": "overcast"
+      },
+      {
+        "time": "02:00",
+        "temp": 24.9,
+        "humidity": 99,
+        "rain_prob": 14,
+        "condition": "overcast"
+      },
+      {
+        "time": "03:00",
+        "temp": 24.6,
+        "humidity": 96,
+        "rain_prob": 8,
+        "condition": "overcast"
+      },
+      {
+        "time": "04:00",
+        "temp": 24.1,
+        "humidity": 97,
+        "rain_prob": 4,
+        "condition": "overcast"
+      },
+      {
+        "time": "05:00",
+        "temp": 24.0,
+        "humidity": 97,
+        "rain_prob": 1,
+        "condition": "sunny"
+      },
+      {
+        "time": "06:00",
+        "temp": 24.0,
+        "humidity": 98,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 25.1,
+        "humidity": 93,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 26.6,
+        "humidity": 89,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 28.2,
+        "humidity": 82,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 29.7,
+        "humidity": 74,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 30.8,
+        "humidity": 67,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 31.5,
+        "humidity": 64,
+        "rain_prob": 0,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 32.0,
+        "humidity": 63,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 32.3,
+        "humidity": 62,
+        "rain_prob": 23,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "15:00",
+        "temp": 32.1,
+        "humidity": 62,
+        "rain_prob": 52,
+        "condition": "overcast"
+      },
+      {
+        "time": "16:00",
+        "temp": 26.3,
+        "humidity": 93,
+        "rain_prob": 71,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "17:00",
+        "temp": 26.4,
+        "humidity": 92,
+        "rain_prob": 73,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.1,
+        "humidity": 95,
+        "rain_prob": 64,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "19:00",
+        "temp": 26.1,
+        "humidity": 96,
+        "rain_prob": 53,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 26.0,
+        "humidity": 97,
+        "rain_prob": 38,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 25.9,
+        "humidity": 97,
+        "rain_prob": 20,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 25.6,
+        "humidity": 98,
+        "rain_prob": 6,
+        "condition": "sunny"
+      },
+      {
+        "time": "23:00",
+        "temp": 25.4,
+        "humidity": 99,
+        "rain_prob": 1,
+        "condition": "sunny"
       }
     ]
   },
@@ -2903,23 +7995,23 @@ PROVINCES_34 = [
     "lat": 11.31,
     "lon": 106.0983,
     "condition": "sunny",
-    "weather_text": "Nắng ráo đỉnh Núi Bà Đen, gió thoảng",
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
     "temp": 32.0,
-    "feels_like": 34.0,
-    "humidity": 62,
-    "wind_speed": 2.9,
-    "wind_dir": "Đông",
-    "rain_prob": 10,
+    "feels_like": 38.2,
+    "humidity": 60,
+    "wind_speed": 7.7,
+    "wind_dir": "Đông Bắc",
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 8.2,
-    "pressure": 1011,
-    "visibility": 12.0,
-    "pm25": 23.5,
-    "pm10": 38.2,
-    "no2": 16.0,
-    "co": 0.65,
-    "o3": 27.5,
-    "so2": 3.8,
+    "uv": 7.5,
+    "pressure": 1009,
+    "visibility": 14.4,
+    "pm25": 8.4,
+    "pm10": 10.3,
+    "no2": 1.1,
+    "co": 0.4,
+    "o3": 111.0,
+    "so2": 3.1,
     "outdoor_activities": [
       "Leo núi",
       "Du lịch tâm linh",
@@ -2934,10 +8026,10 @@ PROVINCES_34 = [
     "latitude": 11.31,
     "longitude": 106.0983,
     "temperature": 32.0,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_TNINH_01",
@@ -2946,16 +8038,17 @@ PROVINCES_34 = [
         "address": "Đường 30/4, P. 3, TP. Tây Ninh",
         "lat": 11.312,
         "lon": 106.099,
-        "pm25": 23.5,
-        "pm10": 38.2,
-        "aqi": 58,
-        "temp": 32.0,
-        "humidity": 62,
-        "wind": 2.9,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TNINH"
+        "pm25": 9.6,
+        "pm10": 14.4,
+        "aqi": 17,
+        "temp": 32.4,
+        "humidity": 57,
+        "wind": 8.1,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TNINH",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_TNINH_02",
@@ -2964,16 +8057,17 @@ PROVINCES_34 = [
         "address": "Khu du lịch Quốc gia Núi Bà Đen",
         "lat": 11.385,
         "lon": 106.168,
-        "pm25": 11.2,
-        "pm10": 18.0,
-        "aqi": 35,
-        "temp": 25.4,
-        "humidity": 74,
-        "wind": 4.2,
+        "pm25": 8.4,
+        "pm10": 12.6,
+        "aqi": 15,
+        "temp": 32.0,
+        "humidity": 61,
+        "wind": 7.7,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TNINH"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TNINH",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_TNINH_03",
@@ -2982,16 +8076,17 @@ PROVINCES_34 = [
         "address": "KCN Trảng Bàng, TX. Trảng Bàng",
         "lat": 11.035,
         "lon": 106.355,
-        "pm25": 31.0,
-        "pm10": 49.5,
-        "aqi": 68,
-        "temp": 32.5,
-        "humidity": 60,
-        "wind": 3.2,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TNINH"
+        "pm25": 9.6,
+        "pm10": 14.4,
+        "aqi": 17,
+        "temp": 32.4,
+        "humidity": 62,
+        "wind": 8.1,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TNINH",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_TNINH_04",
@@ -3000,16 +8095,187 @@ PROVINCES_34 = [
         "address": "Phường Hiệp Ninh, TP. Tây Ninh",
         "lat": 11.305,
         "lon": 106.135,
-        "pm25": 18.5,
-        "pm10": 29.8,
-        "aqi": 47,
-        "temp": 31.8,
-        "humidity": 64,
-        "wind": 2.8,
+        "pm25": 9.6,
+        "pm10": 14.4,
+        "aqi": 17,
+        "temp": 32.4,
+        "humidity": 62,
+        "wind": 8.1,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_TNINH"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_TNINH",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 24.2,
+        "humidity": 99,
+        "rain_prob": 66,
+        "condition": "light_rain"
+      },
+      {
+        "time": "01:00",
+        "temp": 24.8,
+        "humidity": 98,
+        "rain_prob": 51,
+        "condition": "overcast"
+      },
+      {
+        "time": "02:00",
+        "temp": 24.5,
+        "humidity": 100,
+        "rain_prob": 54,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 24.2,
+        "humidity": 99,
+        "rain_prob": 65,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 24.0,
+        "humidity": 99,
+        "rain_prob": 67,
+        "condition": "overcast"
+      },
+      {
+        "time": "05:00",
+        "temp": 23.8,
+        "humidity": 97,
+        "rain_prob": 52,
+        "condition": "overcast"
+      },
+      {
+        "time": "06:00",
+        "temp": 23.7,
+        "humidity": 97,
+        "rain_prob": 30,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 24.7,
+        "humidity": 94,
+        "rain_prob": 12,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 26.5,
+        "humidity": 86,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 28.1,
+        "humidity": 80,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 29.6,
+        "humidity": 73,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 30.7,
+        "humidity": 67,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 31.5,
+        "humidity": 63,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "13:00",
+        "temp": 32.1,
+        "humidity": 59,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "14:00",
+        "temp": 32.0,
+        "humidity": 60,
+        "rain_prob": 9,
+        "condition": "sunny"
+      },
+      {
+        "time": "15:00",
+        "temp": 31.9,
+        "humidity": 61,
+        "rain_prob": 21,
+        "condition": "sunny"
+      },
+      {
+        "time": "16:00",
+        "temp": 30.6,
+        "humidity": 69,
+        "rain_prob": 33,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 27.1,
+        "humidity": 81,
+        "rain_prob": 44,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.0,
+        "humidity": 93,
+        "rain_prob": 53,
+        "condition": "light_rain"
+      },
+      {
+        "time": "19:00",
+        "temp": 25.7,
+        "humidity": 96,
+        "rain_prob": 57,
+        "condition": "light_rain"
+      },
+      {
+        "time": "20:00",
+        "temp": 25.7,
+        "humidity": 97,
+        "rain_prob": 51,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 25.5,
+        "humidity": 97,
+        "rain_prob": 38,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 25.0,
+        "humidity": 99,
+        "rain_prob": 27,
+        "condition": "sunny"
+      },
+      {
+        "time": "23:00",
+        "temp": 24.8,
+        "humidity": 100,
+        "rain_prob": 18,
+        "condition": "foggy"
       }
     ]
   },
@@ -3022,23 +8288,23 @@ PROVINCES_34 = [
     "lat": 10.4577,
     "lon": 105.6322,
     "condition": "sunny",
-    "weather_text": "Trời nắng thanh bình, đồng sen mát lành",
-    "temp": 30.5,
-    "feels_like": 33.0,
-    "humidity": 73,
-    "wind_speed": 2.6,
-    "wind_dir": "Đông Nam",
-    "rain_prob": 15,
+    "weather_text": "Trời nắng ráo, quang đãng, không mây",
+    "temp": 32.1,
+    "feels_like": 37.1,
+    "humidity": 59,
+    "wind_speed": 13.3,
+    "wind_dir": "Đông",
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 7.4,
-    "pressure": 1011,
-    "visibility": 11.0,
-    "pm25": 19.8,
-    "pm10": 32.5,
-    "no2": 13.5,
-    "co": 0.52,
-    "o3": 25.8,
-    "so2": 3.2,
+    "uv": 7.7,
+    "pressure": 1010,
+    "visibility": 14.2,
+    "pm25": 12.4,
+    "pm10": 15.1,
+    "no2": 2.0,
+    "co": 0.44,
+    "o3": 140.0,
+    "so2": 8.4,
     "outdoor_activities": [
       "Du lịch sinh thái",
       "Chụp ảnh"
@@ -3051,11 +8317,11 @@ PROVINCES_34 = [
     "district": "Đồng Tháp",
     "latitude": 10.4577,
     "longitude": 105.6322,
-    "temperature": 30.5,
+    "temperature": 32.1,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_DT_01",
@@ -3064,16 +8330,17 @@ PROVINCES_34 = [
         "address": "Đường Lý Thường Kiệt, P. 1",
         "lat": 10.459,
         "lon": 105.635,
-        "pm25": 19.8,
-        "pm10": 32.5,
-        "aqi": 49,
-        "temp": 30.5,
-        "humidity": 73,
-        "wind": 2.6,
+        "pm25": 11.2,
+        "pm10": 16.8,
+        "aqi": 20,
+        "temp": 31.7,
+        "humidity": 57,
+        "wind": 12.9,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DT"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DT",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_DT_02",
@@ -3082,16 +8349,17 @@ PROVINCES_34 = [
         "address": "Xã Tân Quy Đông, TP. Sa Đéc",
         "lat": 10.315,
         "lon": 105.755,
-        "pm25": 14.2,
-        "pm10": 23.0,
-        "aqi": 38,
-        "temp": 30.2,
-        "humidity": 74,
-        "wind": 2.5,
+        "pm25": 11.8,
+        "pm10": 17.7,
+        "aqi": 21,
+        "temp": 31.9,
+        "humidity": 62,
+        "wind": 13.1,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DT"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DT",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_DT_03",
@@ -3100,16 +8368,187 @@ PROVINCES_34 = [
         "address": "Thị trấn Tràm Chim, H. Tam Nông",
         "lat": 10.715,
         "lon": 105.515,
-        "pm25": 9.8,
-        "pm10": 16.0,
-        "aqi": 26,
-        "temp": 29.5,
-        "humidity": 78,
-        "wind": 2.4,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_DT"
+        "pm25": 13.6,
+        "pm10": 20.4,
+        "aqi": 24,
+        "temp": 32.5,
+        "humidity": 58,
+        "wind": 13.7,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_DT",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 25.6,
+        "humidity": 97,
+        "rain_prob": 20,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 25.9,
+        "humidity": 95,
+        "rain_prob": 14,
+        "condition": "overcast"
+      },
+      {
+        "time": "02:00",
+        "temp": 25.3,
+        "humidity": 93,
+        "rain_prob": 14,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 25.3,
+        "humidity": 94,
+        "rain_prob": 16,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "04:00",
+        "temp": 24.9,
+        "humidity": 97,
+        "rain_prob": 16,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "05:00",
+        "temp": 24.8,
+        "humidity": 97,
+        "rain_prob": 12,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "06:00",
+        "temp": 24.7,
+        "humidity": 97,
+        "rain_prob": 6,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 25.7,
+        "humidity": 92,
+        "rain_prob": 2,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "08:00",
+        "temp": 27.2,
+        "humidity": 85,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 28.6,
+        "humidity": 76,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 30.0,
+        "humidity": 69,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 31.2,
+        "humidity": 62,
+        "rain_prob": 17,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 31.8,
+        "humidity": 60,
+        "rain_prob": 34,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 32.0,
+        "humidity": 60,
+        "rain_prob": 51,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 31.0,
+        "humidity": 64,
+        "rain_prob": 66,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 30.4,
+        "humidity": 69,
+        "rain_prob": 81,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 27.2,
+        "humidity": 87,
+        "rain_prob": 88,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 27.0,
+        "humidity": 89,
+        "rain_prob": 84,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.4,
+        "humidity": 93,
+        "rain_prob": 74,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 25.9,
+        "humidity": 95,
+        "rain_prob": 61,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 25.7,
+        "humidity": 96,
+        "rain_prob": 45,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 25.8,
+        "humidity": 94,
+        "rain_prob": 28,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 25.8,
+        "humidity": 94,
+        "rain_prob": 14,
+        "condition": "sunny"
+      },
+      {
+        "time": "23:00",
+        "temp": 25.7,
+        "humidity": 95,
+        "rain_prob": 8,
+        "condition": "partly_cloudy"
       }
     ]
   },
@@ -3121,24 +8560,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 10.2537,
     "lon": 105.9722,
-    "condition": "partly_cloudy",
-    "weather_text": "Nắng nhẹ cù lao miệt vườn, gió sông Cổ Chiên",
-    "temp": 30.0,
-    "feels_like": 32.5,
-    "humidity": 74,
-    "wind_speed": 2.7,
-    "wind_dir": "Đông Nam",
-    "rain_prob": 15,
-    "rain_mm": 0.0,
-    "uv": 7.2,
+    "condition": "light_rain",
+    "weather_text": "Mưa phùn nhẹ lất phất, se lạnh",
+    "temp": 31.4,
+    "feels_like": 35.8,
+    "humidity": 62,
+    "wind_speed": 16.7,
+    "wind_dir": "Đông",
+    "rain_prob": 10,
+    "rain_mm": 0.1,
+    "uv": 7.7,
     "pressure": 1011,
-    "visibility": 10.5,
-    "pm25": 20.2,
-    "pm10": 33.6,
-    "no2": 14.1,
-    "co": 0.54,
-    "o3": 25.0,
-    "so2": 3.4,
+    "visibility": 13.0,
+    "pm25": 15.2,
+    "pm10": 17.7,
+    "no2": 2.7,
+    "co": 0.58,
+    "o3": 162.0,
+    "so2": 12.4,
     "outdoor_activities": [
       "Du lịch miệt vườn",
       "Thưởng thức ẩm thực"
@@ -3151,11 +8590,11 @@ PROVINCES_34 = [
     "district": "Vĩnh Long",
     "latitude": 10.2537,
     "longitude": 105.9722,
-    "temperature": 30.0,
+    "temperature": 31.4,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_VL_01",
@@ -3164,16 +8603,17 @@ PROVINCES_34 = [
         "address": "Đường Trưng Nữ Vương, P. 1",
         "lat": 10.255,
         "lon": 105.975,
-        "pm25": 20.2,
-        "pm10": 33.6,
-        "aqi": 50,
-        "temp": 30.0,
-        "humidity": 74,
-        "wind": 2.7,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_VL"
+        "pm25": 14.6,
+        "pm10": 21.9,
+        "aqi": 26,
+        "temp": 31.2,
+        "humidity": 62,
+        "wind": 16.5,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_VL",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_VL_02",
@@ -3182,16 +8622,17 @@ PROVINCES_34 = [
         "address": "Huyện Long Hồ",
         "lat": 10.285,
         "lon": 105.985,
-        "pm25": 13.0,
-        "pm10": 21.2,
-        "aqi": 35,
-        "temp": 29.5,
-        "humidity": 76,
-        "wind": 2.5,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_VL"
+        "pm25": 15.8,
+        "pm10": 23.7,
+        "aqi": 28,
+        "temp": 31.6,
+        "humidity": 65,
+        "wind": 16.9,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_VL",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_VL_03",
@@ -3200,16 +8641,187 @@ PROVINCES_34 = [
         "address": "Xã Hòa Phú, H. Long Hồ",
         "lat": 10.185,
         "lon": 105.955,
-        "pm25": 28.5,
-        "pm10": 45.2,
-        "aqi": 62,
-        "temp": 30.6,
-        "humidity": 72,
-        "wind": 2.9,
+        "pm25": 15.2,
+        "pm10": 22.8,
+        "aqi": 27,
+        "temp": 31.4,
+        "humidity": 59,
+        "wind": 16.7,
         "aqi_level": "Trung bình",
         "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_VL"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_VL",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 24.9,
+        "humidity": 89,
+        "rain_prob": 26,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 25.3,
+        "humidity": 93,
+        "rain_prob": 24,
+        "condition": "overcast"
+      },
+      {
+        "time": "02:00",
+        "temp": 24.8,
+        "humidity": 94,
+        "rain_prob": 22,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 24.7,
+        "humidity": 94,
+        "rain_prob": 19,
+        "condition": "overcast"
+      },
+      {
+        "time": "04:00",
+        "temp": 24.7,
+        "humidity": 94,
+        "rain_prob": 16,
+        "condition": "overcast"
+      },
+      {
+        "time": "05:00",
+        "temp": 24.7,
+        "humidity": 93,
+        "rain_prob": 11,
+        "condition": "overcast"
+      },
+      {
+        "time": "06:00",
+        "temp": 24.6,
+        "humidity": 95,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 25.6,
+        "humidity": 92,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 26.9,
+        "humidity": 86,
+        "rain_prob": 0,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "09:00",
+        "temp": 28.4,
+        "humidity": 77,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 29.7,
+        "humidity": 71,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 30.7,
+        "humidity": 65,
+        "rain_prob": 13,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 31.1,
+        "humidity": 62,
+        "rain_prob": 28,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 31.4,
+        "humidity": 62,
+        "rain_prob": 39,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 31.7,
+        "humidity": 62,
+        "rain_prob": 44,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 30.0,
+        "humidity": 72,
+        "rain_prob": 45,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "16:00",
+        "temp": 29.7,
+        "humidity": 70,
+        "rain_prob": 43,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 28.8,
+        "humidity": 77,
+        "rain_prob": 38,
+        "condition": "sunny"
+      },
+      {
+        "time": "18:00",
+        "temp": 27.7,
+        "humidity": 83,
+        "rain_prob": 30,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 27.3,
+        "humidity": 87,
+        "rain_prob": 22,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 26.6,
+        "humidity": 92,
+        "rain_prob": 16,
+        "condition": "light_rain"
+      },
+      {
+        "time": "21:00",
+        "temp": 26.6,
+        "humidity": 93,
+        "rain_prob": 10,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "22:00",
+        "temp": 26.4,
+        "humidity": 94,
+        "rain_prob": 6,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "23:00",
+        "temp": 26.2,
+        "humidity": 95,
+        "rain_prob": 3,
+        "condition": "partly_cloudy"
       }
     ]
   },
@@ -3222,23 +8834,23 @@ PROVINCES_34 = [
     "lat": 10.3833,
     "lon": 105.4167,
     "condition": "sunny",
-    "weather_text": "Trời trong xanh, rợp bóng rừng tràm Trà Sư",
-    "temp": 31.0,
-    "feels_like": 33.2,
-    "humidity": 71,
-    "wind_speed": 2.8,
+    "weather_text": "Trời trong xanh, ít mây, nắng dịu",
+    "temp": 32.4,
+    "feels_like": 36.8,
+    "humidity": 56,
+    "wind_speed": 15.0,
     "wind_dir": "Đông",
-    "rain_prob": 10,
+    "rain_prob": 5,
     "rain_mm": 0.0,
-    "uv": 7.6,
+    "uv": 7.7,
     "pressure": 1011,
-    "visibility": 12.0,
-    "pm25": 18.6,
-    "pm10": 30.5,
-    "no2": 12.8,
-    "co": 0.49,
-    "o3": 27.2,
-    "so2": 3.0,
+    "visibility": 14.2,
+    "pm25": 12.4,
+    "pm10": 15.1,
+    "no2": 2.0,
+    "co": 0.53,
+    "o3": 140.0,
+    "so2": 8.4,
     "outdoor_activities": [
       "Du lịch",
       "Chụp ảnh",
@@ -3252,11 +8864,11 @@ PROVINCES_34 = [
     "district": "An Giang",
     "latitude": 10.3833,
     "longitude": 105.4167,
-    "temperature": 31.0,
+    "temperature": 32.4,
     "aqi_level": "Trung bình",
     "color": "#f59e0b",
     "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_AG_01",
@@ -3265,16 +8877,17 @@ PROVINCES_34 = [
         "address": "Đường Hà Hoàng Hổ, P. Mỹ Xuyên",
         "lat": 10.385,
         "lon": 105.42,
-        "pm25": 18.6,
-        "pm10": 30.5,
-        "aqi": 48,
-        "temp": 31.0,
-        "humidity": 71,
-        "wind": 2.8,
+        "pm25": 11.2,
+        "pm10": 16.8,
+        "aqi": 20,
+        "temp": 32.0,
+        "humidity": 56,
+        "wind": 14.6,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_AG"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_AG",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_AG_02",
@@ -3283,16 +8896,17 @@ PROVINCES_34 = [
         "address": "Phường Núi Sam, TP. Châu Đốc",
         "lat": 10.685,
         "lon": 105.155,
-        "pm25": 15.0,
-        "pm10": 24.5,
-        "aqi": 40,
-        "temp": 30.8,
-        "humidity": 72,
-        "wind": 2.9,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_AG"
+        "pm25": 13.0,
+        "pm10": 19.5,
+        "aqi": 23,
+        "temp": 32.6,
+        "humidity": 56,
+        "wind": 15.2,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_AG",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_AG_03",
@@ -3301,16 +8915,187 @@ PROVINCES_34 = [
         "address": "Xã Văn Giáo, TX. Tịnh Biên",
         "lat": 10.512,
         "lon": 105.052,
-        "pm25": 9.2,
-        "pm10": 15.0,
-        "aqi": 25,
-        "temp": 29.6,
-        "humidity": 76,
-        "wind": 2.6,
-        "aqi_level": "Tốt",
-        "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_AG"
+        "pm25": 12.4,
+        "pm10": 18.6,
+        "aqi": 22,
+        "temp": 32.4,
+        "humidity": 53,
+        "wind": 15.0,
+        "aqi_level": "Trung bình",
+        "color": "#f59e0b",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_AG",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 25.8,
+        "humidity": 95,
+        "rain_prob": 20,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "01:00",
+        "temp": 25.9,
+        "humidity": 88,
+        "rain_prob": 20,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "02:00",
+        "temp": 25.0,
+        "humidity": 94,
+        "rain_prob": 24,
+        "condition": "light_rain"
+      },
+      {
+        "time": "03:00",
+        "temp": 25.1,
+        "humidity": 95,
+        "rain_prob": 29,
+        "condition": "light_rain"
+      },
+      {
+        "time": "04:00",
+        "temp": 25.0,
+        "humidity": 96,
+        "rain_prob": 31,
+        "condition": "overcast"
+      },
+      {
+        "time": "05:00",
+        "temp": 24.9,
+        "humidity": 97,
+        "rain_prob": 24,
+        "condition": "overcast"
+      },
+      {
+        "time": "06:00",
+        "temp": 24.8,
+        "humidity": 96,
+        "rain_prob": 13,
+        "condition": "overcast"
+      },
+      {
+        "time": "07:00",
+        "temp": 25.7,
+        "humidity": 91,
+        "rain_prob": 4,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "08:00",
+        "temp": 27.3,
+        "humidity": 83,
+        "rain_prob": 1,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "09:00",
+        "temp": 29.0,
+        "humidity": 74,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "10:00",
+        "temp": 30.3,
+        "humidity": 66,
+        "rain_prob": 2,
+        "condition": "sunny"
+      },
+      {
+        "time": "11:00",
+        "temp": 31.4,
+        "humidity": 61,
+        "rain_prob": 5,
+        "condition": "sunny"
+      },
+      {
+        "time": "12:00",
+        "temp": 32.2,
+        "humidity": 57,
+        "rain_prob": 10,
+        "condition": "light_rain"
+      },
+      {
+        "time": "13:00",
+        "temp": 32.5,
+        "humidity": 56,
+        "rain_prob": 20,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 32.5,
+        "humidity": 57,
+        "rain_prob": 42,
+        "condition": "light_rain"
+      },
+      {
+        "time": "15:00",
+        "temp": 30.3,
+        "humidity": 68,
+        "rain_prob": 69,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 26.1,
+        "humidity": 87,
+        "rain_prob": 86,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 26.5,
+        "humidity": 87,
+        "rain_prob": 83,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.1,
+        "humidity": 92,
+        "rain_prob": 70,
+        "condition": "sunny"
+      },
+      {
+        "time": "19:00",
+        "temp": 25.9,
+        "humidity": 93,
+        "rain_prob": 55,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 25.7,
+        "humidity": 94,
+        "rain_prob": 41,
+        "condition": "sunny"
+      },
+      {
+        "time": "21:00",
+        "temp": 25.7,
+        "humidity": 95,
+        "rain_prob": 27,
+        "condition": "sunny"
+      },
+      {
+        "time": "22:00",
+        "temp": 25.6,
+        "humidity": 95,
+        "rain_prob": 16,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "23:00",
+        "temp": 25.4,
+        "humidity": 96,
+        "rain_prob": 12,
+        "condition": "overcast"
       }
     ]
   },
@@ -3322,24 +9107,24 @@ PROVINCES_34 = [
     "type": "Tỉnh",
     "lat": 9.1769,
     "lon": 105.15,
-    "condition": "partly_cloudy",
-    "weather_text": "Gió biển Đất Mũi lộng mát, không khí trong lành",
-    "temp": 29.5,
-    "feels_like": 31.5,
-    "humidity": 78,
-    "wind_speed": 4.5,
-    "wind_dir": "Đông Nam",
-    "rain_prob": 25,
-    "rain_mm": 0.2,
-    "uv": 6.8,
+    "condition": "overcast",
+    "weather_text": "Trời nhiều mây, âm u, không khí mát mẻ",
+    "temp": 31.6,
+    "feels_like": 36.8,
+    "humidity": 68,
+    "wind_speed": 18.9,
+    "wind_dir": "Đông",
+    "rain_prob": 5,
+    "rain_mm": 0.0,
+    "uv": 5.0,
     "pressure": 1010,
-    "visibility": 11.5,
-    "pm25": 14.0,
-    "pm10": 23.5,
-    "no2": 10.2,
-    "co": 0.38,
-    "o3": 30.5,
-    "so2": 2.6,
+    "visibility": 14.3,
+    "pm25": 10.2,
+    "pm10": 13.4,
+    "no2": 2.0,
+    "co": 0.3,
+    "o3": 95.0,
+    "so2": 3.8,
     "outdoor_activities": [
       "Du lịch sinh thái",
       "Chụp ảnh Đất Mũi"
@@ -3352,11 +9137,11 @@ PROVINCES_34 = [
     "district": "Cà Mau",
     "latitude": 9.1769,
     "longitude": 105.15,
-    "temperature": 29.5,
-    "aqi_level": "Trung bình",
-    "color": "#f59e0b",
-    "health_advice": "Chất lượng không khí ở mức chấp nhận được đối với đa số người dân.",
-    "timestamp": "2026-10-31 15:00:00",
+    "temperature": 31.6,
+    "aqi_level": "Tốt",
+    "color": "#10b981",
+    "health_advice": "Chất lượng không khí trong lành, lý tưởng cho mọi hoạt động ngoài trời.",
+    "timestamp": "2026-11-08 12:45",
     "stations": [
       {
         "id": "VN_CM_01",
@@ -3365,16 +9150,17 @@ PROVINCES_34 = [
         "address": "Đường Hùng Vương, P. 5",
         "lat": 9.18,
         "lon": 105.155,
-        "pm25": 14.0,
-        "pm10": 23.5,
-        "aqi": 42,
-        "temp": 29.5,
-        "humidity": 78,
-        "wind": 4.5,
+        "pm25": 10.8,
+        "pm10": 16.2,
+        "aqi": 19,
+        "temp": 31.8,
+        "humidity": 68,
+        "wind": 19.1,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_CM"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_CM",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_CM_02",
@@ -3383,16 +9169,17 @@ PROVINCES_34 = [
         "address": "Xã Đất Mũi, H. Ngọc Hiển",
         "lat": 8.615,
         "lon": 104.725,
-        "pm25": 8.4,
-        "pm10": 13.8,
-        "aqi": 22,
-        "temp": 28.5,
-        "humidity": 82,
-        "wind": 5.2,
+        "pm25": 9.6,
+        "pm10": 14.4,
+        "aqi": 17,
+        "temp": 31.4,
+        "humidity": 70,
+        "wind": 18.7,
         "aqi_level": "Tốt",
         "color": "#10b981",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_CM"
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_CM",
+        "timestamp": "2026-11-08 12:45:43"
       },
       {
         "id": "VN_CM_03",
@@ -3401,16 +9188,187 @@ PROVINCES_34 = [
         "address": "Xã Khánh An, H. U Minh",
         "lat": 9.285,
         "lon": 105.015,
-        "pm25": 26.5,
-        "pm10": 42.0,
-        "aqi": 58,
-        "temp": 30.0,
-        "humidity": 76,
-        "wind": 4.2,
-        "aqi_level": "Trung bình",
-        "color": "#f59e0b",
-        "status": "Đang hoạt động 24/7",
-        "province_id": "VN_CM"
+        "pm25": 9.0,
+        "pm10": 13.5,
+        "aqi": 16,
+        "temp": 31.2,
+        "humidity": 71,
+        "wind": 18.5,
+        "aqi_level": "Tốt",
+        "color": "#10b981",
+        "status": "Đang hoạt động 24/7 (Realtime Live)",
+        "province_id": "VN_CM",
+        "timestamp": "2026-11-08 12:45:43"
+      }
+    ],
+    "hourly_forecast_24h": [
+      {
+        "time": "00:00",
+        "temp": 25.8,
+        "humidity": 91,
+        "rain_prob": 20,
+        "condition": "sunny"
+      },
+      {
+        "time": "01:00",
+        "temp": 26.3,
+        "humidity": 89,
+        "rain_prob": 16,
+        "condition": "sunny"
+      },
+      {
+        "time": "02:00",
+        "temp": 26.1,
+        "humidity": 90,
+        "rain_prob": 14,
+        "condition": "overcast"
+      },
+      {
+        "time": "03:00",
+        "temp": 26.0,
+        "humidity": 90,
+        "rain_prob": 12,
+        "condition": "overcast"
+      },
+      {
+        "time": "04:00",
+        "temp": 25.8,
+        "humidity": 91,
+        "rain_prob": 10,
+        "condition": "light_rain"
+      },
+      {
+        "time": "05:00",
+        "temp": 25.4,
+        "humidity": 92,
+        "rain_prob": 6,
+        "condition": "sunny"
+      },
+      {
+        "time": "06:00",
+        "temp": 25.2,
+        "humidity": 92,
+        "rain_prob": 1,
+        "condition": "sunny"
+      },
+      {
+        "time": "07:00",
+        "temp": 26.3,
+        "humidity": 89,
+        "rain_prob": 0,
+        "condition": "sunny"
+      },
+      {
+        "time": "08:00",
+        "temp": 27.6,
+        "humidity": 82,
+        "rain_prob": 4,
+        "condition": "sunny"
+      },
+      {
+        "time": "09:00",
+        "temp": 28.6,
+        "humidity": 77,
+        "rain_prob": 12,
+        "condition": "light_rain"
+      },
+      {
+        "time": "10:00",
+        "temp": 29.4,
+        "humidity": 73,
+        "rain_prob": 25,
+        "condition": "light_rain"
+      },
+      {
+        "time": "11:00",
+        "temp": 30.1,
+        "humidity": 74,
+        "rain_prob": 47,
+        "condition": "light_rain"
+      },
+      {
+        "time": "12:00",
+        "temp": 30.8,
+        "humidity": 71,
+        "rain_prob": 73,
+        "condition": "sunny"
+      },
+      {
+        "time": "13:00",
+        "temp": 31.4,
+        "humidity": 69,
+        "rain_prob": 92,
+        "condition": "light_rain"
+      },
+      {
+        "time": "14:00",
+        "temp": 27.5,
+        "humidity": 87,
+        "rain_prob": 98,
+        "condition": "thunderstorm"
+      },
+      {
+        "time": "15:00",
+        "temp": 27.5,
+        "humidity": 85,
+        "rain_prob": 97,
+        "condition": "light_rain"
+      },
+      {
+        "time": "16:00",
+        "temp": 26.7,
+        "humidity": 85,
+        "rain_prob": 90,
+        "condition": "light_rain"
+      },
+      {
+        "time": "17:00",
+        "temp": 26.5,
+        "humidity": 88,
+        "rain_prob": 76,
+        "condition": "light_rain"
+      },
+      {
+        "time": "18:00",
+        "temp": 26.2,
+        "humidity": 89,
+        "rain_prob": 58,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "19:00",
+        "temp": 26.4,
+        "humidity": 88,
+        "rain_prob": 41,
+        "condition": "sunny"
+      },
+      {
+        "time": "20:00",
+        "temp": 26.6,
+        "humidity": 87,
+        "rain_prob": 28,
+        "condition": "partly_cloudy"
+      },
+      {
+        "time": "21:00",
+        "temp": 26.8,
+        "humidity": 86,
+        "rain_prob": 17,
+        "condition": "overcast"
+      },
+      {
+        "time": "22:00",
+        "temp": 26.7,
+        "humidity": 85,
+        "rain_prob": 10,
+        "condition": "overcast"
+      },
+      {
+        "time": "23:00",
+        "temp": 26.6,
+        "humidity": 85,
+        "rain_prob": 9,
+        "condition": "overcast"
       }
     ]
   }
@@ -3425,16 +9383,17 @@ STATIONS_CONFIG = {
       "address": "Số 1 Hoàng Hoa Thám, P. Ba Đình",
       "lat": 21.0342,
       "lon": 105.836,
-      "pm25": 38.5,
-      "pm10": 58.2,
-      "aqi": 69,
-      "temp": 22.4,
-      "humidity": 72,
-      "wind": 3.2,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HN"
+      "pm25": 11.0,
+      "pm10": 16.5,
+      "aqi": 20,
+      "temp": 26.2,
+      "humidity": 82,
+      "wind": 1.9,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HN_02",
@@ -3443,16 +9402,17 @@ STATIONS_CONFIG = {
       "address": "Số 2 Hàng Trống, P. Hàng Trống",
       "lat": 21.0289,
       "lon": 105.8524,
-      "pm25": 42.1,
-      "pm10": 63.5,
-      "aqi": 74,
-      "temp": 22.8,
-      "humidity": 71,
-      "wind": 2.8,
+      "pm25": 12.2,
+      "pm10": 18.3,
+      "aqi": 22,
+      "temp": 26.6,
+      "humidity": 82,
+      "wind": 2.3,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HN"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HN_03",
@@ -3461,34 +9421,112 @@ STATIONS_CONFIG = {
       "address": "Đường Cầu Giấy, P. Dịch Vọng",
       "lat": 21.0365,
       "lon": 105.7952,
-      "pm25": 48.0,
-      "pm10": 72.8,
-      "aqi": 82,
-      "temp": 23.1,
-      "humidity": 69,
-      "wind": 3.5,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HN"
+      "pm25": 11.0,
+      "pm10": 16.5,
+      "aqi": 20,
+      "temp": 26.2,
+      "humidity": 83,
+      "wind": 1.9,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HN_04",
-      "name": "Trạm Sóc Sơn - Nền Sinh thái Ngoại ô",
-      "type": "Trạm nền sinh thái",
-      "address": "Xã Nam Sơn, H. Sóc Sơn",
-      "lat": 21.312,
-      "lon": 105.845,
-      "pm25": 22.0,
-      "pm10": 34.0,
-      "aqi": 45,
-      "temp": 21.5,
-      "humidity": 75,
-      "wind": 3.0,
+      "name": "Trạm Đống Đa - Nguyễn Lương Bằng",
+      "type": "Khu dân cư mật độ cao",
+      "address": "Đường Nguyễn Lương Bằng, Q. Đống Đa",
+      "lat": 21.0189,
+      "lon": 105.8267,
+      "pm25": 11.0,
+      "pm10": 16.5,
+      "aqi": 20,
+      "temp": 26.2,
+      "humidity": 79,
+      "wind": 1.9,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HN"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HN",
+      "timestamp": "2026-11-08 12:45:43"
+    },
+    {
+      "id": "VN_HN_05",
+      "name": "Trạm Hai Bà Trưng - Minh Khai",
+      "type": "Giao thông và dân cư",
+      "address": "Đường Minh Khai, Q. Hai Bà Trưng",
+      "lat": 21.0025,
+      "lon": 105.8569,
+      "pm25": 11.0,
+      "pm10": 16.5,
+      "aqi": 20,
+      "temp": 26.2,
+      "humidity": 78,
+      "wind": 1.9,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HN",
+      "timestamp": "2026-11-08 12:45:43"
+    },
+    {
+      "id": "VN_HN_06",
+      "name": "Trạm Tây Hồ - Lạc Long Quân",
+      "type": "Đô thị sinh thái hồ",
+      "address": "Đường Lạc Long Quân, Q. Tây Hồ",
+      "lat": 21.0652,
+      "lon": 105.8123,
+      "pm25": 9.8,
+      "pm10": 14.7,
+      "aqi": 18,
+      "temp": 25.8,
+      "humidity": 77,
+      "wind": 1.5,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HN",
+      "timestamp": "2026-11-08 12:45:43"
+    },
+    {
+      "id": "VN_HN_07",
+      "name": "Trạm Long Biên - Nguyễn Văn Cừ",
+      "type": "Khu cửa ngõ phía Đông",
+      "address": "Đường Nguyễn Văn Cừ, Q. Long Biên",
+      "lat": 21.0489,
+      "lon": 105.8785,
+      "pm25": 11.0,
+      "pm10": 16.5,
+      "aqi": 20,
+      "temp": 26.2,
+      "humidity": 78,
+      "wind": 1.9,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HN",
+      "timestamp": "2026-11-08 12:45:43"
+    },
+    {
+      "id": "VN_HN_08",
+      "name": "Trạm Hà Đông - Quang Trung",
+      "type": "Khu đô thị vệ tinh",
+      "address": "Đường Quang Trung, Q. Hà Đông",
+      "lat": 20.9712,
+      "lon": 105.7725,
+      "pm25": 10.4,
+      "pm10": 15.6,
+      "aqi": 19,
+      "temp": 26.0,
+      "humidity": 79,
+      "wind": 1.7,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HN",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_HP": [
@@ -3499,16 +9537,17 @@ STATIONS_CONFIG = {
       "address": "Đường Tam Bạc, P. Phan Bội Châu",
       "lat": 20.8601,
       "lon": 106.6782,
-      "pm25": 32.0,
-      "pm10": 51.5,
-      "aqi": 65,
-      "temp": 23.0,
-      "humidity": 78,
-      "wind": 4.5,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HP"
+      "pm25": 6.1,
+      "pm10": 9.1,
+      "aqi": 11,
+      "temp": 28.7,
+      "humidity": 72,
+      "wind": 16.4,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HP",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HP_02",
@@ -3517,16 +9556,17 @@ STATIONS_CONFIG = {
       "address": "Bán đảo Đình Vũ, Q. Hải An",
       "lat": 20.8415,
       "lon": 106.7582,
-      "pm25": 41.5,
-      "pm10": 64.2,
-      "aqi": 76,
-      "temp": 23.5,
-      "humidity": 76,
-      "wind": 4.8,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HP"
+      "pm25": 5.5,
+      "pm10": 8.2,
+      "aqi": 10,
+      "temp": 28.5,
+      "humidity": 70,
+      "wind": 16.2,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HP",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HP_03",
@@ -3535,16 +9575,17 @@ STATIONS_CONFIG = {
       "address": "Khu 2 Đồ Sơn, Q. Đồ Sơn",
       "lat": 20.7125,
       "lon": 106.7891,
-      "pm25": 16.2,
-      "pm10": 26.5,
-      "aqi": 40,
-      "temp": 22.8,
-      "humidity": 80,
-      "wind": 5.2,
+      "pm25": 4.9,
+      "pm10": 7.4,
+      "aqi": 9,
+      "temp": 28.3,
+      "humidity": 68,
+      "wind": 16.0,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HP"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HP",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_CB": [
@@ -3555,16 +9596,17 @@ STATIONS_CONFIG = {
       "address": "Đường Kim Đồng, P. Hợp Giang",
       "lat": 22.668,
       "lon": 106.255,
-      "pm25": 15.0,
-      "pm10": 24.5,
-      "aqi": 38,
-      "temp": 17.5,
-      "humidity": 84,
-      "wind": 2.0,
+      "pm25": 7.1,
+      "pm10": 10.6,
+      "aqi": 13,
+      "temp": 26.2,
+      "humidity": 81,
+      "wind": 6.0,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_CB"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_CB",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_CB_02",
@@ -3573,16 +9615,17 @@ STATIONS_CONFIG = {
       "address": "Xã Đàm Thủy, H. Trùng Khánh",
       "lat": 22.854,
       "lon": 106.723,
-      "pm25": 9.5,
-      "pm10": 15.2,
-      "aqi": 26,
-      "temp": 16.0,
-      "humidity": 88,
-      "wind": 1.8,
+      "pm25": 4.7,
+      "pm10": 7.1,
+      "aqi": 8,
+      "temp": 25.4,
+      "humidity": 80,
+      "wind": 5.2,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_CB"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_CB",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_TQ": [
@@ -3593,16 +9636,17 @@ STATIONS_CONFIG = {
       "address": "Đường Tân Trào, P. Phan Thiết",
       "lat": 21.824,
       "lon": 105.217,
-      "pm25": 22.1,
-      "pm10": 35.4,
-      "aqi": 52,
-      "temp": 21.0,
-      "humidity": 76,
-      "wind": 2.2,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TQ"
+      "pm25": 11.7,
+      "pm10": 17.5,
+      "aqi": 21,
+      "temp": 24.5,
+      "humidity": 91,
+      "wind": 3.5,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TQ",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_TQ_02",
@@ -3611,16 +9655,17 @@ STATIONS_CONFIG = {
       "address": "Thị trấn Na Hang, H. Na Hang",
       "lat": 22.348,
       "lon": 105.385,
-      "pm25": 12.0,
-      "pm10": 19.5,
-      "aqi": 32,
-      "temp": 19.5,
-      "humidity": 82,
-      "wind": 2.0,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TQ"
+      "pm25": 12.3,
+      "pm10": 18.5,
+      "aqi": 22,
+      "temp": 24.7,
+      "humidity": 93,
+      "wind": 3.7,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TQ",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_DB": [
@@ -3631,16 +9676,17 @@ STATIONS_CONFIG = {
       "address": "Đường Võ Nguyên Giáp, P. Mường Thanh",
       "lat": 21.388,
       "lon": 103.021,
-      "pm25": 18.4,
-      "pm10": 29.8,
-      "aqi": 46,
-      "temp": 20.5,
-      "humidity": 68,
-      "wind": 2.5,
+      "pm25": 6.1,
+      "pm10": 9.1,
+      "aqi": 11,
+      "temp": 29.4,
+      "humidity": 58,
+      "wind": 10.1,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DB"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DB",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_DB_02",
@@ -3649,16 +9695,17 @@ STATIONS_CONFIG = {
       "address": "Xã Na Ư, H. Điện Biên",
       "lat": 21.215,
       "lon": 102.915,
-      "pm25": 11.5,
-      "pm10": 18.5,
-      "aqi": 30,
-      "temp": 19.8,
-      "humidity": 72,
-      "wind": 2.2,
+      "pm25": 7.3,
+      "pm10": 10.9,
+      "aqi": 13,
+      "temp": 29.8,
+      "humidity": 56,
+      "wind": 10.5,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DB"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DB",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_LC": [
@@ -3669,16 +9716,17 @@ STATIONS_CONFIG = {
       "address": "Đường Trần Phú, P. Tân Phong",
       "lat": 22.398,
       "lon": 103.461,
-      "pm25": 12.0,
-      "pm10": 19.5,
-      "aqi": 32,
-      "temp": 16.2,
-      "humidity": 86,
-      "wind": 2.1,
+      "pm25": 4.4,
+      "pm10": 6.6,
+      "aqi": 8,
+      "temp": 24.7,
+      "humidity": 70,
+      "wind": 4.6,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_LC"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_LC",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_LC_02",
@@ -3687,16 +9735,17 @@ STATIONS_CONFIG = {
       "address": "Đèo Ô Quy Hồ, H. Tam Đường",
       "lat": 22.355,
       "lon": 103.778,
-      "pm25": 7.8,
-      "pm10": 12.6,
-      "aqi": 22,
-      "temp": 12.5,
-      "humidity": 92,
-      "wind": 3.8,
+      "pm25": 3.2,
+      "pm10": 4.8,
+      "aqi": 6,
+      "temp": 24.3,
+      "humidity": 73,
+      "wind": 4.2,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_LC"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_LC",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_SL": [
@@ -3707,16 +9756,17 @@ STATIONS_CONFIG = {
       "address": "Đường Tô Hiệu, P. Chiềng Lề",
       "lat": 21.33,
       "lon": 103.918,
-      "pm25": 14.5,
-      "pm10": 23.2,
-      "aqi": 37,
-      "temp": 18.5,
-      "humidity": 70,
-      "wind": 2.6,
+      "pm25": 5.7,
+      "pm10": 8.6,
+      "aqi": 10,
+      "temp": 25.5,
+      "humidity": 79,
+      "wind": 11.9,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_SL"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_SL",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_SL_02",
@@ -3725,16 +9775,17 @@ STATIONS_CONFIG = {
       "address": "Thị trấn Nông trường Mộc Châu",
       "lat": 20.842,
       "lon": 104.654,
-      "pm25": 9.2,
-      "pm10": 14.8,
-      "aqi": 25,
-      "temp": 16.8,
-      "humidity": 76,
-      "wind": 2.8,
+      "pm25": 6.3,
+      "pm10": 9.4,
+      "aqi": 11,
+      "temp": 25.7,
+      "humidity": 79,
+      "wind": 12.1,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_SL"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_SL",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_LCAI": [
@@ -3745,16 +9796,17 @@ STATIONS_CONFIG = {
       "address": "Đường Hoàng Liên, P. Cốc Lếu",
       "lat": 22.489,
       "lon": 103.968,
-      "pm25": 16.5,
-      "pm10": 26.2,
-      "aqi": 42,
-      "temp": 17.2,
-      "humidity": 82,
-      "wind": 2.5,
+      "pm25": 4.3,
+      "pm10": 6.4,
+      "aqi": 8,
+      "temp": 25.9,
+      "humidity": 74,
+      "wind": 6.2,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_LCAI"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_LCAI",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_LCAI_02",
@@ -3763,16 +9815,17 @@ STATIONS_CONFIG = {
       "address": "Thị xã Sa Pa",
       "lat": 22.336,
       "lon": 103.844,
-      "pm25": 8.2,
-      "pm10": 13.5,
-      "aqi": 24,
-      "temp": 12.0,
-      "humidity": 90,
-      "wind": 3.2,
+      "pm25": 6.7,
+      "pm10": 10.1,
+      "aqi": 12,
+      "temp": 26.7,
+      "humidity": 74,
+      "wind": 7.0,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_LCAI"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_LCAI",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_TN": [
@@ -3783,16 +9836,17 @@ STATIONS_CONFIG = {
       "address": "Đường Lương Ngọc Quyến, P. Quang Trung",
       "lat": 21.596,
       "lon": 105.845,
-      "pm25": 36.8,
-      "pm10": 58.4,
-      "aqi": 68,
-      "temp": 22.0,
-      "humidity": 75,
-      "wind": 2.8,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TN"
+      "pm25": 9.0,
+      "pm10": 13.5,
+      "aqi": 16,
+      "temp": 26.8,
+      "humidity": 77,
+      "wind": 6.0,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_TN_02",
@@ -3801,16 +9855,17 @@ STATIONS_CONFIG = {
       "address": "Phường Đồng Tiến, TX. Phổ Yên",
       "lat": 21.432,
       "lon": 105.885,
-      "pm25": 44.5,
-      "pm10": 68.5,
-      "aqi": 78,
-      "temp": 22.8,
-      "humidity": 73,
-      "wind": 3.0,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TN"
+      "pm25": 8.4,
+      "pm10": 12.6,
+      "aqi": 15,
+      "temp": 26.6,
+      "humidity": 82,
+      "wind": 5.8,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_TN_03",
@@ -3819,16 +9874,17 @@ STATIONS_CONFIG = {
       "address": "Xã Tân Thái, H. Đại Từ",
       "lat": 21.602,
       "lon": 105.715,
-      "pm25": 18.0,
-      "pm10": 28.5,
-      "aqi": 44,
-      "temp": 21.2,
-      "humidity": 78,
-      "wind": 2.5,
+      "pm25": 10.2,
+      "pm10": 15.3,
+      "aqi": 18,
+      "temp": 27.2,
+      "humidity": 81,
+      "wind": 6.4,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TN"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TN",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_LS": [
@@ -3839,16 +9895,17 @@ STATIONS_CONFIG = {
       "address": "Đường Lê Lợi, P. Vĩnh Trại",
       "lat": 21.855,
       "lon": 106.76,
-      "pm25": 20.5,
-      "pm10": 33.2,
-      "aqi": 49,
-      "temp": 18.0,
-      "humidity": 78,
-      "wind": 3.4,
+      "pm25": 4.6,
+      "pm10": 6.9,
+      "aqi": 8,
+      "temp": 25.6,
+      "humidity": 80,
+      "wind": 9.3,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_LS"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_LS",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_LS_02",
@@ -3857,16 +9914,17 @@ STATIONS_CONFIG = {
       "address": "Thị trấn Đồng Đăng, H. Cao Lộc",
       "lat": 21.985,
       "lon": 106.712,
-      "pm25": 28.5,
-      "pm10": 44.5,
-      "aqi": 58,
-      "temp": 17.5,
+      "pm25": 5.2,
+      "pm10": 7.8,
+      "aqi": 9,
+      "temp": 25.8,
       "humidity": 80,
-      "wind": 3.6,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_LS"
+      "wind": 9.5,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_LS",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_LS_03",
@@ -3875,16 +9933,17 @@ STATIONS_CONFIG = {
       "address": "Khu du lịch Mẫu Sơn, H. Lộc Bình",
       "lat": 21.848,
       "lon": 106.915,
-      "pm25": 9.8,
-      "pm10": 15.8,
-      "aqi": 26,
-      "temp": 13.5,
-      "humidity": 88,
-      "wind": 4.2,
+      "pm25": 5.8,
+      "pm10": 8.7,
+      "aqi": 10,
+      "temp": 26.0,
+      "humidity": 82,
+      "wind": 9.7,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_LS"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_LS",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_QN": [
@@ -3895,16 +9954,17 @@ STATIONS_CONFIG = {
       "address": "Đường Hạ Long, P. Bãi Cháy",
       "lat": 20.958,
       "lon": 107.035,
-      "pm25": 23.0,
-      "pm10": 38.0,
-      "aqi": 54,
-      "temp": 24.5,
-      "humidity": 74,
-      "wind": 4.6,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_QN"
+      "pm25": 7.9,
+      "pm10": 11.9,
+      "aqi": 14,
+      "temp": 28.7,
+      "humidity": 68,
+      "wind": 20.2,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_QN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_QN_02",
@@ -3913,16 +9973,17 @@ STATIONS_CONFIG = {
       "address": "Đường Trần Phú, P. Cẩm Thành",
       "lat": 21.018,
       "lon": 107.288,
-      "pm25": 38.0,
-      "pm10": 62.5,
-      "aqi": 72,
-      "temp": 24.0,
-      "humidity": 76,
-      "wind": 4.2,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_QN"
+      "pm25": 6.7,
+      "pm10": 10.1,
+      "aqi": 12,
+      "temp": 28.3,
+      "humidity": 69,
+      "wind": 19.8,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_QN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_QN_03",
@@ -3931,16 +9992,17 @@ STATIONS_CONFIG = {
       "address": "Huyện Vân Đồn",
       "lat": 21.125,
       "lon": 107.412,
-      "pm25": 14.5,
-      "pm10": 23.5,
-      "aqi": 36,
-      "temp": 23.8,
-      "humidity": 78,
-      "wind": 5.0,
+      "pm25": 6.7,
+      "pm10": 10.1,
+      "aqi": 12,
+      "temp": 28.3,
+      "humidity": 67,
+      "wind": 19.8,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_QN"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_QN",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_BN": [
@@ -3951,16 +10013,17 @@ STATIONS_CONFIG = {
       "address": "Đường Ngô Gia Tự, P. Tiền An",
       "lat": 21.189,
       "lon": 106.072,
-      "pm25": 41.2,
-      "pm10": 65.2,
-      "aqi": 73,
-      "temp": 22.0,
-      "humidity": 76,
-      "wind": 2.8,
+      "pm25": 12.2,
+      "pm10": 18.3,
+      "aqi": 22,
+      "temp": 28.9,
+      "humidity": 70,
+      "wind": 6.8,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_BN"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_BN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_BN_02",
@@ -3969,16 +10032,17 @@ STATIONS_CONFIG = {
       "address": "KCN Quế Võ, TX. Quế Võ",
       "lat": 21.162,
       "lon": 106.145,
-      "pm25": 49.5,
-      "pm10": 76.5,
-      "aqi": 84,
-      "temp": 22.6,
-      "humidity": 74,
-      "wind": 3.0,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_BN"
+      "pm25": 9.8,
+      "pm10": 14.7,
+      "aqi": 18,
+      "temp": 28.1,
+      "humidity": 67,
+      "wind": 6.0,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_BN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_BN_03",
@@ -3987,16 +10051,17 @@ STATIONS_CONFIG = {
       "address": "KCN Yên Phong, H. Yên Phong",
       "lat": 21.225,
       "lon": 105.985,
-      "pm25": 45.0,
-      "pm10": 70.0,
-      "aqi": 79,
-      "temp": 22.4,
-      "humidity": 75,
-      "wind": 2.9,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_BN"
+      "pm25": 10.4,
+      "pm10": 15.6,
+      "aqi": 19,
+      "temp": 28.3,
+      "humidity": 68,
+      "wind": 6.2,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_BN",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_PT": [
@@ -4007,16 +10072,17 @@ STATIONS_CONFIG = {
       "address": "Đường Hùng Vương, P. Gia Cẩm",
       "lat": 21.318,
       "lon": 105.412,
-      "pm25": 25.4,
-      "pm10": 40.8,
-      "aqi": 56,
-      "temp": 22.5,
-      "humidity": 73,
-      "wind": 2.6,
+      "pm25": 15.5,
+      "pm10": 23.2,
+      "aqi": 28,
+      "temp": 26.6,
+      "humidity": 79,
+      "wind": 4.3,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_PT"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_PT",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_PT_02",
@@ -4025,16 +10091,17 @@ STATIONS_CONFIG = {
       "address": "Khu di tích lịch sử Đền Hùng",
       "lat": 21.378,
       "lon": 105.335,
-      "pm25": 16.5,
-      "pm10": 26.5,
-      "aqi": 41,
-      "temp": 22.0,
-      "humidity": 76,
-      "wind": 2.5,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_PT"
+      "pm25": 14.9,
+      "pm10": 22.4,
+      "aqi": 27,
+      "temp": 26.4,
+      "humidity": 77,
+      "wind": 4.1,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_PT",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_PT_03",
@@ -4043,16 +10110,17 @@ STATIONS_CONFIG = {
       "address": "KCN Thụy Vân, TP. Việt Trì",
       "lat": 21.345,
       "lon": 105.378,
-      "pm25": 36.8,
-      "pm10": 58.0,
-      "aqi": 67,
-      "temp": 23.0,
-      "humidity": 72,
-      "wind": 2.8,
+      "pm25": 14.3,
+      "pm10": 21.5,
+      "aqi": 26,
+      "temp": 26.2,
+      "humidity": 80,
+      "wind": 3.9,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_PT"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_PT",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_HY": [
@@ -4063,16 +10131,17 @@ STATIONS_CONFIG = {
       "address": "Đường Bãi Sậy, P. Quang Trung",
       "lat": 20.648,
       "lon": 106.053,
-      "pm25": 34.0,
-      "pm10": 53.6,
-      "aqi": 64,
-      "temp": 23.0,
-      "humidity": 76,
-      "wind": 3.1,
+      "pm25": 14.4,
+      "pm10": 21.6,
+      "aqi": 26,
+      "temp": 26.9,
+      "humidity": 86,
+      "wind": 2.4,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HY"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HY",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HY_02",
@@ -4081,16 +10150,17 @@ STATIONS_CONFIG = {
       "address": "Huyện Văn Lâm & Mỹ Hào",
       "lat": 20.935,
       "lon": 106.035,
-      "pm25": 44.2,
-      "pm10": 69.5,
-      "aqi": 77,
-      "temp": 23.5,
-      "humidity": 74,
-      "wind": 3.2,
+      "pm25": 14.4,
+      "pm10": 21.6,
+      "aqi": 26,
+      "temp": 26.9,
+      "humidity": 88,
+      "wind": 2.4,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HY"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HY",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HY_03",
@@ -4099,16 +10169,17 @@ STATIONS_CONFIG = {
       "address": "Khu đô thị Ecopark, Văn Giang",
       "lat": 20.965,
       "lon": 105.932,
-      "pm25": 21.5,
-      "pm10": 34.5,
-      "aqi": 50,
-      "temp": 22.7,
-      "humidity": 77,
-      "wind": 3.0,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HY"
+      "pm25": 13.2,
+      "pm10": 19.8,
+      "aqi": 24,
+      "temp": 26.5,
+      "humidity": 84,
+      "wind": 2.0,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HY",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_NB": [
@@ -4119,16 +10190,17 @@ STATIONS_CONFIG = {
       "address": "Đường Lê Thái Tổ, P. Đông Thành",
       "lat": 20.255,
       "lon": 105.978,
-      "pm25": 21.8,
-      "pm10": 36.0,
-      "aqi": 51,
-      "temp": 23.5,
-      "humidity": 72,
-      "wind": 3.3,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_NB"
+      "pm25": 11.2,
+      "pm10": 16.8,
+      "aqi": 20,
+      "temp": 25.9,
+      "humidity": 82,
+      "wind": 11.6,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_NB",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_NB_02",
@@ -4137,16 +10209,17 @@ STATIONS_CONFIG = {
       "address": "Quần thể danh thắng Tràng An",
       "lat": 20.258,
       "lon": 105.908,
-      "pm25": 13.5,
-      "pm10": 21.5,
-      "aqi": 34,
-      "temp": 23.0,
-      "humidity": 75,
-      "wind": 3.0,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_NB"
+      "pm25": 12.4,
+      "pm10": 18.6,
+      "aqi": 22,
+      "temp": 26.3,
+      "humidity": 79,
+      "wind": 12.0,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_NB",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_NB_03",
@@ -4155,16 +10228,17 @@ STATIONS_CONFIG = {
       "address": "Huyện Gia Viễn",
       "lat": 20.325,
       "lon": 105.912,
-      "pm25": 33.5,
-      "pm10": 52.8,
-      "aqi": 63,
-      "temp": 23.8,
-      "humidity": 71,
-      "wind": 3.4,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_NB"
+      "pm25": 11.8,
+      "pm10": 17.7,
+      "aqi": 21,
+      "temp": 26.1,
+      "humidity": 84,
+      "wind": 11.8,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_NB",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_TH": [
@@ -4175,16 +10249,17 @@ STATIONS_CONFIG = {
       "address": "Đường Trần Phú, P. Điện Biên",
       "lat": 19.812,
       "lon": 105.782,
-      "pm25": 27.6,
-      "pm10": 43.5,
-      "aqi": 59,
-      "temp": 23.8,
-      "humidity": 79,
-      "wind": 3.5,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TH"
+      "pm25": 10.7,
+      "pm10": 16.0,
+      "aqi": 19,
+      "temp": 27.9,
+      "humidity": 75,
+      "wind": 15.7,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TH",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_TH_02",
@@ -4193,16 +10268,17 @@ STATIONS_CONFIG = {
       "address": "Đường Hồ Xuân Hương, TP. Sầm Sơn",
       "lat": 19.745,
       "lon": 105.905,
-      "pm25": 18.2,
-      "pm10": 29.5,
-      "aqi": 43,
-      "temp": 24.2,
-      "humidity": 82,
-      "wind": 4.2,
+      "pm25": 9.5,
+      "pm10": 14.2,
+      "aqi": 17,
+      "temp": 27.5,
+      "humidity": 77,
+      "wind": 15.3,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TH"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TH",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_TH_03",
@@ -4211,16 +10287,17 @@ STATIONS_CONFIG = {
       "address": "Khu kinh tế Nghi Sơn, TX. Nghi Sơn",
       "lat": 19.345,
       "lon": 105.785,
-      "pm25": 43.0,
-      "pm10": 67.5,
-      "aqi": 75,
-      "temp": 24.5,
-      "humidity": 77,
-      "wind": 4.0,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TH"
+      "pm25": 10.1,
+      "pm10": 15.1,
+      "aqi": 18,
+      "temp": 27.7,
+      "humidity": 80,
+      "wind": 15.5,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TH",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_NA": [
@@ -4231,16 +10308,17 @@ STATIONS_CONFIG = {
       "address": "Đường Lê Mao, P. Lê Mao",
       "lat": 18.675,
       "lon": 105.684,
-      "pm25": 26.2,
-      "pm10": 41.5,
-      "aqi": 57,
-      "temp": 23.2,
-      "humidity": 81,
-      "wind": 3.6,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_NA"
+      "pm25": 11.1,
+      "pm10": 16.6,
+      "aqi": 20,
+      "temp": 25.9,
+      "humidity": 83,
+      "wind": 10.8,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_NA",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_NA_02",
@@ -4249,16 +10327,17 @@ STATIONS_CONFIG = {
       "address": "Khu di tích Kim Liên, H. Nam Đàn",
       "lat": 18.685,
       "lon": 105.545,
-      "pm25": 15.8,
-      "pm10": 25.0,
-      "aqi": 38,
-      "temp": 23.0,
-      "humidity": 83,
-      "wind": 3.2,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_NA"
+      "pm25": 12.3,
+      "pm10": 18.5,
+      "aqi": 22,
+      "temp": 26.3,
+      "humidity": 80,
+      "wind": 11.2,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_NA",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_NA_03",
@@ -4267,16 +10346,17 @@ STATIONS_CONFIG = {
       "address": "Đường Bình Minh, TX. Cửa Lò",
       "lat": 18.805,
       "lon": 105.725,
-      "pm25": 19.4,
-      "pm10": 30.8,
-      "aqi": 45,
-      "temp": 23.5,
-      "humidity": 84,
-      "wind": 4.0,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_NA"
+      "pm25": 12.3,
+      "pm10": 18.5,
+      "aqi": 22,
+      "temp": 26.3,
+      "humidity": 85,
+      "wind": 11.2,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_NA",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_HT": [
@@ -4287,16 +10367,17 @@ STATIONS_CONFIG = {
       "address": "Đường Phan Đình Phùng, P. Bắc Hà",
       "lat": 18.345,
       "lon": 105.908,
-      "pm25": 22.0,
-      "pm10": 35.8,
-      "aqi": 52,
-      "temp": 23.0,
-      "humidity": 82,
-      "wind": 3.4,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HT"
+      "pm25": 9.9,
+      "pm10": 14.9,
+      "aqi": 18,
+      "temp": 28.5,
+      "humidity": 70,
+      "wind": 11.5,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HT",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HT_02",
@@ -4305,16 +10386,17 @@ STATIONS_CONFIG = {
       "address": "Khu kinh tế Vũng Áng, TX. Kỳ Anh",
       "lat": 18.065,
       "lon": 106.385,
-      "pm25": 39.5,
-      "pm10": 62.0,
-      "aqi": 71,
-      "temp": 23.6,
-      "humidity": 80,
-      "wind": 4.5,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HT"
+      "pm25": 10.5,
+      "pm10": 15.8,
+      "aqi": 19,
+      "temp": 28.7,
+      "humidity": 70,
+      "wind": 11.7,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HT",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HT_03",
@@ -4323,16 +10405,17 @@ STATIONS_CONFIG = {
       "address": "Huyện Can Lộc",
       "lat": 18.425,
       "lon": 105.752,
-      "pm25": 14.0,
-      "pm10": 22.5,
-      "aqi": 35,
-      "temp": 22.6,
-      "humidity": 85,
-      "wind": 3.0,
+      "pm25": 8.1,
+      "pm10": 12.1,
+      "aqi": 15,
+      "temp": 27.9,
+      "humidity": 71,
+      "wind": 10.9,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HT"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HT",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_QT": [
@@ -4343,16 +10426,17 @@ STATIONS_CONFIG = {
       "address": "Đường Hùng Vương, P. 1",
       "lat": 16.822,
       "lon": 107.098,
-      "pm25": 18.0,
-      "pm10": 28.5,
-      "aqi": 44,
-      "temp": 24.2,
-      "humidity": 84,
-      "wind": 3.1,
+      "pm25": 6.1,
+      "pm10": 9.1,
+      "aqi": 11,
+      "temp": 28.3,
+      "humidity": 74,
+      "wind": 16.0,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_QT"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_QT",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_QT_02",
@@ -4361,16 +10445,17 @@ STATIONS_CONFIG = {
       "address": "Đường Hai Bà Trưng, P. 2",
       "lat": 16.748,
       "lon": 107.185,
-      "pm25": 15.2,
-      "pm10": 24.0,
-      "aqi": 38,
-      "temp": 24.0,
-      "humidity": 85,
-      "wind": 2.8,
+      "pm25": 4.9,
+      "pm10": 7.4,
+      "aqi": 9,
+      "temp": 27.9,
+      "humidity": 77,
+      "wind": 15.6,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_QT"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_QT",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_QT_03",
@@ -4379,16 +10464,17 @@ STATIONS_CONFIG = {
       "address": "Thị trấn Lao Bảo, H. Hướng Hóa",
       "lat": 16.615,
       "lon": 106.592,
-      "pm25": 12.0,
-      "pm10": 19.2,
-      "aqi": 31,
-      "temp": 22.8,
-      "humidity": 80,
-      "wind": 3.5,
+      "pm25": 6.1,
+      "pm10": 9.1,
+      "aqi": 11,
+      "temp": 28.3,
+      "humidity": 75,
+      "wind": 16.0,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_QT"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_QT",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_HUE": [
@@ -4399,16 +10485,17 @@ STATIONS_CONFIG = {
       "address": "Đường Đoàn Thị Điểm, P. Thuận Thành",
       "lat": 16.469,
       "lon": 107.578,
-      "pm25": 16.2,
-      "pm10": 26.8,
-      "aqi": 42,
-      "temp": 24.0,
-      "humidity": 85,
-      "wind": 2.8,
+      "pm25": 4.3,
+      "pm10": 6.4,
+      "aqi": 8,
+      "temp": 28.9,
+      "humidity": 73,
+      "wind": 12.0,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HUE"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HUE",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HUE_02",
@@ -4417,16 +10504,17 @@ STATIONS_CONFIG = {
       "address": "Bờ sông Hương, P. Vĩnh Ninh",
       "lat": 16.462,
       "lon": 107.589,
-      "pm25": 17.5,
-      "pm10": 28.0,
-      "aqi": 44,
-      "temp": 24.1,
-      "humidity": 84,
-      "wind": 2.6,
+      "pm25": 5.5,
+      "pm10": 8.2,
+      "aqi": 10,
+      "temp": 29.3,
+      "humidity": 72,
+      "wind": 12.4,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HUE"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HUE",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HUE_03",
@@ -4435,16 +10523,17 @@ STATIONS_CONFIG = {
       "address": "TX. Hương Thủy",
       "lat": 16.398,
       "lon": 107.698,
-      "pm25": 24.8,
-      "pm10": 39.5,
-      "aqi": 54,
-      "temp": 24.5,
-      "humidity": 82,
-      "wind": 3.2,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HUE"
+      "pm25": 4.9,
+      "pm10": 7.4,
+      "aqi": 9,
+      "temp": 29.1,
+      "humidity": 73,
+      "wind": 12.2,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HUE",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_DN": [
@@ -4455,16 +10544,17 @@ STATIONS_CONFIG = {
       "address": "Đường Bạch Đằng, Q. Hải Châu",
       "lat": 16.062,
       "lon": 108.223,
-      "pm25": 14.5,
-      "pm10": 24.0,
-      "aqi": 38,
-      "temp": 27.5,
-      "humidity": 70,
-      "wind": 4.2,
+      "pm25": 11.5,
+      "pm10": 17.2,
+      "aqi": 21,
+      "temp": 29.7,
+      "humidity": 64,
+      "wind": 12.0,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DN"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_DN_02",
@@ -4473,16 +10563,17 @@ STATIONS_CONFIG = {
       "address": "Bán đảo Sơn Trà, Q. Sơn Trà",
       "lat": 16.115,
       "lon": 108.275,
-      "pm25": 8.2,
-      "pm10": 13.5,
-      "aqi": 22,
-      "temp": 25.8,
-      "humidity": 76,
-      "wind": 4.8,
+      "pm25": 11.5,
+      "pm10": 17.2,
+      "aqi": 21,
+      "temp": 29.7,
+      "humidity": 63,
+      "wind": 12.0,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DN"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_DN_03",
@@ -4491,16 +10582,17 @@ STATIONS_CONFIG = {
       "address": "KCN Hòa Khánh, Q. Liên Chiểu",
       "lat": 16.072,
       "lon": 108.145,
-      "pm25": 23.5,
-      "pm10": 38.2,
-      "aqi": 53,
-      "temp": 27.8,
-      "humidity": 68,
-      "wind": 3.8,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DN"
+      "pm25": 11.5,
+      "pm10": 17.2,
+      "aqi": 21,
+      "temp": 29.7,
+      "humidity": 63,
+      "wind": 12.0,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DN",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_DN_04",
@@ -4509,16 +10601,17 @@ STATIONS_CONFIG = {
       "address": "Đường Võ Nguyên Giáp, Q. Ngũ Hành Sơn",
       "lat": 16.048,
       "lon": 108.245,
-      "pm25": 11.0,
-      "pm10": 18.0,
-      "aqi": 29,
-      "temp": 27.2,
-      "humidity": 72,
-      "wind": 4.5,
+      "pm25": 10.9,
+      "pm10": 16.4,
+      "aqi": 20,
+      "temp": 29.5,
+      "humidity": 68,
+      "wind": 11.8,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DN"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DN",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_QNG": [
@@ -4529,16 +10622,17 @@ STATIONS_CONFIG = {
       "address": "Đường Quang Trung, P. Lê Hồng Phong",
       "lat": 15.122,
       "lon": 108.795,
-      "pm25": 15.5,
-      "pm10": 25.2,
-      "aqi": 39,
-      "temp": 27.0,
-      "humidity": 73,
-      "wind": 3.8,
+      "pm25": 8.7,
+      "pm10": 13.0,
+      "aqi": 16,
+      "temp": 30.1,
+      "humidity": 62,
+      "wind": 11.7,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_QNG"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_QNG",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_QNG_02",
@@ -4547,16 +10641,17 @@ STATIONS_CONFIG = {
       "address": "Khu kinh tế Dung Quất, H. Bình Sơn",
       "lat": 15.412,
       "lon": 108.785,
-      "pm25": 31.0,
-      "pm10": 49.5,
-      "aqi": 61,
-      "temp": 27.5,
-      "humidity": 71,
-      "wind": 4.2,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_QNG"
+      "pm25": 10.5,
+      "pm10": 15.8,
+      "aqi": 19,
+      "temp": 30.7,
+      "humidity": 62,
+      "wind": 12.3,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_QNG",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_QNG_03",
@@ -4565,16 +10660,17 @@ STATIONS_CONFIG = {
       "address": "Huyện đảo Lý Sơn",
       "lat": 15.378,
       "lon": 109.125,
-      "pm25": 8.5,
-      "pm10": 13.8,
-      "aqi": 23,
-      "temp": 26.5,
-      "humidity": 76,
-      "wind": 5.2,
+      "pm25": 11.1,
+      "pm10": 16.6,
+      "aqi": 20,
+      "temp": 30.9,
+      "humidity": 61,
+      "wind": 12.5,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_QNG"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_QNG",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_KH": [
@@ -4585,16 +10681,17 @@ STATIONS_CONFIG = {
       "address": "Đường Trần Phú, TP. Nha Trang",
       "lat": 12.242,
       "lon": 109.198,
-      "pm25": 12.4,
-      "pm10": 20.8,
-      "aqi": 34,
-      "temp": 28.2,
-      "humidity": 70,
-      "wind": 4.8,
+      "pm25": 10.5,
+      "pm10": 15.8,
+      "aqi": 19,
+      "temp": 30.5,
+      "humidity": 58,
+      "wind": 22.0,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_KH"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_KH",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_KH_02",
@@ -4603,16 +10700,17 @@ STATIONS_CONFIG = {
       "address": "TP. Cam Ranh",
       "lat": 11.995,
       "lon": 109.135,
-      "pm25": 10.8,
-      "pm10": 17.5,
-      "aqi": 30,
-      "temp": 28.5,
-      "humidity": 68,
-      "wind": 5.0,
+      "pm25": 9.9,
+      "pm10": 14.9,
+      "aqi": 18,
+      "temp": 30.3,
+      "humidity": 58,
+      "wind": 21.8,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_KH"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_KH",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_KH_03",
@@ -4621,16 +10719,17 @@ STATIONS_CONFIG = {
       "address": "Vịnh Nha Trang",
       "lat": 12.215,
       "lon": 109.255,
-      "pm25": 7.5,
-      "pm10": 12.2,
-      "aqi": 20,
-      "temp": 27.6,
-      "humidity": 73,
-      "wind": 4.6,
+      "pm25": 8.1,
+      "pm10": 12.1,
+      "aqi": 15,
+      "temp": 29.7,
+      "humidity": 61,
+      "wind": 21.2,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_KH"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_KH",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_GL": [
@@ -4641,16 +10740,17 @@ STATIONS_CONFIG = {
       "address": "Đường Trần Hưng Đạo, P. Tây Sơn",
       "lat": 13.985,
       "lon": 108.005,
-      "pm25": 11.5,
-      "pm10": 18.2,
-      "aqi": 31,
-      "temp": 22.8,
-      "humidity": 65,
-      "wind": 3.5,
+      "pm25": 4.3,
+      "pm10": 6.4,
+      "aqi": 8,
+      "temp": 27.7,
+      "humidity": 53,
+      "wind": 21.6,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_GL"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_GL",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_GL_02",
@@ -4659,16 +10759,17 @@ STATIONS_CONFIG = {
       "address": "Xã Biển Hồ, TP. Pleiku",
       "lat": 14.048,
       "lon": 108.002,
-      "pm25": 7.2,
-      "pm10": 11.5,
-      "aqi": 19,
-      "temp": 21.5,
-      "humidity": 70,
-      "wind": 3.8,
+      "pm25": 3.1,
+      "pm10": 4.7,
+      "aqi": 6,
+      "temp": 27.3,
+      "humidity": 57,
+      "wind": 21.2,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_GL"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_GL",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_GL_03",
@@ -4677,16 +10778,17 @@ STATIONS_CONFIG = {
       "address": "Huyện Mang Yang",
       "lat": 14.315,
       "lon": 108.385,
-      "pm25": 5.8,
-      "pm10": 9.2,
-      "aqi": 16,
-      "temp": 19.8,
-      "humidity": 75,
-      "wind": 3.0,
+      "pm25": 3.7,
+      "pm10": 5.6,
+      "aqi": 7,
+      "temp": 27.5,
+      "humidity": 57,
+      "wind": 21.4,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_GL"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_GL",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_DLAK": [
@@ -4697,16 +10799,17 @@ STATIONS_CONFIG = {
       "address": "Đường Lê Duẩn, P. Tân Thành",
       "lat": 12.671,
       "lon": 108.048,
-      "pm25": 13.8,
-      "pm10": 22.0,
-      "aqi": 36,
-      "temp": 24.5,
-      "humidity": 67,
-      "wind": 3.2,
+      "pm25": 6.1,
+      "pm10": 9.1,
+      "aqi": 11,
+      "temp": 30.0,
+      "humidity": 58,
+      "wind": 21.7,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DLAK"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DLAK",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_DLAK_02",
@@ -4715,16 +10818,17 @@ STATIONS_CONFIG = {
       "address": "Thị trấn Liên Sơn, H. Lắk",
       "lat": 12.415,
       "lon": 108.185,
-      "pm25": 8.6,
-      "pm10": 13.8,
-      "aqi": 23,
-      "temp": 23.8,
-      "humidity": 72,
-      "wind": 2.8,
+      "pm25": 6.7,
+      "pm10": 10.1,
+      "aqi": 12,
+      "temp": 30.2,
+      "humidity": 55,
+      "wind": 21.9,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DLAK"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DLAK",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_DLAK_03",
@@ -4733,16 +10837,17 @@ STATIONS_CONFIG = {
       "address": "Xã Hòa Phú, TP. Buôn Ma Thuột",
       "lat": 12.585,
       "lon": 107.955,
-      "pm25": 22.5,
-      "pm10": 36.0,
-      "aqi": 52,
-      "temp": 25.2,
-      "humidity": 64,
-      "wind": 3.0,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DLAK"
+      "pm25": 4.9,
+      "pm10": 7.4,
+      "aqi": 9,
+      "temp": 29.6,
+      "humidity": 57,
+      "wind": 21.3,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DLAK",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_LD": [
@@ -4753,16 +10858,17 @@ STATIONS_CONFIG = {
       "address": "Đường Trần Quốc Toản, P. 1, TP. Đà Lạt",
       "lat": 11.944,
       "lon": 108.448,
-      "pm25": 8.5,
-      "pm10": 14.8,
-      "aqi": 23,
-      "temp": 17.0,
-      "humidity": 82,
-      "wind": 2.2,
+      "pm25": 5.4,
+      "pm10": 8.1,
+      "aqi": 10,
+      "temp": 24.4,
+      "humidity": 62,
+      "wind": 21.9,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_LD"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_LD",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_LD_02",
@@ -4771,16 +10877,17 @@ STATIONS_CONFIG = {
       "address": "Đèo Prenn, TP. Đà Lạt",
       "lat": 11.895,
       "lon": 108.442,
-      "pm25": 6.2,
-      "pm10": 10.2,
-      "aqi": 17,
-      "temp": 16.2,
-      "humidity": 86,
-      "wind": 2.5,
+      "pm25": 4.2,
+      "pm10": 6.3,
+      "aqi": 8,
+      "temp": 24.0,
+      "humidity": 63,
+      "wind": 21.5,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_LD"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_LD",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_LD_03",
@@ -4789,16 +10896,17 @@ STATIONS_CONFIG = {
       "address": "Đường Lê Hồng Phong, TP. Bảo Lộc",
       "lat": 11.545,
       "lon": 107.805,
-      "pm25": 10.4,
-      "pm10": 16.8,
-      "aqi": 27,
-      "temp": 21.0,
-      "humidity": 78,
-      "wind": 2.6,
+      "pm25": 4.8,
+      "pm10": 7.2,
+      "aqi": 9,
+      "temp": 24.2,
+      "humidity": 58,
+      "wind": 21.7,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_LD"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_LD",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_HCM": [
@@ -4809,16 +10917,17 @@ STATIONS_CONFIG = {
       "address": "Đường Nguyễn Huệ, P. Bến Nghé, Q. 1",
       "lat": 10.775,
       "lon": 106.704,
-      "pm25": 31.5,
-      "pm10": 51.0,
-      "aqi": 68,
-      "temp": 31.5,
-      "humidity": 66,
-      "wind": 3.0,
+      "pm25": 16.2,
+      "pm10": 24.3,
+      "aqi": 29,
+      "temp": 32.4,
+      "humidity": 54,
+      "wind": 7.8,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HCM"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HCM",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HCM_02",
@@ -4827,16 +10936,17 @@ STATIONS_CONFIG = {
       "address": "Ngã tư Hàng Xanh, Q. Bình Thạnh",
       "lat": 10.802,
       "lon": 106.712,
-      "pm25": 44.0,
-      "pm10": 68.5,
-      "aqi": 78,
-      "temp": 32.2,
-      "humidity": 63,
-      "wind": 3.2,
+      "pm25": 16.2,
+      "pm10": 24.3,
+      "aqi": 29,
+      "temp": 32.4,
+      "humidity": 58,
+      "wind": 7.8,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HCM"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HCM",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HCM_03",
@@ -4845,16 +10955,17 @@ STATIONS_CONFIG = {
       "address": "Đường D1, Khu CNC, TP. Thủ Đức",
       "lat": 10.854,
       "lon": 106.795,
-      "pm25": 27.5,
-      "pm10": 44.2,
-      "aqi": 60,
-      "temp": 31.8,
-      "humidity": 65,
-      "wind": 3.0,
+      "pm25": 17.4,
+      "pm10": 26.1,
+      "aqi": 31,
+      "temp": 32.8,
+      "humidity": 54,
+      "wind": 8.2,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HCM"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HCM",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HCM_04",
@@ -4863,16 +10974,17 @@ STATIONS_CONFIG = {
       "address": "KCN Tân Bình & Bình Chánh",
       "lat": 10.812,
       "lon": 106.625,
-      "pm25": 41.8,
-      "pm10": 65.0,
-      "aqi": 75,
-      "temp": 32.5,
-      "humidity": 62,
-      "wind": 2.8,
+      "pm25": 18.0,
+      "pm10": 27.0,
+      "aqi": 32,
+      "temp": 33.0,
+      "humidity": 58,
+      "wind": 8.4,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HCM"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HCM",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_HCM_05",
@@ -4881,16 +10993,17 @@ STATIONS_CONFIG = {
       "address": "Xã Long Hòa, H. Cần Giờ",
       "lat": 10.415,
       "lon": 106.915,
-      "pm25": 12.8,
-      "pm10": 20.5,
-      "aqi": 32,
-      "temp": 29.8,
-      "humidity": 75,
-      "wind": 4.5,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_HCM"
+      "pm25": 16.8,
+      "pm10": 25.2,
+      "aqi": 30,
+      "temp": 32.6,
+      "humidity": 59,
+      "wind": 8.0,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_HCM",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_DNAI": [
@@ -4901,16 +11014,17 @@ STATIONS_CONFIG = {
       "address": "Đường 30/4, P. Thanh Bình",
       "lat": 10.959,
       "lon": 106.839,
-      "pm25": 34.2,
-      "pm10": 54.6,
-      "aqi": 70,
-      "temp": 31.0,
-      "humidity": 68,
-      "wind": 2.9,
+      "pm25": 15.6,
+      "pm10": 23.4,
+      "aqi": 28,
+      "temp": 31.5,
+      "humidity": 66,
+      "wind": 5.9,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DNAI"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DNAI",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_DNAI_02",
@@ -4919,16 +11033,17 @@ STATIONS_CONFIG = {
       "address": "KCN Biên Hòa 2, TP. Biên Hòa",
       "lat": 10.925,
       "lon": 106.885,
-      "pm25": 46.5,
-      "pm10": 72.8,
-      "aqi": 82,
-      "temp": 32.0,
-      "humidity": 65,
-      "wind": 3.1,
+      "pm25": 16.8,
+      "pm10": 25.2,
+      "aqi": 30,
+      "temp": 31.9,
+      "humidity": 66,
+      "wind": 6.3,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DNAI"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DNAI",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_DNAI_03",
@@ -4937,16 +11052,17 @@ STATIONS_CONFIG = {
       "address": "Huyện Tân Phú",
       "lat": 11.425,
       "lon": 107.415,
-      "pm25": 11.0,
-      "pm10": 17.5,
-      "aqi": 28,
-      "temp": 27.5,
-      "humidity": 78,
-      "wind": 2.4,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DNAI"
+      "pm25": 16.2,
+      "pm10": 24.3,
+      "aqi": 29,
+      "temp": 31.7,
+      "humidity": 66,
+      "wind": 6.1,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DNAI",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_TNINH": [
@@ -4957,16 +11073,17 @@ STATIONS_CONFIG = {
       "address": "Đường 30/4, P. 3, TP. Tây Ninh",
       "lat": 11.312,
       "lon": 106.099,
-      "pm25": 23.5,
-      "pm10": 38.2,
-      "aqi": 58,
-      "temp": 32.0,
-      "humidity": 62,
-      "wind": 2.9,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TNINH"
+      "pm25": 9.6,
+      "pm10": 14.4,
+      "aqi": 17,
+      "temp": 32.4,
+      "humidity": 57,
+      "wind": 8.1,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TNINH",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_TNINH_02",
@@ -4975,16 +11092,17 @@ STATIONS_CONFIG = {
       "address": "Khu du lịch Quốc gia Núi Bà Đen",
       "lat": 11.385,
       "lon": 106.168,
-      "pm25": 11.2,
-      "pm10": 18.0,
-      "aqi": 35,
-      "temp": 25.4,
-      "humidity": 74,
-      "wind": 4.2,
+      "pm25": 8.4,
+      "pm10": 12.6,
+      "aqi": 15,
+      "temp": 32.0,
+      "humidity": 61,
+      "wind": 7.7,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TNINH"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TNINH",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_TNINH_03",
@@ -4993,16 +11111,17 @@ STATIONS_CONFIG = {
       "address": "KCN Trảng Bàng, TX. Trảng Bàng",
       "lat": 11.035,
       "lon": 106.355,
-      "pm25": 31.0,
-      "pm10": 49.5,
-      "aqi": 68,
-      "temp": 32.5,
-      "humidity": 60,
-      "wind": 3.2,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TNINH"
+      "pm25": 9.6,
+      "pm10": 14.4,
+      "aqi": 17,
+      "temp": 32.4,
+      "humidity": 62,
+      "wind": 8.1,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TNINH",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_TNINH_04",
@@ -5011,16 +11130,17 @@ STATIONS_CONFIG = {
       "address": "Phường Hiệp Ninh, TP. Tây Ninh",
       "lat": 11.305,
       "lon": 106.135,
-      "pm25": 18.5,
-      "pm10": 29.8,
-      "aqi": 47,
-      "temp": 31.8,
-      "humidity": 64,
-      "wind": 2.8,
+      "pm25": 9.6,
+      "pm10": 14.4,
+      "aqi": 17,
+      "temp": 32.4,
+      "humidity": 62,
+      "wind": 8.1,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_TNINH"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_TNINH",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_CT": [
@@ -5031,16 +11151,17 @@ STATIONS_CONFIG = {
       "address": "Đường Hai Bà Trưng, P. Tân An, Q. Ninh Kiều",
       "lat": 10.035,
       "lon": 105.789,
-      "pm25": 21.4,
-      "pm10": 36.8,
-      "aqi": 52,
-      "temp": 30.2,
-      "humidity": 72,
-      "wind": 2.8,
+      "pm25": 15.2,
+      "pm10": 22.8,
+      "aqi": 27,
+      "temp": 30.8,
+      "humidity": 65,
+      "wind": 19.0,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_CT"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_CT",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_CT_02",
@@ -5049,16 +11170,17 @@ STATIONS_CONFIG = {
       "address": "KCN Trà Nóc 1, Q. Bình Thủy",
       "lat": 10.085,
       "lon": 105.725,
-      "pm25": 29.8,
-      "pm10": 47.5,
-      "aqi": 64,
-      "temp": 30.8,
-      "humidity": 70,
-      "wind": 3.1,
+      "pm25": 17.6,
+      "pm10": 26.4,
+      "aqi": 32,
+      "temp": 31.6,
+      "humidity": 65,
+      "wind": 19.8,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_CT"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_CT",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_CT_03",
@@ -5067,16 +11189,17 @@ STATIONS_CONFIG = {
       "address": "Quận Cái Răng",
       "lat": 10.005,
       "lon": 105.745,
-      "pm25": 15.5,
-      "pm10": 24.8,
-      "aqi": 42,
-      "temp": 29.8,
-      "humidity": 75,
-      "wind": 2.6,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_CT"
+      "pm25": 16.4,
+      "pm10": 24.6,
+      "aqi": 30,
+      "temp": 31.2,
+      "humidity": 62,
+      "wind": 19.4,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_CT",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_DT": [
@@ -5087,16 +11210,17 @@ STATIONS_CONFIG = {
       "address": "Đường Lý Thường Kiệt, P. 1",
       "lat": 10.459,
       "lon": 105.635,
-      "pm25": 19.8,
-      "pm10": 32.5,
-      "aqi": 49,
-      "temp": 30.5,
-      "humidity": 73,
-      "wind": 2.6,
+      "pm25": 11.2,
+      "pm10": 16.8,
+      "aqi": 20,
+      "temp": 31.7,
+      "humidity": 57,
+      "wind": 12.9,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DT"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DT",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_DT_02",
@@ -5105,16 +11229,17 @@ STATIONS_CONFIG = {
       "address": "Xã Tân Quy Đông, TP. Sa Đéc",
       "lat": 10.315,
       "lon": 105.755,
-      "pm25": 14.2,
-      "pm10": 23.0,
-      "aqi": 38,
-      "temp": 30.2,
-      "humidity": 74,
-      "wind": 2.5,
+      "pm25": 11.8,
+      "pm10": 17.7,
+      "aqi": 21,
+      "temp": 31.9,
+      "humidity": 62,
+      "wind": 13.1,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DT"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DT",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_DT_03",
@@ -5123,16 +11248,17 @@ STATIONS_CONFIG = {
       "address": "Thị trấn Tràm Chim, H. Tam Nông",
       "lat": 10.715,
       "lon": 105.515,
-      "pm25": 9.8,
-      "pm10": 16.0,
-      "aqi": 26,
-      "temp": 29.5,
-      "humidity": 78,
-      "wind": 2.4,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_DT"
+      "pm25": 13.6,
+      "pm10": 20.4,
+      "aqi": 24,
+      "temp": 32.5,
+      "humidity": 58,
+      "wind": 13.7,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_DT",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_VL": [
@@ -5143,16 +11269,17 @@ STATIONS_CONFIG = {
       "address": "Đường Trưng Nữ Vương, P. 1",
       "lat": 10.255,
       "lon": 105.975,
-      "pm25": 20.2,
-      "pm10": 33.6,
-      "aqi": 50,
-      "temp": 30.0,
-      "humidity": 74,
-      "wind": 2.7,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_VL"
+      "pm25": 14.6,
+      "pm10": 21.9,
+      "aqi": 26,
+      "temp": 31.2,
+      "humidity": 62,
+      "wind": 16.5,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_VL",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_VL_02",
@@ -5161,16 +11288,17 @@ STATIONS_CONFIG = {
       "address": "Huyện Long Hồ",
       "lat": 10.285,
       "lon": 105.985,
-      "pm25": 13.0,
-      "pm10": 21.2,
-      "aqi": 35,
-      "temp": 29.5,
-      "humidity": 76,
-      "wind": 2.5,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_VL"
+      "pm25": 15.8,
+      "pm10": 23.7,
+      "aqi": 28,
+      "temp": 31.6,
+      "humidity": 65,
+      "wind": 16.9,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_VL",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_VL_03",
@@ -5179,16 +11307,17 @@ STATIONS_CONFIG = {
       "address": "Xã Hòa Phú, H. Long Hồ",
       "lat": 10.185,
       "lon": 105.955,
-      "pm25": 28.5,
-      "pm10": 45.2,
-      "aqi": 62,
-      "temp": 30.6,
-      "humidity": 72,
-      "wind": 2.9,
+      "pm25": 15.2,
+      "pm10": 22.8,
+      "aqi": 27,
+      "temp": 31.4,
+      "humidity": 59,
+      "wind": 16.7,
       "aqi_level": "Trung bình",
       "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_VL"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_VL",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_AG": [
@@ -5199,16 +11328,17 @@ STATIONS_CONFIG = {
       "address": "Đường Hà Hoàng Hổ, P. Mỹ Xuyên",
       "lat": 10.385,
       "lon": 105.42,
-      "pm25": 18.6,
-      "pm10": 30.5,
-      "aqi": 48,
-      "temp": 31.0,
-      "humidity": 71,
-      "wind": 2.8,
+      "pm25": 11.2,
+      "pm10": 16.8,
+      "aqi": 20,
+      "temp": 32.0,
+      "humidity": 56,
+      "wind": 14.6,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_AG"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_AG",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_AG_02",
@@ -5217,16 +11347,17 @@ STATIONS_CONFIG = {
       "address": "Phường Núi Sam, TP. Châu Đốc",
       "lat": 10.685,
       "lon": 105.155,
-      "pm25": 15.0,
-      "pm10": 24.5,
-      "aqi": 40,
-      "temp": 30.8,
-      "humidity": 72,
-      "wind": 2.9,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_AG"
+      "pm25": 13.0,
+      "pm10": 19.5,
+      "aqi": 23,
+      "temp": 32.6,
+      "humidity": 56,
+      "wind": 15.2,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_AG",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_AG_03",
@@ -5235,16 +11366,17 @@ STATIONS_CONFIG = {
       "address": "Xã Văn Giáo, TX. Tịnh Biên",
       "lat": 10.512,
       "lon": 105.052,
-      "pm25": 9.2,
-      "pm10": 15.0,
-      "aqi": 25,
-      "temp": 29.6,
-      "humidity": 76,
-      "wind": 2.6,
-      "aqi_level": "Tốt",
-      "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_AG"
+      "pm25": 12.4,
+      "pm10": 18.6,
+      "aqi": 22,
+      "temp": 32.4,
+      "humidity": 53,
+      "wind": 15.0,
+      "aqi_level": "Trung bình",
+      "color": "#f59e0b",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_AG",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ],
   "VN_CM": [
@@ -5255,16 +11387,17 @@ STATIONS_CONFIG = {
       "address": "Đường Hùng Vương, P. 5",
       "lat": 9.18,
       "lon": 105.155,
-      "pm25": 14.0,
-      "pm10": 23.5,
-      "aqi": 42,
-      "temp": 29.5,
-      "humidity": 78,
-      "wind": 4.5,
+      "pm25": 10.8,
+      "pm10": 16.2,
+      "aqi": 19,
+      "temp": 31.8,
+      "humidity": 68,
+      "wind": 19.1,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_CM"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_CM",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_CM_02",
@@ -5273,16 +11406,17 @@ STATIONS_CONFIG = {
       "address": "Xã Đất Mũi, H. Ngọc Hiển",
       "lat": 8.615,
       "lon": 104.725,
-      "pm25": 8.4,
-      "pm10": 13.8,
-      "aqi": 22,
-      "temp": 28.5,
-      "humidity": 82,
-      "wind": 5.2,
+      "pm25": 9.6,
+      "pm10": 14.4,
+      "aqi": 17,
+      "temp": 31.4,
+      "humidity": 70,
+      "wind": 18.7,
       "aqi_level": "Tốt",
       "color": "#10b981",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_CM"
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_CM",
+      "timestamp": "2026-11-08 12:45:43"
     },
     {
       "id": "VN_CM_03",
@@ -5291,16 +11425,17 @@ STATIONS_CONFIG = {
       "address": "Xã Khánh An, H. U Minh",
       "lat": 9.285,
       "lon": 105.015,
-      "pm25": 26.5,
-      "pm10": 42.0,
-      "aqi": 58,
-      "temp": 30.0,
-      "humidity": 76,
-      "wind": 4.2,
-      "aqi_level": "Trung bình",
-      "color": "#f59e0b",
-      "status": "Đang hoạt động 24/7",
-      "province_id": "VN_CM"
+      "pm25": 9.0,
+      "pm10": 13.5,
+      "aqi": 16,
+      "temp": 31.2,
+      "humidity": 71,
+      "wind": 18.5,
+      "aqi_level": "Tốt",
+      "color": "#10b981",
+      "status": "Đang hoạt động 24/7 (Realtime Live)",
+      "province_id": "VN_CM",
+      "timestamp": "2026-11-08 12:45:43"
     }
   ]
 }

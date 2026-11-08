@@ -432,6 +432,97 @@
         }
       }
     },
+    "/api/weather/live": {
+      "get": {
+        "tags": [
+          "Live Weather & Real-Time Sync"
+        ],
+        "summary": "Get Live Weather",
+        "description": "Trả về dữ liệu thời tiết và quan trắc thực tế thời gian thực của 34 tỉnh và 105 trạm.",
+        "operationId": "get_live_weather_api_weather_live_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/weather/sync-realtime": {
+      "post": {
+        "tags": [
+          "Live Weather & Real-Time Sync"
+        ],
+        "summary": "Trigger Live Sync",
+        "description": "Kích hoạt tiến trình đồng bộ thời gian thực từ Open-Meteo API.",
+        "operationId": "trigger_live_sync_api_weather_sync_realtime_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "summary": "Apidoc Redirect",
+        "description": "Điều hướng nhanh tới trang tài liệu API tương tác Swagger UI.",
+        "operationId": "apidoc_redirect_api_docs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apidocs": {
+      "get": {
+        "summary": "Apidoc Redirect",
+        "description": "Điều hướng nhanh tới trang tài liệu API tương tác Swagger UI.",
+        "operationId": "apidoc_redirect_apidocs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apidoc": {
+      "get": {
+        "summary": "Apidoc Redirect",
+        "description": "Điều hướng nhanh tới trang tài liệu API tương tác Swagger UI.",
+        "operationId": "apidoc_redirect_apidoc_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
     "/": {
       "get": {
         "summary": "Root",

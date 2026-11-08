@@ -23,7 +23,7 @@
   <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3222/3222800.png">
   
   <!-- Custom CSS: Ocean Blue & Cyan/Teal Design System -->
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
 </head>
 <body>
   <div class="app-layout">
@@ -66,6 +66,10 @@
           <i class="fa-solid fa-compass"></i>
           <span>7. Khám phá – Đi chơi</span>
         </button>
+        <a href="apidoc.html" target="_blank" class="nav-btn" style="text-decoration:none;margin-top:10px;border-top:1px solid rgba(255,255,255,0.08);padding-top:10px;color:#38bdf8;" title="Mở trang tài liệu Swagger UI OpenAPI">
+          <i class="fa-solid fa-code" style="color:#38bdf8;"></i>
+          <span>Tài liệu API (Docs)</span>
+        </a>
       </nav>
 
       <div class="sidebar-footer">
@@ -97,6 +101,9 @@
             <i class="fa-solid fa-moon" id="theme-icon"></i>
           </button>
           <!-- Nút Làm Mới hoạt động mượt mà có hiệu ứng quay và thông báo toast -->
+          <a href="apidoc.html" target="_blank" class="btn btn-outline" id="btn-api-docs" title="Xem tài liệu Swagger API Docs" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+            <i class="fa-solid fa-book-open" style="color:var(--accent-cyan);"></i> <span>Tài liệu API</span>
+          </a>
           <button class="btn btn-outline" id="btn-refresh" onclick="App.refreshAllDataWithAnimation()" title="Làm mới dữ liệu quan trắc">
             <i class="fa-solid fa-arrows-rotate"></i> <span>Làm mới</span>
           </button>
@@ -158,7 +165,10 @@
             </div>
             <div class="cloud cloud-1" id="hero-cloud-1"></div>
             <div class="cloud cloud-2" id="hero-cloud-2"></div>
-            <div class="rain-stream" id="hero-rain-stream" style="display:none;"></div>
+            <div class="rain-stream" id="hero-rain-stream" style="display:none;">
+              <canvas class="rain-canvas" id="hero-rain-canvas"></canvas>
+              <div class="rain-drops-container" id="hero-rain-drops"></div>
+            </div>
             <div class="lightning-flash" id="hero-lightning-flash" style="display:none;"></div>
             <div class="fog-layer" id="hero-fog-layer" style="display:none;"></div>
             <div class="moon-element" id="hero-moon" style="display:none;"></div>
@@ -1010,8 +1020,8 @@
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="js/stations_data.js?v=8"></script>
-  <script src="js/embedded_data.js?v=8"></script>
-  <script src="js/app.js?v=8"></script>
+  <script src="js/stations_data.js?v=9"></script>
+  <script src="js/embedded_data.js?v=9"></script>
+  <script src="js/app.js?v=9"></script>
 </body>
 </html>
