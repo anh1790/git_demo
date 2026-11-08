@@ -12,7 +12,7 @@
       "properties": {
         "district_name": "Hoàn Kiếm",
         "city": "Hà Nội",
-        "country": "Vietnam"
+        "country": "Việt Nam"
       },
       "geometry": {
         "type": "Polygon",
@@ -51,7 +51,7 @@
       "properties": {
         "district_name": "Ba Đình",
         "city": "Hà Nội",
-        "country": "Vietnam"
+        "country": "Việt Nam"
       },
       "geometry": {
         "type": "Polygon",
@@ -90,7 +90,7 @@
       "properties": {
         "district_name": "Cầu Giấy",
         "city": "Hà Nội",
-        "country": "Vietnam"
+        "country": "Việt Nam"
       },
       "geometry": {
         "type": "Polygon",
@@ -129,7 +129,7 @@
       "properties": {
         "district_name": "Đống Đa",
         "city": "Hà Nội",
-        "country": "Vietnam"
+        "country": "Việt Nam"
       },
       "geometry": {
         "type": "Polygon",
@@ -168,7 +168,7 @@
       "properties": {
         "district_name": "Hai Bà Trưng",
         "city": "Hà Nội",
-        "country": "Vietnam"
+        "country": "Việt Nam"
       },
       "geometry": {
         "type": "Polygon",
@@ -203,7 +203,7 @@
       "properties": {
         "district_name": "Tây Hồ",
         "city": "Hà Nội",
-        "country": "Vietnam"
+        "country": "Việt Nam"
       },
       "geometry": {
         "type": "Polygon",
@@ -242,7 +242,7 @@
       "properties": {
         "district_name": "Long Biên",
         "city": "Hà Nội",
-        "country": "Vietnam"
+        "country": "Việt Nam"
       },
       "geometry": {
         "type": "Polygon",
@@ -281,7 +281,7 @@
       "properties": {
         "district_name": "Hà Đông",
         "city": "Hà Nội",
-        "country": "Vietnam"
+        "country": "Việt Nam"
       },
       "geometry": {
         "type": "Polygon",

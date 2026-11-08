@@ -1528,7 +1528,7 @@ const App = {
           responsive: true,
           maintainAspectRatio: false,
           plugins: { legend: { display: false } },
-          scales: { y: { beginAtZero: true, title: { display: true, text: 'AQI Index' } } }
+          scales: { y: { beginAtZero: true, title: { display: true, text: 'Chỉ số chất lượng không khí (AQI)' } } }
         }
       });
     }
@@ -1640,7 +1640,7 @@ const App = {
             pointRadius: 1
           },
           {
-            label: `Dự báo Backend AI (${this.selectedMlModel} - ${this.inferencePrecision === 'optimized' ? 'Int8 Quantized' : 'FP32 Raw'})`,
+            label: `Dự báo Backend AI (${this.selectedMlModel} - ${this.inferencePrecision === 'optimized' ? 'Lượng tử hóa Int8' : 'Mô hình gốc FP32'})`,
             data: [...Array(47).fill(null), historyData[historyData.length - 1], ...futureData],
             borderColor: this.inferencePrecision === 'optimized' ? '#0d9488' : '#0284c7',
             backgroundColor: this.inferencePrecision === 'optimized' ? 'rgba(13,148,136,0.1)' : 'rgba(2,132,199,0.1)',
@@ -1751,7 +1751,7 @@ const App = {
             pointRadius: 1
           },
           {
-            label: `Dự báo AI (${this.selectedMlModel.replace('_', ' ')} - ${isOptimized ? 'Int8 Quantized' : 'FP32 Gốc'})`,
+            label: `Dự báo AI (${this.selectedMlModel.replace('_', ' ')} - ${isOptimized ? 'Lượng tử hóa Int8' : 'Mô hình gốc FP32'})`,
             data: [...Array(47).fill(null), lastObs, ...futureData],
             borderColor: isOptimized ? '#0d9488' : '#0284c7',
             backgroundColor: isOptimized ? 'rgba(13,148,136,0.1)' : 'rgba(2,132,199,0.1)',
@@ -2157,22 +2157,26 @@ const App = {
     if (!mapContainer || typeof L === 'undefined') return;
 
     if (!this.map) {
-      // Khởi tạo bản đồ bao trọn vẹn lãnh thổ Việt Nam, Hoàng Sa & Trường Sa
-      this.map = L.map('weather-leaflet-map').setView([15.5, 108.5], 6);
+      // Khởi tạo bản đồ tập trung chính xác vào phạm vi lãnh thổ đất liền Việt Nam
+      this.map = L.map('weather-leaflet-map', {
+        minZoom: 5,
+        maxZoom: 15
+      }).setView([16.0, 107.0], 6);
+
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors | Bản đồ Khí tượng Việt Nam'
+        attribution: '&copy; OpenStreetMap contributors | Bản đồ Khí tượng & Quan trắc Việt Nam'
       }).addTo(this.map);
 
-      // Thêm bảng khẳng định chủ quyền Hoàng Sa & Trường Sa vĩnh viễn ở góc bản đồ
+      // Bảng thông tin ghi chú địa lý hành chính Việt Nam
       const SovereigntyControl = L.Control.extend({
         options: { position: 'bottomleft' },
         onAdd: function() {
           const div = L.DomUtil.create('div', 'map-sovereignty-box');
           div.innerHTML = `
-            <div style="font-weight:800;color:#dc2626;margin-bottom:3px;display:flex;align-items:center;gap:6px;">
-              <i class="fa-solid fa-flag"></i> CHỦ QUYỀN BIỂN ĐẢO VIỆT NAM
+            <div style="font-weight:800;color:#0284c7;margin-bottom:3px;display:flex;align-items:center;gap:6px;">
+              <i class="fa-solid fa-map-location-dot"></i> ĐỊA LÝ & HÀNH CHÍNH VIỆT NAM
             </div>
-            <div>Khẳng định chủ quyền toàn vẹn lãnh thổ đối với <strong>Quần đảo Hoàng Sa</strong> (TP. Đà Nẵng) và <strong>Quần đảo Trường Sa</strong> (Tỉnh Khánh Hòa).</div>
+            <div style="font-size:11.5px;line-height:1.45;">Mạng lưới trạm khí tượng quốc gia trên phạm vi đất liền Việt Nam. Ghi nhận <strong>Quần đảo Hoàng Sa</strong> (thuộc TP. Đà Nẵng) và <strong>Quần đảo Trường Sa</strong> (thuộc Tỉnh Khánh Hòa). Không tự ý xác định đường ranh giới trên biển khi chưa có nguồn pháp lý xác thực.</div>
           `;
           return div;
         }
@@ -2198,20 +2202,17 @@ const App = {
 
     this.mapMarkers.forEach(m => this.map.removeLayer(m));
     this.mapMarkers = [];
+    if (this.geoJsonDistrictsLayer) {
+      this.map.removeLayer(this.geoJsonDistrictsLayer);
+      this.geoJsonDistrictsLayer = null;
+    }
 
-    // 1. Nhãn Biển Đông Việt Nam
-    const seaMarker = L.marker([12.8, 113.8], {
-      icon: L.divIcon({
-        className: 'sea-label-div',
-        html: '<div class="sea-label-badge">BIỂN ĐÔNG (VIỆT NAM)</div>',
-        iconSize: [240, 30],
-        iconAnchor: [120, 15]
-      }),
-      interactive: false
-    }).addTo(this.map);
-    this.mapMarkers.push(seaMarker);
+    // 1. Lớp ranh giới hành chính GeoPandas (Hiển thị khi chọn lớp GeoPandas hoặc xem thủ đô Hà Nội)
+    if (this.mapLayer === 'geopandas') {
+      this.renderGeoPandasLayer();
+    }
 
-    // 2. Marker & Tooltip Chủ quyền Quần đảo Hoàng Sa (TP. Đà Nẵng, Việt Nam)
+    // 2. Điểm quan trắc hành chính Quần đảo Hoàng Sa (Huyện Hoàng Sa, TP. Đà Nẵng)
     const hsIcon = L.divIcon({
       className: 'island-flag-pin',
       html: `
@@ -2219,21 +2220,21 @@ const App = {
           <div class="flag-icon-circle"><i class="fa-solid fa-star"></i></div>
         </div>
       `,
-      iconSize: [34, 34],
-      iconAnchor: [17, 17]
+      iconSize: [32, 32],
+      iconAnchor: [16, 16]
     });
-    const hsMarker = L.marker([16.536, 112.025], { icon: hsIcon, zIndexOffset: 1000 }).addTo(this.map);
-    hsMarker.bindTooltip('🇻🇳 <strong>QUẦN ĐẢO HOÀNG SA</strong><br><small style="color:#fef08a;">(TP. Đà Nẵng, Việt Nam)</small>', {
-      permanent: true,
+    const hsMarker = L.marker([16.536, 112.025], { icon: hsIcon, zIndexOffset: 900 }).addTo(this.map);
+    hsMarker.bindTooltip('<strong>QUẦN ĐẢO HOÀNG SA</strong><br><small style="color:#fef08a;">(TP. Đà Nẵng, Việt Nam)</small>', {
+      permanent: false,
       direction: 'top',
       className: 'island-sovereignty-badge',
-      offset: [0, -12]
+      offset: [0, -10]
     });
     hsMarker.bindPopup(`
       <div style="font-family:'Plus Jakarta Sans',sans-serif;min-width:240px;line-height:1.5;">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
-          <span style="font-size:16px;">🇻🇳</span>
-          <h4 style="font-size:14px;font-weight:800;margin:0;color:#dc2626;">QUẦN ĐẢO HOÀNG SA</h4>
+          <i class="fa-solid fa-circle-dot" style="color:#0284c7;"></i>
+          <h4 style="font-size:14px;font-weight:800;margin:0;color:#0f172a;">QUẦN ĐẢO HOÀNG SA</h4>
         </div>
         <p style="font-size:11.5px;color:#475569;margin-bottom:8px;">
           <strong>Đơn vị hành chính:</strong> Huyện Hoàng Sa, Thành phố Đà Nẵng, Việt Nam<br>
@@ -2242,10 +2243,7 @@ const App = {
         <div style="font-size:11.5px;background:#f8fafc;padding:8px;border-radius:6px;border:1px solid #e2e8f0;margin-bottom:8px;">
           <div><strong>Nhiệt độ biển:</strong> 28.5°C • <strong>Độ ẩm:</strong> 82%</div>
           <div><strong>Gió:</strong> Đông Bắc 6.5 m/s (Cấp 4) • <strong>Sóng:</strong> 1.2 m</div>
-          <div><strong>Chất lượng không khí:</strong> AQI 18 (Rất trong lành)</div>
-        </div>
-        <div style="font-size:11px;color:#15803d;font-weight:700;margin-bottom:10px;">
-          <i class="fa-solid fa-shield-halved"></i> Lãnh thổ thiêng liêng không thể tách rời của Việt Nam
+          <div><strong>Chất lượng không khí:</strong> AQI 18 (Tốt)</div>
         </div>
         <button style="width:100%;padding:6px;background:#0284c7;color:#fff;border:none;border-radius:6px;font-weight:700;font-size:11.5px;cursor:pointer;" onclick="App.selectProvince('VN_DN'); App.switchTab('tab-overview');">
           Xem thời tiết TP. Đà Nẵng
@@ -2254,7 +2252,7 @@ const App = {
     `);
     this.mapMarkers.push(hsMarker);
 
-    // 3. Marker & Tooltip Chủ quyền Quần đảo Trường Sa (Tỉnh Khánh Hòa, Việt Nam)
+    // 3. Điểm quan trắc hành chính Quần đảo Trường Sa (Huyện Trường Sa, Tỉnh Khánh Hòa)
     const tsIcon = L.divIcon({
       className: 'island-flag-pin',
       html: `
@@ -2262,21 +2260,21 @@ const App = {
           <div class="flag-icon-circle"><i class="fa-solid fa-star"></i></div>
         </div>
       `,
-      iconSize: [34, 34],
-      iconAnchor: [17, 17]
+      iconSize: [32, 32],
+      iconAnchor: [16, 16]
     });
-    const tsMarker = L.marker([8.647, 111.919], { icon: tsIcon, zIndexOffset: 1000 }).addTo(this.map);
-    tsMarker.bindTooltip('🇻🇳 <strong>QUẦN ĐẢO TRƯỜNG SA</strong><br><small style="color:#fef08a;">(Tỉnh Khánh Hòa, Việt Nam)</small>', {
-      permanent: true,
+    const tsMarker = L.marker([8.647, 111.919], { icon: tsIcon, zIndexOffset: 900 }).addTo(this.map);
+    tsMarker.bindTooltip('<strong>QUẦN ĐẢO TRƯỜNG SA</strong><br><small style="color:#fef08a;">(Tỉnh Khánh Hòa, Việt Nam)</small>', {
+      permanent: false,
       direction: 'top',
       className: 'island-sovereignty-badge',
-      offset: [0, -12]
+      offset: [0, -10]
     });
     tsMarker.bindPopup(`
       <div style="font-family:'Plus Jakarta Sans',sans-serif;min-width:240px;line-height:1.5;">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
-          <span style="font-size:16px;">🇻🇳</span>
-          <h4 style="font-size:14px;font-weight:800;margin:0;color:#dc2626;">QUẦN ĐẢO TRƯỜNG SA</h4>
+          <i class="fa-solid fa-circle-dot" style="color:#0284c7;"></i>
+          <h4 style="font-size:14px;font-weight:800;margin:0;color:#0f172a;">QUẦN ĐẢO TRƯỜNG SA</h4>
         </div>
         <p style="font-size:11.5px;color:#475569;margin-bottom:8px;">
           <strong>Đơn vị hành chính:</strong> Huyện Trường Sa, Tỉnh Khánh Hòa, Việt Nam<br>
@@ -2285,10 +2283,7 @@ const App = {
         <div style="font-size:11.5px;background:#f8fafc;padding:8px;border-radius:6px;border:1px solid #e2e8f0;margin-bottom:8px;">
           <div><strong>Nhiệt độ biển:</strong> 29.2°C • <strong>Độ ẩm:</strong> 85%</div>
           <div><strong>Gió:</strong> Đông Nam 5.2 m/s (Cấp 3) • <strong>Sóng:</strong> 1.0 m</div>
-          <div><strong>Chất lượng không khí:</strong> AQI 15 (Tuyệt hảo)</div>
-        </div>
-        <div style="font-size:11px;color:#15803d;font-weight:700;margin-bottom:10px;">
-          <i class="fa-solid fa-shield-halved"></i> Chủ quyền toàn vẹn và bất khả xâm phạm của Việt Nam
+          <div><strong>Chất lượng không khí:</strong> AQI 15 (Tốt)</div>
         </div>
         <button style="width:100%;padding:6px;background:#0284c7;color:#fff;border:none;border-radius:6px;font-weight:700;font-size:11.5px;cursor:pointer;" onclick="App.selectProvince('VN_KH'); App.switchTab('tab-overview');">
           Xem thời tiết Tỉnh Khánh Hòa
@@ -2297,7 +2292,7 @@ const App = {
     `);
     this.mapMarkers.push(tsMarker);
 
-    // 4. Các marker 34 tỉnh thành
+    // 4. Các điểm quan trắc 34 tỉnh thành Việt Nam
     this.provinces.forEach(p => {
       let pinText = `${p.temp}°`;
       let pinColor = '#0284c7';
@@ -2311,6 +2306,9 @@ const App = {
       } else if (this.mapLayer === 'wind') {
         pinText = `${p.wind_speed}`;
         pinColor = '#0d9488';
+      } else if (this.mapLayer === 'geopandas') {
+        pinText = 'GIS';
+        pinColor = '#0891b2';
       }
 
       const isCurrentProv = (p.id === this.selectedProvinceId);
@@ -2323,13 +2321,14 @@ const App = {
 
       const marker = L.marker([p.lat, p.lon], { icon: customIcon }).addTo(this.map);
       marker.bindPopup(`
-        <div style="font-family:'Plus Jakarta Sans',sans-serif;min-width:180px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;min-width:190px;">
           <h4 style="font-size:14px;font-weight:800;margin-bottom:4px;color:#0f172a;">${p.name}</h4>
           <p style="font-size:12px;color:#64748b;margin-bottom:8px;">${p.weather_text}</p>
           <div style="font-size:12px;display:flex;flex-direction:column;gap:3px;margin-bottom:10px;">
             <span><strong>Nhiệt độ:</strong> ${p.temp}°C (Cảm giác ${p.feels_like}°C)</span>
-            <span><strong>Độ ẩm:</strong> ${p.humidity}% • <strong>Gió:</strong> ${p.wind_speed}m/s</span>
-            <span><strong>Bụi PM2.5:</strong> ${p.pm25} µg/m³ (AQI ${Math.round(p.pm25 * 1.8)})</span>
+            <span><strong>Độ ẩm:</strong> ${p.humidity}% • <strong>Gió:</strong> ${p.wind_speed} m/s ${p.wind_dir}</span>
+            <span><strong>Bụi mịn PM2.5:</strong> ${p.pm25} µg/m³ (AQI ${Math.round(p.pm25 * 1.8)})</span>
+            <span><strong>Vùng địa lý:</strong> ${p.region}</span>
           </div>
           <button style="width:100%;padding:6px;background:#0284c7;color:#fff;border:none;border-radius:6px;font-weight:700;font-size:12px;cursor:pointer;" onclick="App.selectProvince('${p.id}'); App.switchTab('tab-overview');">
             Xem chi tiết địa phương
