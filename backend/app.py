@@ -65,16 +65,25 @@ from fastapi.responses import FileResponse, RedirectResponse
 @app.get("/apidoc")
 @app.get("/apidocs")
 @app.get("/api-docs")
-async def apidoc_redirect():
-    """Điều hướng nhanh tới trang tài liệu API tương tác Swagger UI."""
+@app.get("/apidoc.html")
+async def apidoc_page():
+    """Phục vụ trực tiếp giao diện tài liệu Swagger UI OpenAPI tương tác."""
+    doc_file = STATIC_DIR / "apidoc.html"
+    if not doc_file.exists():
+        doc_file = BASE_DIR / "apidoc.html"
+    if doc_file.exists():
+        return FileResponse(doc_file, media_type="text/html")
     return RedirectResponse(url="/docs")
 
 @app.get("/")
+@app.get("/index.html")
 async def root():
     """Trang chủ chuyển hướng thẳng tới giao diện người dùng."""
     index_file = STATIC_DIR / "index.html"
+    if not index_file.exists():
+        index_file = BASE_DIR / "index.html"
     if index_file.exists():
-        return FileResponse(index_file)
+        return FileResponse(index_file, media_type="text/html")
     return {"message": "Air Quality Forecasting API is running. Visit /docs for Swagger UI."}
 
 @app.get("/manifest.json")

@@ -158,3 +158,14 @@ def test_endpoint_model_explainability(app_state):
     assert "preprocessing_pipeline" in explain
     assert "models_comparison" in explain
     assert len(explain["preprocessing_pipeline"]) >= 5
+
+
+def test_endpoint_apidoc_and_root_html_pages():
+    from backend.app import apidoc_page, root
+    res_doc = run_coro(apidoc_page())
+    assert "apidoc.html" in str(res_doc.path)
+    assert res_doc.media_type == "text/html"
+    
+    res_root = run_coro(root())
+    assert "index.html" in str(res_root.path)
+    assert res_root.media_type == "text/html"
