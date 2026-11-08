@@ -2163,9 +2163,26 @@ const App = {
         maxZoom: 15
       }).setView([16.0, 107.0], 6);
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors | Bản đồ Khí tượng & Quan trắc Việt Nam'
-      }).addTo(this.map);
+      // Hệ thống bản đồ nền GIS chuẩn quốc tế (Esri) - Loại bỏ 100% nhãn tiếng Trung ("西沙区", "陵水县") và ranh giới sai lệch của OSM
+      this.baseTileLayers = {
+        streets: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Bản đồ GIS &copy; Esri &mdash; Mạng lưới Trạm Khí tượng Quốc gia Việt Nam',
+          minZoom: 5,
+          maxZoom: 17
+        }),
+        satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Hình ảnh Vệ tinh &copy; Esri &mdash; Bản đồ Khí tượng Việt Nam',
+          minZoom: 5,
+          maxZoom: 17
+        }),
+        topo: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Bản đồ Địa hình &copy; Esri &mdash; Bản đồ Khí tượng Việt Nam',
+          minZoom: 5,
+          maxZoom: 17
+        })
+      };
+      this.currentBaseTile = 'streets';
+      this.baseTileLayers.streets.addTo(this.map);
 
       // Bảng thông tin ghi chú địa lý hành chính Việt Nam
       const SovereigntyControl = L.Control.extend({
@@ -2239,6 +2256,21 @@ const App = {
     }
   },
 
+  setBaseTile(tileKey) {
+    if (!this.map || !this.baseTileLayers || !this.baseTileLayers[tileKey]) return;
+    Object.values(this.baseTileLayers).forEach(layer => {
+      if (this.map.hasLayer(layer)) {
+        this.map.removeLayer(layer);
+      }
+    });
+    this.baseTileLayers[tileKey].addTo(this.map);
+    this.currentBaseTile = tileKey;
+    document.querySelectorAll('.map-basetile-btn').forEach(btn => btn.classList.remove('active'));
+    if (typeof event !== 'undefined' && event && event.currentTarget) {
+      event.currentTarget.classList.add('active');
+    }
+  },
+
   setMapLayer(layerType) {
     this.mapLayer = layerType;
     document.querySelectorAll('.map-layer-btn').forEach(btn => btn.classList.remove('active'));
@@ -2275,8 +2307,8 @@ const App = {
       iconAnchor: [16, 16]
     });
     const hsMarker = L.marker([16.536, 112.025], { icon: hsIcon, zIndexOffset: 900 }).addTo(this.map);
-    hsMarker.bindTooltip('<strong>QUẦN ĐẢO HOÀNG SA</strong><br><small style="color:#fef08a;">(TP. Đà Nẵng, Việt Nam)</small>', {
-      permanent: false,
+    hsMarker.bindTooltip('<strong>QUẦN ĐẢO HOÀNG SA</strong><br><small style="color:#fef08a;">(Huyện Hoàng Sa, TP. Đà Nẵng, Việt Nam)</small>', {
+      permanent: true,
       direction: 'top',
       className: 'island-sovereignty-badge',
       offset: [0, -10]
@@ -2315,8 +2347,8 @@ const App = {
       iconAnchor: [16, 16]
     });
     const tsMarker = L.marker([8.647, 111.919], { icon: tsIcon, zIndexOffset: 900 }).addTo(this.map);
-    tsMarker.bindTooltip('<strong>QUẦN ĐẢO TRƯỜNG SA</strong><br><small style="color:#fef08a;">(Tỉnh Khánh Hòa, Việt Nam)</small>', {
-      permanent: false,
+    tsMarker.bindTooltip('<strong>QUẦN ĐẢO TRƯỜNG SA</strong><br><small style="color:#fef08a;">(Huyện Trường Sa, Tỉnh Khánh Hòa, Việt Nam)</small>', {
+      permanent: true,
       direction: 'top',
       className: 'island-sovereignty-badge',
       offset: [0, -10]
