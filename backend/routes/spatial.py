@@ -28,6 +28,8 @@ async def list_stations():
     return stations
 
 @router.get("/regions")
+@router.get("/regions-geojson")
+@router.get("/spatial/regions-geojson")
 async def get_geojson_regions():
     """
     Trả về dữ liệu GeoJSON đa giác các quận Hà Nội được gắn nhãn AQI và PM2.5 trung bình.
