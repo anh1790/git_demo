@@ -557,11 +557,18 @@ body {
   box-shadow: var(--shadow-lg);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   color: #ffffff;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 40%, #075985 100%); /* Default background guarantee: never white screen */
 }
 
 /* Background Gradients for Weather Conditions */
 .weather-stage.weather-sunny {
   background: linear-gradient(135deg, #0284c7 0%, #38bdf8 60%, #fdba74 100%);
+}
+.weather-stage.weather-noon {
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 40%, #38bdf8 75%, #fde047 100%);
+}
+.weather-stage.weather-noon-rain {
+  background: linear-gradient(135deg, #0369a1 0%, #0284c7 40%, #2563eb 75%, #60a5fa 100%);
 }
 .weather-stage.weather-partly-cloudy {
   background: linear-gradient(135deg, #0369a1 0%, #0284c7 45%, #7dd3fc 100%);
@@ -710,23 +717,96 @@ body {
   100% { transform: translateX(950px); }
 }
 
-/* 3. Rain Stream */
+/* 3. Rain Stream & Realistic Fluid Water Flowing Drops */
 .rain-stream {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(186, 230, 253, 0.75) 70%, rgba(255,255,255,0) 100%);
-  background-size: 2px 28px;
-  background-repeat: repeat;
-  animation: rainFall 0.35s linear infinite;
-  opacity: 0.7;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 3;
 }
 
-@keyframes rainFall {
-  0% { background-position: 0 0; }
-  100% { background-position: -30px 110px; }
+.rain-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rain-drops-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Fallback individual flowing raindrops */
+.rain-streak {
+  position: absolute;
+  top: -50px;
+  width: 1.5px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(186, 230, 253, 0.75) 60%, #ffffff 100%);
+  border-radius: 0 0 2px 2px;
+  transform: rotate(12deg);
+  animation: rainDropFlow linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Flowing glass water trickle bead */
+.rain-trickle {
+  position: absolute;
+  top: -20px;
+  width: 3.5px;
+  height: 8px;
+  background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.95) 0%, rgba(186, 230, 253, 0.65) 60%, rgba(2, 132, 199, 0.3) 100%);
+  border-radius: 50% 50% 60% 60%;
+  animation: rainTrickleFlow linear infinite;
+  opacity: 0.75;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15));
+  pointer-events: none;
+}
+
+@keyframes rainDropFlow {
+  0% {
+    transform: translateY(0) rotate(12deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(350px) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rainTrickleFlow {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(300px);
+    opacity: 0;
+  }
 }
 
 /* 4. Lightning Flash */
